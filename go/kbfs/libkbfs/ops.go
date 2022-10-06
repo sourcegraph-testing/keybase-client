@@ -859,10 +859,10 @@ func (w WriteRange) End() uint64 {
 // operation and `other` overlap in some way.  Specifically, it
 // returns true if:
 //
-// - both operations are writes and their write ranges overlap;
-// - one operation is a write and one is a truncate, and the truncate is
-//   within the write's range or before it; or
-// - both operations are truncates.
+//   - both operations are writes and their write ranges overlap;
+//   - one operation is a write and one is a truncate, and the truncate is
+//     within the write's range or before it; or
+//   - both operations are truncates.
 func (w WriteRange) Affects(other WriteRange) bool {
 	if w.isTruncate() {
 		if other.isTruncate() {
@@ -1605,7 +1605,7 @@ func invertOpForLocalNotifications(oldOp op) (newOp op, err error) {
 // we need them to be pointers so they correctly satisfy the op
 // interface.  So this function simply converts them into pointers as
 // needed.
-func opPointerizer(iface interface{}) reflect.Value {
+func opPointerizer(iface any) reflect.Value {
 	switch op := iface.(type) {
 	default:
 		return reflect.ValueOf(iface)

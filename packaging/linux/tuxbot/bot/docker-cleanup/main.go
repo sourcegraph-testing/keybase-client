@@ -117,7 +117,7 @@ func main2() error {
 		return err
 	}
 	var cfg struct {
-		Variants map[string]interface{} `json:"variants"`
+		Variants map[string]any `json:"variants"`
 	}
 	if err := json.NewDecoder(configRes.Body).Decode(&cfg); err != nil {
 		return err
@@ -133,7 +133,7 @@ func main2() error {
 		Client: &http.Client{
 			Transport: registry.WrapTransport(http.DefaultTransport, "https://registry-1.docker.io", *username, *password),
 		},
-		Logf: func(format string, args ...interface{}) {},
+		Logf: func(format string, args ...any) {},
 	}
 	if err := hub.Ping(); err != nil {
 		return err

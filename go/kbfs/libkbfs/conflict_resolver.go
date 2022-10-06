@@ -3374,13 +3374,13 @@ func (cr *ConflictResolver) recordStartResolve(ci conflictInput) error {
 }
 
 // recordFinishResolve does one of two things:
-//  - in the event of success, it deletes the DB entry that recorded conflict
-//    resolution attempts for this resolver
-//  - in the event of failure, it logs that CR failed and tries to record the
-//    failure to the DB.
+//   - in the event of success, it deletes the DB entry that recorded conflict
+//     resolution attempts for this resolver
+//   - in the event of failure, it logs that CR failed and tries to record the
+//     failure to the DB.
 func (cr *ConflictResolver) recordFinishResolve(
 	ctx context.Context, ci conflictInput,
-	panicVar interface{}, receivedErr error) {
+	panicVar any, receivedErr error) {
 	db, key, _, wasStuck, err := cr.isStuckWithDbAndConflicts()
 	if err != nil {
 		cr.log.CWarningf(ctx, "could not record CR result: %+v", err)

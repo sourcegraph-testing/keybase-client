@@ -78,7 +78,7 @@ func (c Tuxbot) Dispatch(msg chat1.MsgSummary, args []string) (err error) {
 
 	// Defer deferment so we don't spam logs with non-commands
 	cmd := fmt.Sprintf("%s(%s)", command, strings.Join(args, ", "))
-	defer chatbot.InfoTraceVerbose(c, cmd, func() (interface{}, error) { return nil, err })()
+	defer chatbot.InfoTraceVerbose(c, cmd, func() (any, error) { return nil, err })()
 
 	currentUser, err := user.Current()
 	if err != nil {

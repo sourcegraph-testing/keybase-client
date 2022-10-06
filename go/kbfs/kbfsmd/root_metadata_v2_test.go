@@ -189,7 +189,7 @@ func TestWriterMetadataV2EncodedFields(t *testing.T) {
 	buf, err := c.Encode(wm)
 	require.NoError(t, err)
 
-	var m map[string]interface{}
+	var m map[string]any
 	err = c.Decode(buf, &m)
 	require.NoError(t, err)
 

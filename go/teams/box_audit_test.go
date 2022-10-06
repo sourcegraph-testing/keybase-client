@@ -133,12 +133,12 @@ func TestBoxAuditAttempt(t *testing.T) {
 	require.NoError(t, toErr(attempt), "attempt OK after rotate")
 }
 
-func requireFatalError(t *testing.T, err error, args ...interface{}) {
+func requireFatalError(t *testing.T, err error, args ...any) {
 	_, ok := err.(FatalBoxAuditError)
 	require.True(t, ok, args...)
 }
 
-func requireNonfatalError(t *testing.T, err error, args ...interface{}) {
+func requireNonfatalError(t *testing.T, err error, args ...any) {
 	_, ok := err.(NonfatalBoxAuditError)
 	require.True(t, ok, args...)
 }

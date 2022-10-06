@@ -32,7 +32,7 @@ type UIInboxLoader struct {
 	eg      errgroup.Group
 
 	clock                 clockwork.Clock
-	transmitCh            chan interface{}
+	transmitCh            chan any
 	layoutCh              chan chat1.InboxLayoutReselectMode
 	bigTeamUnboxCh        chan []chat1.ConversationID
 	convTransmitBatch     map[chat1.ConvIDStr]chat1.ConversationLocal
@@ -73,7 +73,7 @@ func (h *UIInboxLoader) Start(ctx context.Context, uid gregor1.UID) {
 	if h.started {
 		return
 	}
-	h.transmitCh = make(chan interface{}, 1000)
+	h.transmitCh = make(chan any, 1000)
 	h.layoutCh = make(chan chat1.InboxLayoutReselectMode, 1000)
 	h.bigTeamUnboxCh = make(chan []chat1.ConversationID, 1000)
 	h.stopCh = make(chan struct{})
@@ -249,7 +249,7 @@ func (h *UIInboxLoader) flushFailed(r failedResponse) {
 	}
 }
 
-func (h *UIInboxLoader) transmitOnce(imsg interface{}) {
+func (h *UIInboxLoader) transmitOnce(imsg any) {
 	switch msg := imsg.(type) {
 	case unverifiedResponse:
 		_ = h.flushConvBatch()

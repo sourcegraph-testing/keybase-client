@@ -224,7 +224,7 @@ func jsonLocalDbGet(ops LocalDbOps, id DbKey) (*jsonw.Wrapper, error) {
 	return ret, err
 }
 
-func jsonLocalDbGetInto(ops LocalDbOps, obj interface{}, id DbKey) (found bool, err error) {
+func jsonLocalDbGetInto(ops LocalDbOps, obj any, id DbKey) (found bool, err error) {
 	var buf []byte
 	buf, found, err = ops.Get(id)
 	if err == nil && found {
@@ -237,7 +237,7 @@ func jsonLocalDbGetInto(ops LocalDbOps, obj interface{}, id DbKey) (found bool, 
 	return found, err
 }
 
-func jsonLocalDbPutObj(ops LocalDbOps, id DbKey, aliases []DbKey, obj interface{}) (err error) {
+func jsonLocalDbPutObj(ops LocalDbOps, id DbKey, aliases []DbKey, obj any) (err error) {
 	var bytes []byte
 	bytes, err = json.Marshal(obj)
 	if err == nil {
@@ -255,7 +255,7 @@ func jsonLocalDbLookup(ops LocalDbOps, id DbKey) (*jsonw.Wrapper, error) {
 	return ret, err
 }
 
-func jsonLocalDbLookupIntoMsgpack(ops LocalDbOps, obj interface{}, alias DbKey) (found bool, err error) {
+func jsonLocalDbLookupIntoMsgpack(ops LocalDbOps, obj any, alias DbKey) (found bool, err error) {
 	var buf []byte
 	buf, found, err = ops.Lookup(alias)
 	if err != nil || !found {
@@ -265,7 +265,7 @@ func jsonLocalDbLookupIntoMsgpack(ops LocalDbOps, obj interface{}, alias DbKey) 
 	return true, err
 }
 
-func jsonLocalDbGetIntoMsgpack(ops LocalDbOps, obj interface{}, id DbKey) (found bool, err error) {
+func jsonLocalDbGetIntoMsgpack(ops LocalDbOps, obj any, id DbKey) (found bool, err error) {
 	var buf []byte
 	buf, found, err = ops.Get(id)
 	if err != nil || !found {
@@ -275,7 +275,7 @@ func jsonLocalDbGetIntoMsgpack(ops LocalDbOps, obj interface{}, id DbKey) (found
 	return true, err
 }
 
-func jsonLocalDbPutObjMsgpack(ops LocalDbOps, id DbKey, aliases []DbKey, obj interface{}) error {
+func jsonLocalDbPutObjMsgpack(ops LocalDbOps, id DbKey, aliases []DbKey, obj any) error {
 	bytes, err := msgpack.Encode(obj)
 	if err != nil {
 		return err
@@ -313,11 +313,11 @@ func (j *JSONLocalDb) Get(id DbKey) (*jsonw.Wrapper, error) {
 	return jsonLocalDbGet(j.engine, id)
 }
 
-func (j *JSONLocalDb) GetInto(obj interface{}, id DbKey) (found bool, err error) {
+func (j *JSONLocalDb) GetInto(obj any, id DbKey) (found bool, err error) {
 	return jsonLocalDbGetInto(j.engine, obj, id)
 }
 
-func (j *JSONLocalDb) PutObj(id DbKey, aliases []DbKey, obj interface{}) (err error) {
+func (j *JSONLocalDb) PutObj(id DbKey, aliases []DbKey, obj any) (err error) {
 	return jsonLocalDbPutObj(j.engine, id, aliases, obj)
 }
 
@@ -325,15 +325,15 @@ func (j *JSONLocalDb) Lookup(id DbKey) (*jsonw.Wrapper, error) {
 	return jsonLocalDbLookup(j.engine, id)
 }
 
-func (j *JSONLocalDb) LookupIntoMsgpack(obj interface{}, alias DbKey) (found bool, err error) {
+func (j *JSONLocalDb) LookupIntoMsgpack(obj any, alias DbKey) (found bool, err error) {
 	return jsonLocalDbLookupIntoMsgpack(j.engine, obj, alias)
 }
 
-func (j *JSONLocalDb) GetIntoMsgpack(obj interface{}, id DbKey) (found bool, err error) {
+func (j *JSONLocalDb) GetIntoMsgpack(obj any, id DbKey) (found bool, err error) {
 	return jsonLocalDbGetIntoMsgpack(j.engine, obj, id)
 }
 
-func (j *JSONLocalDb) PutObjMsgpack(id DbKey, aliases []DbKey, obj interface{}) (err error) {
+func (j *JSONLocalDb) PutObjMsgpack(id DbKey, aliases []DbKey, obj any) (err error) {
 	return jsonLocalDbPutObjMsgpack(j.engine, id, aliases, obj)
 }
 
@@ -368,11 +368,11 @@ func (j JSONLocalDbTransaction) Get(id DbKey) (*jsonw.Wrapper, error) {
 	return jsonLocalDbGet(j.tr, id)
 }
 
-func (j JSONLocalDbTransaction) GetInto(obj interface{}, id DbKey) (found bool, err error) {
+func (j JSONLocalDbTransaction) GetInto(obj any, id DbKey) (found bool, err error) {
 	return jsonLocalDbGetInto(j.tr, obj, id)
 }
 
-func (j JSONLocalDbTransaction) PutObj(id DbKey, aliases []DbKey, obj interface{}) (err error) {
+func (j JSONLocalDbTransaction) PutObj(id DbKey, aliases []DbKey, obj any) (err error) {
 	return jsonLocalDbPutObj(j.tr, id, aliases, obj)
 }
 

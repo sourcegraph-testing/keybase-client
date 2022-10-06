@@ -36,11 +36,11 @@ func NotifyTrackingProtocol(i NotifyTrackingInterface) rpc.Protocol {
 		Name: "keybase.1.NotifyTracking",
 		Methods: map[string]rpc.ServeHandlerDescription{
 			"trackingChanged": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]TrackingChangedArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]TrackingChangedArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]TrackingChangedArg)(nil), args)
@@ -51,11 +51,11 @@ func NotifyTrackingProtocol(i NotifyTrackingInterface) rpc.Protocol {
 				},
 			},
 			"trackingInfo": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]TrackingInfoArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]TrackingInfoArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]TrackingInfoArg)(nil), args)
@@ -66,11 +66,11 @@ func NotifyTrackingProtocol(i NotifyTrackingInterface) rpc.Protocol {
 				},
 			},
 			"notifyUserBlocked": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]NotifyUserBlockedArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]NotifyUserBlockedArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]NotifyUserBlockedArg)(nil), args)
@@ -89,17 +89,17 @@ type NotifyTrackingClient struct {
 }
 
 func (c NotifyTrackingClient) TrackingChanged(ctx context.Context, __arg TrackingChangedArg) (err error) {
-	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.trackingChanged", []interface{}{__arg}, 0*time.Millisecond)
+	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.trackingChanged", []any{__arg}, 0*time.Millisecond)
 	return
 }
 
 func (c NotifyTrackingClient) TrackingInfo(ctx context.Context, __arg TrackingInfoArg) (err error) {
-	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.trackingInfo", []interface{}{__arg}, 0*time.Millisecond)
+	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.trackingInfo", []any{__arg}, 0*time.Millisecond)
 	return
 }
 
 func (c NotifyTrackingClient) NotifyUserBlocked(ctx context.Context, b UserBlockedSummary) (err error) {
 	__arg := NotifyUserBlockedArg{B: b}
-	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.notifyUserBlocked", []interface{}{__arg}, 0*time.Millisecond)
+	err = c.Cli.Notify(ctx, "keybase.1.NotifyTracking.notifyUserBlocked", []any{__arg}, 0*time.Millisecond)
 	return
 }

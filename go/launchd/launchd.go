@@ -681,16 +681,16 @@ func (p Plist) plistXML() string {
 
 // Log is the logging interface for this package
 type Log interface {
-	Debug(s string, args ...interface{})
-	Info(s string, args ...interface{})
-	Errorf(s string, args ...interface{})
+	Debug(s string, args ...any)
+	Info(s string, args ...any)
+	Errorf(s string, args ...any)
 }
 
 type emptyLog struct{}
 
-func (l emptyLog) Debug(s string, args ...interface{})  {}
-func (l emptyLog) Info(s string, args ...interface{})   {}
-func (l emptyLog) Errorf(s string, args ...interface{}) {}
+func (l emptyLog) Debug(s string, args ...any)  {}
+func (l emptyLog) Info(s string, args ...any)   {}
+func (l emptyLog) Errorf(s string, args ...any) {}
 
 func writable(path string) bool {
 	return unix.Access(path, unix.W_OK) == nil

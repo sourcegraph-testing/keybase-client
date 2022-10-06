@@ -98,7 +98,7 @@ func makeBlockIndexKey(convID chat1.ConversationID, uid gregor1.UID) libkb.DbKey
 	}
 }
 
-func encode(input interface{}) ([]byte, error) {
+func encode(input any) ([]byte, error) {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	var data []byte
 	enc := codec.NewEncoderBytes(&data, &mh)
@@ -108,7 +108,7 @@ func encode(input interface{}) ([]byte, error) {
 	return data, nil
 }
 
-func decode(data []byte, res interface{}) error {
+func decode(data []byte, res any) error {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	dec := codec.NewDecoderBytes(data, &mh)
 	err := dec.Decode(res)
@@ -686,7 +686,7 @@ func (s *Storage) flatten(m map[chat1.MessageID]chat1.MessageUnboxed) (res []cha
 func (s *Storage) updateMinDeletableMessage(ctx context.Context, convID chat1.ConversationID,
 	uid gregor1.UID, msgs []chat1.MessageUnboxed) Error {
 
-	de := func(format string, args ...interface{}) {
+	de := func(format string, args ...any) {
 		s.Debug(ctx, "updateMinDeletableMessage: "+fmt.Sprintf(format, args...))
 	}
 
@@ -736,11 +736,12 @@ func (s *Storage) updateMinDeletableMessage(ctx context.Context, convID chat1.Co
 // Returns a non-nil expunge if deletes happened.
 // Shortcircuits so it's ok to call a lot.
 // The actual effect will be to delete upto the max of `expungeExplicit` (which can be nil)
-//   and the DeleteHistory-type messages.
+//
+//	and the DeleteHistory-type messages.
 func (s *Storage) handleDeleteHistory(ctx context.Context, conv types.UnboxConversationInfo,
 	uid gregor1.UID, msgs []chat1.MessageUnboxed, expungeExplicit *chat1.Expunge) (*chat1.Expunge, Error) {
 
-	de := func(format string, args ...interface{}) {
+	de := func(format string, args ...any) {
 		s.Debug(ctx, "handleDeleteHistory: "+fmt.Sprintf(format, args...))
 	}
 
@@ -824,7 +825,7 @@ func (s *Storage) applyExpunge(ctx context.Context, conv types.UnboxConversation
 	convID := conv.GetConvID()
 	s.Debug(ctx, "applyExpunge(%v, %v, %v)", convID, uid, expunge.Upto)
 
-	de := func(format string, args ...interface{}) {
+	de := func(format string, args ...any) {
 		s.Debug(ctx, "applyExpunge: "+fmt.Sprintf(format, args...))
 	}
 

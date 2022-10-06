@@ -89,7 +89,7 @@ type failingCodec struct {
 	kbfscodec.Codec
 }
 
-func (fc failingCodec) Encode(interface{}) ([]byte, error) {
+func (fc failingCodec) Encode(any) ([]byte, error) {
 	return nil, errors.New("Stopping resolution process early")
 }
 

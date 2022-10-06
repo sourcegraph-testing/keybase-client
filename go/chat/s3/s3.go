@@ -99,7 +99,6 @@ type Owner struct {
 }
 
 // Fold options into an Options struct
-//
 type Options struct {
 	SSE              bool
 	Meta             map[string][]string
@@ -639,41 +638,41 @@ type Key struct {
 //
 // For example, given these keys in a bucket:
 //
-//     index.html
-//     index2.html
-//     photos/2006/January/sample.jpg
-//     photos/2006/February/sample2.jpg
-//     photos/2006/February/sample3.jpg
-//     photos/2006/February/sample4.jpg
+//	index.html
+//	index2.html
+//	photos/2006/January/sample.jpg
+//	photos/2006/February/sample2.jpg
+//	photos/2006/February/sample3.jpg
+//	photos/2006/February/sample4.jpg
 //
 // Listing this bucket with delimiter set to "/" would yield the
 // following result:
 //
-//     &ListResp{
-//         Name:      "sample-bucket",
-//         MaxKeys:   1000,
-//         Delimiter: "/",
-//         Contents:  []Key{
-//             {Key: "index.html", "index2.html"},
-//         },
-//         CommonPrefixes: []string{
-//             "photos/",
-//         },
-//     }
+//	&ListResp{
+//	    Name:      "sample-bucket",
+//	    MaxKeys:   1000,
+//	    Delimiter: "/",
+//	    Contents:  []Key{
+//	        {Key: "index.html", "index2.html"},
+//	    },
+//	    CommonPrefixes: []string{
+//	        "photos/",
+//	    },
+//	}
 //
 // Listing the same bucket with delimiter set to "/" and prefix set to
 // "photos/2006/" would yield the following result:
 //
-//     &ListResp{
-//         Name:      "sample-bucket",
-//         MaxKeys:   1000,
-//         Delimiter: "/",
-//         Prefix:    "photos/2006/",
-//         CommonPrefixes: []string{
-//             "photos/2006/February/",
-//             "photos/2006/January/",
-//         },
-//     }
+//	&ListResp{
+//	    Name:      "sample-bucket",
+//	    MaxKeys:   1000,
+//	    Delimiter: "/",
+//	    Prefix:    "photos/2006/",
+//	    CommonPrefixes: []string{
+//	        "photos/2006/February/",
+//	        "photos/2006/January/",
+//	    },
+//	}
 //
 // See http://goo.gl/YjQTc for details.
 func (b *Bucket) List(prefix, delim, marker string, max int) (result *ListResp, err error) {
@@ -850,7 +849,7 @@ func (req *request) url() (*url.URL, error) {
 // query prepares and runs the req request.
 // If resp is not nil, the XML data contained in the response
 // body will be unmarshalled on it.
-func (s3 *S3) query(ctx context.Context, req *request, resp interface{}) error {
+func (s3 *S3) query(ctx context.Context, req *request, resp any) error {
 	err := s3.prepare(req)
 	if err == nil {
 		var httpResponse *http.Response
@@ -918,7 +917,7 @@ func (s3 *S3) prepare(req *request) error {
 // run sends req and returns the http response from the server.
 // If resp is not nil, the XML data contained in the response
 // body will be unmarshalled on it.
-func (s3 *S3) run(ctx context.Context, req *request, resp interface{}) (*http.Response, error) {
+func (s3 *S3) run(ctx context.Context, req *request, resp any) (*http.Response, error) {
 	if debug {
 		log.Printf("Running S3 request: %#v", req)
 	}

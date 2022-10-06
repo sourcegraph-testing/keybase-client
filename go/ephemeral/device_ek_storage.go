@@ -106,7 +106,7 @@ func (s *DeviceEKStorage) SetLogPrefix(mctx libkb.MetaContext) {
 
 // Log sensitive deletion actions to a separate log file so we don't lose the
 // logs during normal rotation.
-func (s *DeviceEKStorage) ekLogf(mctx libkb.MetaContext, format string, args ...interface{}) {
+func (s *DeviceEKStorage) ekLogf(mctx libkb.MetaContext, format string, args ...any) {
 	mctx.Debug(format, args...)
 	if s.logger != nil {
 		s.logger.Printf(format, args...)
@@ -283,14 +283,14 @@ func (s *DeviceEKStorage) get(mctx libkb.MetaContext, generation keybase1.EkGene
 }
 
 func (s *DeviceEKStorage) Delete(mctx libkb.MetaContext, generation keybase1.EkGeneration,
-	reason string, args ...interface{}) (err error) {
+	reason string, args ...any) (err error) {
 	s.Lock()
 	defer s.Unlock()
 	return s.delete(mctx, generation, reason, args...)
 }
 
 func (s *DeviceEKStorage) delete(mctx libkb.MetaContext, generation keybase1.EkGeneration,
-	reason string, args ...interface{}) (err error) {
+	reason string, args ...any) (err error) {
 	defer s.ekLogCTrace(mctx, fmt.Sprintf("DeviceEKStorage#delete: generation:%v reason: %s", generation, fmt.Sprintf(reason, args...)), &err)()
 
 	// clear the cache

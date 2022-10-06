@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func divDebug(ctx *smuContext, fmt string, arg ...interface{}) {
+func divDebug(ctx *smuContext, fmt string, arg ...any) {
 	div := "------------"
 	ctx.log.Debug(div+" "+fmt+" "+div, arg...)
 }

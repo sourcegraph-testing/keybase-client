@@ -49,7 +49,7 @@ func NewSrv(g *libkb.GlobalContext) *Srv {
 	return h
 }
 
-func (r *Srv) debug(ctx context.Context, msg string, args ...interface{}) {
+func (r *Srv) debug(ctx context.Context, msg string, args ...any) {
 	r.G().Log.CDebugf(ctx, "Srv: %s", fmt.Sprintf(msg, args...))
 }
 

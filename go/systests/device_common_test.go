@@ -75,11 +75,11 @@ func (t *testUI) UnescapedOutputWriter() io.Writer {
 	return t
 }
 
-func (t *testUI) Printf(f string, args ...interface{}) (int, error) {
+func (t *testUI) Printf(f string, args ...any) (int, error) {
 	return t.PrintfUnescaped(f, args...)
 }
 
-func (t *testUI) PrintfUnescaped(f string, args ...interface{}) (int, error) {
+func (t *testUI) PrintfUnescaped(f string, args ...any) (int, error) {
 	s := fmt.Sprintf(f, args...)
 	t.G().Log.Debug("Terminal Printf: %s", s)
 	return len(s), nil

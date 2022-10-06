@@ -48,13 +48,13 @@ func (c *chatClient) ServerTime(context.Context) (time.Time, error) {
 	return c.Clock().Now(), nil
 }
 
-func testPrintf(fmtString string, args ...interface{}) {
+func testPrintf(fmtString string, args ...any) {
 	if testing.Verbose() {
 		fmt.Printf(fmtString, args...)
 	}
 }
 
-func (c *chatClient) CLogf(ctx context.Context, fmtString string, args ...interface{}) {
+func (c *chatClient) CLogf(ctx context.Context, fmtString string, args ...any) {
 	testPrintf(fmtString+"\n", args...)
 }
 

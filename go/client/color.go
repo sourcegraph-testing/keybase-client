@@ -146,6 +146,6 @@ func ColorBytes(g *libkb.GlobalContext, which string, text []byte) []byte {
 	}
 }
 
-func ColorString(g *libkb.GlobalContext, which, format string, args ...interface{}) string {
+func ColorString(g *libkb.GlobalContext, which, format string, args ...any) string {
 	return string(ColorBytes(g, which, []byte(fmt.Sprintf(format, args...))))
 }

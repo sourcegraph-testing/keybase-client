@@ -152,7 +152,7 @@ func (c *levelDbCleaner) monitorAppState() {
 	}
 }
 
-func (c *levelDbCleaner) log(format string, args ...interface{}) {
+func (c *levelDbCleaner) log(format string, args ...any) {
 	c.M().Debug(fmt.Sprintf("levelDbCleaner(%s): %s", c.dbName, format), args...)
 }
 

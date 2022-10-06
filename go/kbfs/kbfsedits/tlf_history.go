@@ -70,12 +70,12 @@ func (wbr writersByRevision) Swap(i, j int) {
 	wbr[i], wbr[j] = wbr[j], wbr[i]
 }
 
-func (wbr *writersByRevision) Push(x interface{}) {
+func (wbr *writersByRevision) Push(x any) {
 	wn := x.(*writerNotifications)
 	*wbr = append(*wbr, wn)
 }
 
-func (wbr *writersByRevision) Pop() interface{} {
+func (wbr *writersByRevision) Pop() any {
 	// The item to remove is the last item; heap has already swapped
 	// it to the end.
 	old := *wbr
@@ -90,7 +90,7 @@ func (wbr *writersByRevision) Pop() interface{} {
 //
 // There will be two users of a TlfHistory instance:
 //
-//   * One user (likely something outside of the kbfsedits package,
+//   - One user (likely something outside of the kbfsedits package,
 //     e.g. libkbfs.folderBranchOps) will read notifications from the
 //     corresponding TLF and add them to this history.  After adding a
 //     batch or several batches of messages, it should call
@@ -98,7 +98,7 @@ func (wbr *writersByRevision) Pop() interface{} {
 //     it should fetch more notifications for the indicated writer and
 //     repeat.
 //
-//   * The other user (within the kbfsedits package) will collate the
+//   - The other user (within the kbfsedits package) will collate the
 //     histories from multiple TlfHistory instances together using
 //     `getHistory()` from each one.  It may also construct pretty
 //     versions of individual edit histories for a particular TLF.

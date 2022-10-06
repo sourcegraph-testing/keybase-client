@@ -39,7 +39,7 @@ func (e InvalidLink) Error() string {
 	return fmt.Sprintf("invalid link (seqno %d): %s", e.l.Seqno(), e.note)
 }
 
-func NewInvalidLink(l *ChainLinkUnpacked, format string, args ...interface{}) InvalidLink {
+func NewInvalidLink(l *ChainLinkUnpacked, format string, args ...any) InvalidLink {
 	return InvalidLink{l, fmt.Sprintf(format, args...)}
 }
 
@@ -152,7 +152,7 @@ type PrevError struct {
 	Msg string
 }
 
-func NewPrevError(format string, args ...interface{}) error {
+func NewPrevError(format string, args ...any) error {
 	return PrevError{fmt.Sprintf(format, args...)}
 }
 
@@ -214,7 +214,7 @@ func (e TeamDoesNotExistError) Error() string {
 	return fmt.Sprintf("Team %q does not exist", e.descriptor)
 }
 
-func NewTeamDoesNotExistError(public bool, format string, args ...interface{}) error {
+func NewTeamDoesNotExistError(public bool, format string, args ...any) error {
 	return TeamDoesNotExistError{
 		descriptor: fmt.Sprintf(format, args...),
 		public:     public,
@@ -237,7 +237,7 @@ func (e ExplicitTeamOperationError) Error() string {
 	return fmt.Sprintf("Operation only allowed on implicit teams: %s", e.msg)
 }
 
-func NewImplicitTeamOperationError(format string, args ...interface{}) error {
+func NewImplicitTeamOperationError(format string, args ...any) error {
 	return &ImplicitTeamOperationError{msg: fmt.Sprintf(format, args...)}
 }
 
@@ -413,7 +413,7 @@ func (e AttemptedInviteSocialOwnerError) Error() string { return e.Msg }
 
 type UserHasNotResetError struct{ Msg string }
 
-func NewUserHasNotResetError(format string, args ...interface{}) error {
+func NewUserHasNotResetError(format string, args ...any) error {
 	return UserHasNotResetError{Msg: fmt.Sprintf(format, args...)}
 }
 
@@ -459,7 +459,7 @@ func (f FastLoadError) Error() string {
 	return fmt.Sprintf("fast load error: %s", f.Msg)
 }
 
-func NewFastLoadError(format string, args ...interface{}) error {
+func NewFastLoadError(format string, args ...any) error {
 	return FastLoadError{Msg: fmt.Sprintf(format, args...)}
 }
 
@@ -480,7 +480,7 @@ type AuditError struct {
 	Msg string
 }
 
-func NewAuditError(format string, args ...interface{}) error {
+func NewAuditError(format string, args ...any) error {
 	return AuditError{Msg: fmt.Sprintf(format, args...)}
 }
 
@@ -628,6 +628,6 @@ func (e InviteLinkAcceptanceError) Error() string {
 	return fmt.Sprintf("InviteLinkAcceptanceError: %s", e.Cause)
 }
 
-func NewInviteLinkAcceptanceError(format string, args ...interface{}) InviteLinkAcceptanceError {
+func NewInviteLinkAcceptanceError(format string, args ...any) InviteLinkAcceptanceError {
 	return InviteLinkAcceptanceError{fmt.Errorf(format, args...)}
 }

@@ -40,19 +40,19 @@ func (c *TestConfig) GetConfigFileName() string { return c.configFileName }
 // this in order to avoid pulling in the "testing" package in exported
 // code.
 type TestingTB interface {
-	Error(args ...interface{})
-	Errorf(format string, args ...interface{})
+	Error(args ...any)
+	Errorf(format string, args ...any)
 	Fail()
 	FailNow()
 	Failed() bool
-	Fatal(args ...interface{})
-	Fatalf(format string, args ...interface{})
-	Log(args ...interface{})
-	Logf(format string, args ...interface{})
+	Fatal(args ...any)
+	Fatalf(format string, args ...any)
+	Log(args ...any)
+	Logf(format string, args ...any)
 	Name() string
-	Skip(args ...interface{})
+	Skip(args ...any)
 	SkipNow()
-	Skipf(format string, args ...interface{})
+	Skipf(format string, args ...any)
 	Skipped() bool
 	Helper()
 }
@@ -391,15 +391,15 @@ type nullui struct {
 	gctx *GlobalContext
 }
 
-func (n *nullui) Printf(f string, args ...interface{}) (int, error) {
+func (n *nullui) Printf(f string, args ...any) (int, error) {
 	return fmt.Printf(f, args...)
 }
 
-func (n *nullui) PrintfStderr(f string, args ...interface{}) (int, error) {
+func (n *nullui) PrintfStderr(f string, args ...any) (int, error) {
 	return fmt.Fprintf(os.Stderr, f, args...)
 }
 
-func (n *nullui) PrintfUnescaped(f string, args ...interface{}) (int, error) {
+func (n *nullui) PrintfUnescaped(f string, args ...any) (int, error) {
 	return fmt.Printf(f, args...)
 }
 

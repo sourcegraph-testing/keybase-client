@@ -69,7 +69,7 @@ func (s *SimpleSource) makeRes(res *keybase1.LoadAvatarsRes, apiRes apiAvatarRes
 	return nil
 }
 
-func (s *SimpleSource) debug(m libkb.MetaContext, msg string, args ...interface{}) {
+func (s *SimpleSource) debug(m libkb.MetaContext, msg string, args ...any) {
 	m.Debug("Avatars.SimpleSource: %s", fmt.Sprintf(msg, args...))
 }
 

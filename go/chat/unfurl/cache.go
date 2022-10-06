@@ -13,7 +13,7 @@ const defaultCacheLifetime = 10 * time.Minute
 const defaultCacheSize = 1000
 
 type cacheItem struct {
-	data  interface{}
+	data  any
 	ctime gregor1.Time
 }
 
@@ -60,7 +60,7 @@ func (c *unfurlCache) get(key string) (res cacheItem, ok bool) {
 	return cacheItem, valid
 }
 
-func (c *unfurlCache) put(key string, data interface{}) {
+func (c *unfurlCache) put(key string, data any) {
 	c.Lock()
 	defer c.Unlock()
 	c.cache.Add(key, cacheItem{

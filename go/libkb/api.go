@@ -350,7 +350,7 @@ func doRequestShared(m MetaContext, api Requester, arg APIArg, req *http.Request
 
 		reader := newCountingReader(&buf)
 		decoder := json.NewDecoder(reader)
-		var obj interface{}
+		var obj any
 		decoder.UseNumber()
 		err = decoder.Decode(&obj)
 		jsonBytes = reader.numRead()

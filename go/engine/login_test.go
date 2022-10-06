@@ -4003,7 +4003,7 @@ func newTestProvisionUIGPGSign() *testProvisionUI {
 	return ui
 }
 
-func (u *testProvisionUI) printf(format string, a ...interface{}) {
+func (u *testProvisionUI) printf(format string, a ...any) {
 	if !u.verbose {
 		return
 	}

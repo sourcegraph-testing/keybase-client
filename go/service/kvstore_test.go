@@ -150,7 +150,7 @@ func TestKvStoreMultiUserTeam(t *testing.T) {
 	// Alice puts a secret
 	namespace := "myapp"
 	entryKey := "asdfasfeasef"
-	secretData := map[string]interface{}{
+	secretData := map[string]any{
 		"username":      "hunter2",
 		"email":         "thereal@example.com",
 		"password":      "super random password",

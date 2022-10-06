@@ -164,7 +164,7 @@ type JourneyCardManagerSingleUser struct {
 	encryptedDB *encrypteddb.EncryptedDB
 }
 
-type logFn func(ctx context.Context, format string, args ...interface{})
+type logFn func(ctx context.Context, format string, args ...any)
 
 func NewJourneyCardManagerSingleUser(g *globals.Context, ri func() chat1.RemoteInterface, uid gregor1.UID) *JourneyCardManagerSingleUser {
 	lru, err := lru.New(200)
@@ -237,7 +237,7 @@ func (cc *JourneyCardManagerSingleUser) PickCard(ctx context.Context,
 		// Journey cards are gated by either client-side flag KEYBASE_DEBUG_JOURNEYCARD or server-driven flag 'journeycard'.
 		return nil, nil
 	}
-	debugDebug := func(ctx context.Context, format string, args ...interface{}) {
+	debugDebug := func(ctx context.Context, format string, args ...any) {
 		if debug {
 			cc.Debug(ctx, format, args...)
 		}

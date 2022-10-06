@@ -43,11 +43,11 @@ func newMockProvisioner(t *testing.T) *mockProvisioner {
 type nullLogOutput struct {
 }
 
-func (n *nullLogOutput) Error(s string, args ...interface{})   {}
-func (n *nullLogOutput) Warning(s string, args ...interface{}) {}
-func (n *nullLogOutput) Info(s string, args ...interface{})    {}
-func (n *nullLogOutput) Debug(s string, args ...interface{})   {}
-func (n *nullLogOutput) Profile(s string, args ...interface{}) {}
+func (n *nullLogOutput) Error(s string, args ...any)   {}
+func (n *nullLogOutput) Warning(s string, args ...any) {}
+func (n *nullLogOutput) Info(s string, args ...any)    {}
+func (n *nullLogOutput) Debug(s string, args ...any)   {}
+func (n *nullLogOutput) Profile(s string, args ...any) {}
 
 var _ rpc.LogOutput = (*nullLogOutput)(nil)
 

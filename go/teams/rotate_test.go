@@ -329,7 +329,7 @@ func TestRotateRace(t *testing.T) {
 		return errCh
 	}
 
-	assertNoErr := func(errCh <-chan error, msgAndArgs ...interface{}) {
+	assertNoErr := func(errCh <-chan error, msgAndArgs ...any) {
 		select {
 		case err := <-errCh:
 			require.NoError(t, err, msgAndArgs...)

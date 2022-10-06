@@ -86,7 +86,7 @@ func NewAttachmentHTTPSrv(g *globals.Context, httpSrv *manager.Srv, fetcher type
 		fetcher:            fetcher,
 		httpSrv:            httpSrv,
 		hmacPool: sync.Pool{
-			New: func() interface{} {
+			New: func() any {
 				return hmac.New(sha256.New, token)
 			},
 		},
@@ -104,7 +104,7 @@ func (r *AttachmentHTTPSrv) GetAttachmentFetcher() types.AttachmentFetcher {
 	return r.fetcher
 }
 
-func (r *AttachmentHTTPSrv) genURLKey(prefix string, payload interface{}) (string, error) {
+func (r *AttachmentHTTPSrv) genURLKey(prefix string, payload any) (string, error) {
 	h := r.hmacPool.Get().(hash.Hash)
 	defer r.hmacPool.Put(h)
 	h.Reset()
@@ -118,7 +118,7 @@ func (r *AttachmentHTTPSrv) genURLKey(prefix string, payload interface{}) (strin
 	return prefix + hex.EncodeToString(h.Sum(nil)), nil
 }
 
-func (r *AttachmentHTTPSrv) getURL(ctx context.Context, prefix string, payload interface{}) string {
+func (r *AttachmentHTTPSrv) getURL(ctx context.Context, prefix string, payload any) string {
 	if !r.httpSrv.Active() {
 		r.Debug(ctx, "getURL: http server failed to start earlier")
 		return ""
@@ -391,7 +391,7 @@ func (r *AttachmentHTTPSrv) serveGiphyLink(ctx context.Context, w http.ResponseW
 }
 
 func (r *AttachmentHTTPSrv) makeError(ctx context.Context, w http.ResponseWriter, code int, msg string,
-	args ...interface{}) {
+	args ...any) {
 	r.Debug(ctx, "serve: error code: %d msg %s", code, fmt.Sprintf(msg, args...))
 	w.WriteHeader(code)
 }

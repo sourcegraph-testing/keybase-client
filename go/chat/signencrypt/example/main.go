@@ -14,7 +14,7 @@ import (
 	"github.com/keybase/go-crypto/ed25519"
 )
 
-func failf(format string, args ...interface{}) {
+func failf(format string, args ...any) {
 	log.Print(fmt.Sprintf(format, args...))
 	os.Exit(1)
 }

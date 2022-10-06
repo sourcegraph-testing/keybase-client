@@ -98,10 +98,10 @@ type FullCachingSource struct {
 
 	prepareDirs sync.Once
 
-	usersMissBatch  func(interface{})
-	teamsMissBatch  func(interface{})
-	usersStaleBatch func(interface{})
-	teamsStaleBatch func(interface{})
+	usersMissBatch  func(any)
+	teamsMissBatch  func(any)
+	usersStaleBatch func(any)
+	teamsStaleBatch func(any)
 
 	// testing
 	populateSuccessCh chan struct{}
@@ -117,16 +117,16 @@ func NewFullCachingSource(g *libkb.GlobalContext, staleThreshold time.Duration, 
 		staleThreshold: staleThreshold,
 		simpleSource:   NewSimpleSource(),
 	}
-	batcher := func(intBatched interface{}, intSingle interface{}) interface{} {
+	batcher := func(intBatched any, intSingle any) any {
 		reqs, _ := intBatched.([]remoteFetchArg)
 		single, _ := intSingle.(remoteFetchArg)
 		return append(reqs, single)
 	}
-	reset := func() interface{} {
+	reset := func() any {
 		return []remoteFetchArg{}
 	}
-	actor := func(loadFn func(libkb.MetaContext, []string, []keybase1.AvatarFormat) (keybase1.LoadAvatarsRes, error)) func(interface{}) {
-		return func(intBatched interface{}) {
+	actor := func(loadFn func(libkb.MetaContext, []string, []keybase1.AvatarFormat) (keybase1.LoadAvatarsRes, error)) func(any) {
+		return func(intBatched any) {
 			reqs, _ := intBatched.([]remoteFetchArg)
 			s.makeRemoteFetchRequests(reqs, loadFn)
 		}
@@ -238,7 +238,7 @@ func (c *FullCachingSource) StopBackgroundTasks(mctx libkb.MetaContext) {
 	}
 }
 
-func (c *FullCachingSource) debug(m libkb.MetaContext, msg string, args ...interface{}) {
+func (c *FullCachingSource) debug(m libkb.MetaContext, msg string, args ...any) {
 	m.Debug("Avatars.FullCachingSource: %s", fmt.Sprintf(msg, args...))
 }
 
@@ -266,7 +266,7 @@ func (c *FullCachingSource) monitorAppState(m libkb.MetaContext) {
 
 func (c *FullCachingSource) processLRUHit(entry lru.DiskLRUEntry) (res lruEntry) {
 	var ok bool
-	if _, ok = entry.Value.(map[string]interface{}); ok {
+	if _, ok = entry.Value.(map[string]any); ok {
 		jstr, _ := json.Marshal(entry.Value)
 		_ = json.Unmarshal(jstr, &res)
 		return res

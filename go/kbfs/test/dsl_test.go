@@ -1351,5 +1351,5 @@ func crnameEsc(path string, user username) string {
 
 type silentBenchmark struct{ *testing.B }
 
-func (silentBenchmark) Log(args ...interface{})                 {}
-func (silentBenchmark) Logf(format string, args ...interface{}) {}
+func (silentBenchmark) Log(args ...any)                 {}
+func (silentBenchmark) Logf(format string, args ...any) {}

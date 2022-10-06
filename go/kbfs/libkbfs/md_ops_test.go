@@ -156,7 +156,7 @@ type kmdMatcher struct {
 	kmd libkey.KeyMetadata
 }
 
-func (m kmdMatcher) Matches(x interface{}) bool {
+func (m kmdMatcher) Matches(x any) bool {
 	kmd, ok := x.(libkey.KeyMetadata)
 	if !ok {
 		return false
@@ -882,7 +882,7 @@ type failEncodeCodec struct {
 	err error
 }
 
-func (c failEncodeCodec) Encode(obj interface{}) ([]byte, error) {
+func (c failEncodeCodec) Encode(obj any) ([]byte, error) {
 	return nil, c.err
 }
 

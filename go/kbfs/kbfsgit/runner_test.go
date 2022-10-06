@@ -216,7 +216,7 @@ func testPushWithTemplate(ctx context.Context, t *testing.T,
 		outputMap[line] = true
 	}
 
-	dsts := make([]interface{}, 0, len(refspecs))
+	dsts := make([]any, 0, len(refspecs))
 	for _, refspec := range refspecs {
 		dsts = append(dsts, gogitcfg.RefSpec(refspec).Dst(""))
 	}

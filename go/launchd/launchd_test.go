@@ -35,7 +35,7 @@ func TestPlist(t *testing.T) {
 	data := plist.plistXML()
 	t.Logf("Plist: %s\n", data)
 
-	var i interface{}
+	var i any
 	// This tests valid XML but not actual values
 	err = xml.Unmarshal([]byte(data), &i)
 	if err != nil {

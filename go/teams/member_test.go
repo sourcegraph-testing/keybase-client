@@ -1411,7 +1411,7 @@ func TestMemberAddRace(t *testing.T) {
 		return errCh
 	}
 
-	assertNoErr := func(errCh <-chan error, msgAndArgs ...interface{}) {
+	assertNoErr := func(errCh <-chan error, msgAndArgs ...any) {
 		select {
 		case err := <-errCh:
 			require.NoError(t, err, msgAndArgs...)
@@ -1483,7 +1483,7 @@ func TestMemberAddRaceConflict(t *testing.T) {
 		return errCh
 	}
 
-	assertNoErr := func(errCh <-chan error, msgAndArgs ...interface{}) {
+	assertNoErr := func(errCh <-chan error, msgAndArgs ...any) {
 		select {
 		case err := <-errCh:
 			require.NoError(t, err, msgAndArgs...)
@@ -1493,7 +1493,7 @@ func TestMemberAddRaceConflict(t *testing.T) {
 	}
 
 	// Exactly one error comes from the list of channels
-	assertOneErr := func(errChs []<-chan error, msgAndArgs ...interface{}) (retErr error) {
+	assertOneErr := func(errChs []<-chan error, msgAndArgs ...any) (retErr error) {
 		for i, errCh := range errChs {
 			select {
 			case err := <-errCh:

@@ -259,7 +259,7 @@ func (j *diskJournal) removeEarliest() (empty bool, err error) {
 
 // The functions below are for reading and writing journal entries.
 
-func (j diskJournal) readJournalEntry(o journalOrdinal) (interface{}, error) {
+func (j diskJournal) readJournalEntry(o journalOrdinal) (any, error) {
 	p := j.journalEntryPath(o)
 	entry := reflect.New(j.entryType)
 	err := kbfscodec.DeserializeFromFile(j.codec, p, entry)
@@ -271,7 +271,7 @@ func (j diskJournal) readJournalEntry(o journalOrdinal) (interface{}, error) {
 }
 
 func (j *diskJournal) writeJournalEntry(
-	o journalOrdinal, entry interface{}) error {
+	o journalOrdinal, entry any) error {
 	entryType := reflect.TypeOf(entry)
 	if entryType != j.entryType {
 		panic(errors.Errorf("Expected entry type %v, got %v",
@@ -290,7 +290,7 @@ func (j *diskJournal) writeJournalEntry(
 // successful, appendJournalEntry returns the ordinal of the
 // just-appended entry.
 func (j *diskJournal) appendJournalEntry(
-	o *journalOrdinal, entry interface{}) (journalOrdinal, error) {
+	o *journalOrdinal, entry any) (journalOrdinal, error) {
 	var next journalOrdinal
 	if j.empty() {
 		if o != nil {

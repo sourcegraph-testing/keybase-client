@@ -93,7 +93,7 @@ func JSONGetChildren(w *jsonw.Wrapper) ([]*jsonw.Wrapper, error) {
 // ([], nil) will be returned.  This is because a selector may descend into
 // many subtrees and fail in all but one.
 func AtSelectorPath(selectedObject *jsonw.Wrapper, selectors []keybase1.SelectorEntry,
-	logger func(format string, arg ...interface{}), mkErr func(selector keybase1.SelectorEntry) error) ([]*jsonw.Wrapper, error) {
+	logger func(format string, arg ...any), mkErr func(selector keybase1.SelectorEntry) error) ([]*jsonw.Wrapper, error) {
 	// The terminating condition is when we've consumed all the selectors.
 	if len(selectors) == 0 {
 		return []*jsonw.Wrapper{selectedObject}, nil

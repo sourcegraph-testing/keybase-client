@@ -202,8 +202,8 @@ type SafeWriter interface {
 }
 
 type SafeWriteLogger interface {
-	Debug(format string, args ...interface{})
-	Errorf(format string, args ...interface{})
+	Debug(format string, args ...any)
+	Errorf(format string, args ...any)
 }
 
 // SafeWriteToFile to safely write to a file. Use mode=0 for default permissions.
@@ -273,9 +273,10 @@ func safeWriteToFileOnce(g SafeWriteLogger, t SafeWriter, mode os.FileMode) (err
 
 // Pluralize returns pluralized string with value.
 // For example,
-//   Pluralize(1, "zebra", "zebras", true) => "1 zebra"
-//   Pluralize(2, "zebra", "zebras", true) => "2 zebras"
-//   Pluralize(2, "zebra", "zebras", false) => "zebras"
+//
+//	Pluralize(1, "zebra", "zebras", true) => "1 zebra"
+//	Pluralize(2, "zebra", "zebras", true) => "2 zebras"
+//	Pluralize(2, "zebra", "zebras", false) => "zebras"
 func Pluralize(n int, singular string, plural string, nshow bool) string {
 	if n == 1 {
 		if nshow {
@@ -634,14 +635,16 @@ func Digest(r io.Reader) (string, error) {
 }
 
 // TimeLog calls out with the time since start.  Use like this:
-//    defer TimeLog("MyFunc", time.Now(), e.G().Log.Warning)
-func TimeLog(name string, start time.Time, out func(string, ...interface{})) {
+//
+//	defer TimeLog("MyFunc", time.Now(), e.G().Log.Warning)
+func TimeLog(name string, start time.Time, out func(string, ...any)) {
 	out("time> %s: %s", name, time.Since(start))
 }
 
 // CTimeLog calls out with the time since start.  Use like this:
-//    defer CTimeLog(ctx, "MyFunc", time.Now(), e.G().Log.Warning)
-func CTimeLog(ctx context.Context, name string, start time.Time, out func(context.Context, string, ...interface{})) {
+//
+//	defer CTimeLog(ctx, "MyFunc", time.Now(), e.G().Log.Warning)
+func CTimeLog(ctx context.Context, name string, start time.Time, out func(context.Context, string, ...any)) {
 	out(ctx, "time> %s: %s", name, time.Since(start))
 }
 
@@ -672,9 +675,9 @@ func JoinPredicate(arr []string, delimeter string, f func(s string) bool) string
 // LogTagsFromContext is a wrapper around logger.LogTagsFromContext
 // that simply casts the result to the type expected by
 // rpc.Connection.
-func LogTagsFromContext(ctx context.Context) (map[interface{}]string, bool) {
+func LogTagsFromContext(ctx context.Context) (map[any]string, bool) {
 	tags, ok := logger.LogTagsFromContext(ctx)
-	return map[interface{}]string(tags), ok
+	return map[any]string(tags), ok
 }
 
 func MakeByte24(a []byte) [24]byte {
@@ -851,7 +854,7 @@ func ShredFile(filename string) error {
 	return os.Remove(filename)
 }
 
-func MPackEncode(input interface{}) ([]byte, error) {
+func MPackEncode(input any) ([]byte, error) {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	var data []byte
 	enc := codec.NewEncoderBytes(&data, &mh)
@@ -861,7 +864,7 @@ func MPackEncode(input interface{}) ([]byte, error) {
 	return data, nil
 }
 
-func MPackDecode(data []byte, res interface{}) error {
+func MPackDecode(data []byte, res any) error {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	dec := codec.NewDecoderBytes(data, &mh)
 	err := dec.Decode(res)
@@ -1158,23 +1161,23 @@ var throttleBatchClock = clockwork.NewRealClock()
 
 type throttleBatchEmpty struct{}
 
-func isEmptyThrottleData(arg interface{}) bool {
+func isEmptyThrottleData(arg any) bool {
 	_, ok := arg.(throttleBatchEmpty)
 	return ok
 }
 
-func ThrottleBatch(f func(interface{}), batcher func(interface{}, interface{}) interface{},
-	reset func() interface{}, delay time.Duration, leadingFire bool) (func(interface{}), func()) {
+func ThrottleBatch(f func(any), batcher func(any, any) any,
+	reset func() any, delay time.Duration, leadingFire bool) (func(any), func()) {
 	var lock sync.Mutex
 	var closeLock sync.Mutex
 	var lastCalled time.Time
-	var creation func(interface{})
+	var creation func(any)
 	hasStored := false
 	scheduled := false
 	stored := reset()
 	cancelCh := make(chan struct{})
 	closed := false
-	creation = func(arg interface{}) {
+	creation = func(arg any) {
 		lock.Lock()
 		defer lock.Unlock()
 		elapsed := throttleBatchClock.Since(lastCalled)

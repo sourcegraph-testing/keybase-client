@@ -216,9 +216,9 @@ type noLogTB struct {
 	testing.TB
 }
 
-func (tb noLogTB) Log(args ...interface{}) {}
+func (tb noLogTB) Log(args ...any) {}
 
-func (tb noLogTB) Logf(format string, args ...interface{}) {}
+func (tb noLogTB) Logf(format string, args ...any) {}
 
 func BenchmarkMDJournalBasic(b *testing.B) {
 	runBenchmarkOverMetadataVers(b, benchmarkMDJournalBasic)

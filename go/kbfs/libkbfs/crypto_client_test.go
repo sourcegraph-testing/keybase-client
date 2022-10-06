@@ -57,23 +57,23 @@ func (fc FakeCryptoClient) maybeWaitOnChannel(ctx context.Context) error {
 	}
 }
 
-func (fc FakeCryptoClient) Call(ctx context.Context, s string, args interface{},
-	res interface{}, _ time.Duration) error {
+func (fc FakeCryptoClient) Call(ctx context.Context, s string, args any,
+	res any, _ time.Duration) error {
 	return fc.call(ctx, s, args, res)
 }
 
-func (fc FakeCryptoClient) CallCompressed(ctx context.Context, s string, args interface{},
-	res interface{}, _ rpc.CompressionType, _ time.Duration) error {
+func (fc FakeCryptoClient) CallCompressed(ctx context.Context, s string, args any,
+	res any, _ rpc.CompressionType, _ time.Duration) error {
 	return fc.call(ctx, s, args, res)
 }
 
-func (fc FakeCryptoClient) call(ctx context.Context, s string, args interface{}, res interface{}) error {
+func (fc FakeCryptoClient) call(ctx context.Context, s string, args any, res any) error {
 	switch s {
 	case "keybase.1.crypto.signED25519":
 		if err := fc.maybeWaitOnChannel(ctx); err != nil {
 			return err
 		}
-		arg := args.([]interface{})[0].(keybase1.SignED25519Arg)
+		arg := args.([]any)[0].(keybase1.SignED25519Arg)
 		sigInfo, err := fc.Local.Sign(ctx, arg.Msg)
 		if err != nil {
 			return err
@@ -96,7 +96,7 @@ func (fc FakeCryptoClient) call(ctx context.Context, s string, args interface{},
 		if err := fc.maybeWaitOnChannel(ctx); err != nil {
 			return err
 		}
-		arg := args.([]interface{})[0].(keybase1.UnboxBytes32Arg)
+		arg := args.([]any)[0].(keybase1.UnboxBytes32Arg)
 		publicKey := kbfscrypto.MakeTLFEphemeralPublicKey(
 			arg.PeersPublicKey)
 		encryptedClientHalf := kbfscrypto.MakeEncryptedTLFCryptKeyClientHalfForTest(
@@ -115,7 +115,7 @@ func (fc FakeCryptoClient) call(ctx context.Context, s string, args interface{},
 		if err := fc.maybeWaitOnChannel(ctx); err != nil {
 			return err
 		}
-		arg := args.([]interface{})[0].(keybase1.UnboxBytes32AnyArg)
+		arg := args.([]any)[0].(keybase1.UnboxBytes32AnyArg)
 		keys := make([]EncryptedTLFCryptKeyClientAndEphemeral, 0, len(arg.Bundles))
 		for _, k := range arg.Bundles {
 			ePublicKey := kbfscrypto.MakeTLFEphemeralPublicKey(
@@ -146,7 +146,7 @@ func (fc FakeCryptoClient) call(ctx context.Context, s string, args interface{},
 	}
 }
 
-func (fc FakeCryptoClient) Notify(_ context.Context, s string, args interface{}, _ time.Duration) error {
+func (fc FakeCryptoClient) Notify(_ context.Context, s string, args any, _ time.Duration) error {
 	return errors.Errorf("Unknown notify: %s %v", s, args)
 }
 

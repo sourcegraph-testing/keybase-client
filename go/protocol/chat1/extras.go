@@ -586,9 +586,9 @@ func (m MessageUnboxed) IsJourneycard() bool {
 }
 
 // IsValidFull returns whether the message is both:
-// 1. Valid
-// 2. Has a non-deleted body with a type matching the header
-//    (TLFNAME is an exception as it has no body)
+//  1. Valid
+//  2. Has a non-deleted body with a type matching the header
+//     (TLFNAME is an exception as it has no body)
 func (m MessageUnboxed) IsValidFull() bool {
 	if !m.IsValid() {
 		return false
@@ -1281,7 +1281,7 @@ var ConversationStatusGregorRevMap = map[string]ConversationStatus{
 }
 
 var sha256Pool = sync.Pool{
-	New: func() interface{} {
+	New: func() any {
 		return sha256.New()
 	},
 }

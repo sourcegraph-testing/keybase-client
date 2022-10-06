@@ -305,4 +305,4 @@ func checkError(r1, r2 uintptr, err error) error {
 
 // use is a no-op, but the compiler cannot see that it is.
 // Calling use(p) ensures that p is kept live until that point.
-func use(p interface{}) {}
+func use(p any) {}

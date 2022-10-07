@@ -228,7 +228,7 @@ func (l *TeamLoader) ResolveNameToIDUntrusted(ctx context.Context, teamName keyb
 		return resolveNameToIDUntrustedAPICall(ctx, l.G(), teamName, public)
 	}
 
-	var idVoidPointer interface{}
+	var idVoidPointer any
 	key := nameLookupBurstCacheKey{teamName, public}
 	idVoidPointer, err = l.nameLookupBurstCache.Load(ctx, key, l.makeNameLookupBurstCacheLoader(ctx, l.G(), key))
 	if err != nil {
@@ -264,7 +264,7 @@ func resolveNameToIDUntrustedAPICall(ctx context.Context, g *libkb.GlobalContext
 }
 
 func (l *TeamLoader) makeNameLookupBurstCacheLoader(ctx context.Context, g *libkb.GlobalContext, key nameLookupBurstCacheKey) libkb.BurstCacheLoader {
-	return func() (obj interface{}, err error) {
+	return func() (obj any, err error) {
 		id, err := resolveNameToIDUntrustedAPICall(ctx, g, key.teamName, key.public)
 		if err != nil {
 			return nil, err
@@ -1300,16 +1300,16 @@ func (l *TeamLoader) userPreload(ctx context.Context, links []*ChainLinkUnpacked
 // discardCache - the caller should throw out their cached copy and repoll.
 // repoll - hit up merkle for the latest tail
 // Considers:
-// - NeedAdmin
-// - NeedKeyGeneration
-// - NeedApplicationsAtGenerations
-// - WantMembers
-// - ForceRepoll
-// - Cache freshness / StaleOK
-// - NeedSeqnos
-// - JustUpdated
-// - If this user is in global "force repoll" mode, where it would be too spammy to
-//   push out individual team changed notifications, so all team loads need a repoll.
+//   - NeedAdmin
+//   - NeedKeyGeneration
+//   - NeedApplicationsAtGenerations
+//   - WantMembers
+//   - ForceRepoll
+//   - Cache freshness / StaleOK
+//   - NeedSeqnos
+//   - JustUpdated
+//   - If this user is in global "force repoll" mode, where it would be too spammy to
+//     push out individual team changed notifications, so all team loads need a repoll.
 func (l *TeamLoader) load2DecideRepoll(mctx libkb.MetaContext, arg load2ArgT, fromCache Teamer, cachedPolledAt *keybase1.Time) (discardCache bool, repoll bool) {
 	var reason string
 	defer func() {

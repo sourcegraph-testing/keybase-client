@@ -265,7 +265,7 @@ func (t emptyFS) ErrorPrint(err error) {
 	debug(err)
 }
 
-func (t emptyFS) Printf(string, ...interface{}) {
+func (t emptyFS) Printf(string, ...any) {
 }
 
 func (t emptyFS) CreateFile(ctx context.Context, fi *FileInfo, cd *CreateData) (File, CreateStatus, error) {

@@ -110,7 +110,7 @@ type txPayload struct {
 	Tag txPayloadTag
 	// txPayload holds either of: *SCTeamInvites or
 	// *keybase1.TeamChangeReq.
-	Val interface{}
+	Val any
 }
 
 func CreateAddMemberTx(t *Team) *AddMemberTx {
@@ -122,7 +122,7 @@ func CreateAddMemberTx(t *Team) *AddMemberTx {
 	}
 }
 
-func (tx *AddMemberTx) DebugPayloads() (res []interface{}) {
+func (tx *AddMemberTx) DebugPayloads() (res []any) {
 	for _, v := range tx.payloads {
 		res = append(res, v.Val)
 	}
@@ -137,7 +137,7 @@ func (tx *AddMemberTx) IsEmpty() bool {
 // of AddMemberTx API. Users of this API should avoid lowercase
 // methods and fields at all cost, even from same package.
 
-func (tx *AddMemberTx) findPayload(tag txPayloadTag, forUID keybase1.UID) interface{} {
+func (tx *AddMemberTx) findPayload(tag txPayloadTag, forUID keybase1.UID) any {
 	minSeqno := 0
 	hasUID := !forUID.IsNil()
 	if hasUID {
@@ -619,10 +619,11 @@ func (a AddMemberCandidate) DebugString() string {
 // ResolveUPKV2FromAssertion itself does not modify the transaction.
 //
 // If your use case is:
-// - you have an assertion,
-// - that should be resolved,
-// - and based on the resolution it should either add it to the transaction or
-//   not,
+//   - you have an assertion,
+//   - that should be resolved,
+//   - and based on the resolution it should either add it to the transaction or
+//     not,
+//
 // this is the way to go.
 //
 // See documentation of AddOrInviteMemberByAssertion to find out what assertion
@@ -832,11 +833,11 @@ func (tx *AddMemberTx) ConsumeInviteByID(ctx context.Context, inviteID keybase1.
 // being added outside of SBS handling. There are two cases in which this
 // function completes an invite:
 //
-// 1) An admin is racing SBS handler by adding a user after they add a proof but
-//    before server sends out SBS notifications.
-// 2) There was more than one social invite that resolved to the same user
-// 3) ...or other cases (or bugs) when there are outstanding invites that
-//    resolve to a user but they were not added through SBS handler.
+//  1. An admin is racing SBS handler by adding a user after they add a proof but
+//     before server sends out SBS notifications.
+//  2. There was more than one social invite that resolved to the same user
+//  3. ...or other cases (or bugs) when there are outstanding invites that
+//     resolve to a user but they were not added through SBS handler.
 //
 // Note that (2) is likely still not handled correctly if there are social
 // invites that someone who is already in the team adds proofs for.

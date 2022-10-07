@@ -31,7 +31,7 @@ type errorPrinter struct {
 	buf bytes.Buffer
 }
 
-func (ep *errorPrinter) Printf(s string, os ...interface{}) {
+func (ep *errorPrinter) Printf(s string, os ...any) {
 	fmt.Fprintf(&ep.buf, s, os...)
 }
 

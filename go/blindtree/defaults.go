@@ -12,7 +12,7 @@ const maxValuesPerLeaf = 1
 const keysByteLength = 16
 
 func GetCurrentBlindTreeConfig() (cfg merkletree2.Config) {
-	valueConstructor := func() interface{} { return BlindMerkleValue{} }
+	valueConstructor := func() any { return BlindMerkleValue{} }
 
 	cfg, err := merkletree2.NewConfig(
 		encodingType.GetEncoder(),
@@ -29,7 +29,7 @@ func GetCurrentBlindTreeConfig() (cfg merkletree2.Config) {
 
 // This config uses the non thread safe encoder.
 func GetCurrentBlindTreeConfigUnsafe() (cfg merkletree2.Config) {
-	valueConstructor := func() interface{} { return BlindMerkleValue{} }
+	valueConstructor := func() any { return BlindMerkleValue{} }
 
 	cfg, err := merkletree2.NewConfig(
 		encodingType.GetUnsafeEncoder(),

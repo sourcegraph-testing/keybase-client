@@ -113,7 +113,9 @@ func TestLoaderByName(t *testing.T) {
 // Test loading a team with NeedKeyGeneration set.
 // User A creates a team and rotate the key several times.
 // User B caches the team at generation 1, and then loads with NeedKeyGeneration later.
-//   which should get the latest generation that exists.
+//
+//	which should get the latest generation that exists.
+//
 // User C is a bot and never has access to keys.
 func TestLoaderKeyGen(t *testing.T) {
 	fus, tcs, cleanup := setupNTests(t, 4)
@@ -368,7 +370,7 @@ func TestLoaderWantMembers(t *testing.T) {
 	defer cleanup()
 
 	// Require that a team is at this seqno
-	requireSeqno := func(team *keybase1.TeamData, seqno int, dots ...interface{}) {
+	requireSeqno := func(team *keybase1.TeamData, seqno int, dots ...any) {
 		require.NotNil(t, team, dots...)
 		require.Equal(t, keybase1.Seqno(seqno), TeamSigChainState{inner: team.Chain}.GetLatestSeqno(), dots...)
 	}
@@ -592,7 +594,7 @@ func TestLoaderInferWantMembers(t *testing.T) {
 	defer cleanup()
 
 	// Require that a team is at this seqno
-	requireSeqno := func(team *keybase1.TeamData, seqno int, dots ...interface{}) {
+	requireSeqno := func(team *keybase1.TeamData, seqno int, dots ...any) {
 		require.NotNil(t, team, dots...)
 		require.Equal(t, keybase1.Seqno(seqno), TeamSigChainState{inner: team.Chain}.GetLatestSeqno(), dots...)
 	}

@@ -221,7 +221,7 @@ func newTestLogCtx(t *testing.T) (ret *testLogCtx, closer func()) {
 	return ret, closer
 }
 
-func (t *testLogCtx) Debug(format string, args ...interface{}) {
+func (t *testLogCtx) Debug(format string, args ...any) {
 	t.Lock()
 	if t.t != nil {
 		t.t.Logf(format, args...)

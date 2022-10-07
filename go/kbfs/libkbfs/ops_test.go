@@ -160,7 +160,7 @@ func TestWriteRangeUnknownFields(t *testing.T) {
 // of opPointerizer and RegisterOps. registerOpsFuture is used by
 // testStructUnknownFields.
 
-func opPointerizerFuture(iface interface{}) reflect.Value {
+func opPointerizerFuture(iface any) reflect.Value {
 	switch op := iface.(type) {
 	default:
 		return reflect.ValueOf(iface)
@@ -475,7 +475,7 @@ func TestGcOpUnknownFields(t *testing.T) {
 }
 
 type testOps struct {
-	Ops []interface{}
+	Ops []any
 }
 
 // Tests that ops can be serialized and deserialized as extensions.

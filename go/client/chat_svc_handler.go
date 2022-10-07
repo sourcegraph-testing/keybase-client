@@ -266,7 +266,7 @@ func (c *chatServiceHandler) GetUnfurlSettingsV1(ctx context.Context) Reply {
 		return c.errReply(err)
 	}
 	return Reply{
-		Result: map[string]interface{}{
+		Result: map[string]any{
 			"mode":      strings.ToLower(chat1.UnfurlModeRevMap[res.Mode]),
 			"whitelist": res.Whitelist,
 		},

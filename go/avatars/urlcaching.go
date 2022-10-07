@@ -36,7 +36,7 @@ func (c *URLCachingSource) StopBackgroundTasks(m libkb.MetaContext) {
 	c.diskLRU.Flush(m.Ctx(), m.G())
 }
 
-func (c *URLCachingSource) debug(m libkb.MetaContext, msg string, args ...interface{}) {
+func (c *URLCachingSource) debug(m libkb.MetaContext, msg string, args ...any) {
 	m.Debug("Avatars.URLCachingSource: %s", fmt.Sprintf(msg, args...))
 }
 

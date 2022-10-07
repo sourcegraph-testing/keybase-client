@@ -1433,7 +1433,7 @@ func (m *FlipManager) IsFlipConversationCreated(ctx context.Context, outboxID ch
 }
 
 // CLogf implements the flip.DealersHelper interface
-func (m *FlipManager) CLogf(ctx context.Context, fmt string, args ...interface{}) {
+func (m *FlipManager) CLogf(ctx context.Context, fmt string, args ...any) {
 	m.Debug(ctx, fmt, args...)
 }
 

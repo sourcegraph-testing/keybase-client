@@ -410,15 +410,15 @@ func (g *gregorHandler) getRPCCli() rpc.GenericClient {
 	return g.cli
 }
 
-func (g *gregorHandler) Debug(ctx context.Context, s string, args ...interface{}) {
+func (g *gregorHandler) Debug(ctx context.Context, s string, args ...any) {
 	g.G().Log.CloneWithAddedDepth(1).CDebugf(ctx, "PushHandler: "+s, args...)
 }
 
-func (g *gregorHandler) Warning(ctx context.Context, s string, args ...interface{}) {
+func (g *gregorHandler) Warning(ctx context.Context, s string, args ...any) {
 	g.G().Log.CloneWithAddedDepth(1).CWarningf(ctx, "PushHandler: "+s, args...)
 }
 
-func (g *gregorHandler) Errorf(ctx context.Context, s string, args ...interface{}) {
+func (g *gregorHandler) Errorf(ctx context.Context, s string, args ...any) {
 	g.G().Log.CloneWithAddedDepth(1).CErrorf(ctx, "PushHandler: "+s, args...)
 }
 
@@ -1901,8 +1901,8 @@ type timeoutClient struct {
 
 var _ rpc.GenericClient = (*timeoutClient)(nil)
 
-func (t *timeoutClient) Call(ctx context.Context, method string, arg interface{},
-	res interface{}, timeout time.Duration) error {
+func (t *timeoutClient) Call(ctx context.Context, method string, arg any,
+	res any, timeout time.Duration) error {
 	if timeout == 0 {
 		timeout = t.timeout
 	}
@@ -1913,8 +1913,8 @@ func (t *timeoutClient) Call(ctx context.Context, method string, arg interface{}
 	return err
 }
 
-func (t *timeoutClient) CallCompressed(ctx context.Context, method string, arg interface{},
-	res interface{}, ctype rpc.CompressionType, timeout time.Duration) error {
+func (t *timeoutClient) CallCompressed(ctx context.Context, method string, arg any,
+	res any, ctype rpc.CompressionType, timeout time.Duration) error {
 	if timeout == 0 {
 		timeout = t.timeout
 	}
@@ -1925,7 +1925,7 @@ func (t *timeoutClient) CallCompressed(ctx context.Context, method string, arg i
 	return err
 }
 
-func (t *timeoutClient) Notify(ctx context.Context, method string, arg interface{}, timeout time.Duration) error {
+func (t *timeoutClient) Notify(ctx context.Context, method string, arg any, timeout time.Duration) error {
 	if timeout == 0 {
 		timeout = t.timeout
 	}

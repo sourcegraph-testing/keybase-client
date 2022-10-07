@@ -40,7 +40,7 @@ func (m *MockBlockWithPtrs) AppendNewIndirectPtr(arg0 BlockPointer, arg1 Offset)
 }
 
 // AppendNewIndirectPtr indicates an expected call of AppendNewIndirectPtr.
-func (mr *MockBlockWithPtrsMockRecorder) AppendNewIndirectPtr(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) AppendNewIndirectPtr(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AppendNewIndirectPtr", reflect.TypeOf((*MockBlockWithPtrs)(nil).AppendNewIndirectPtr), arg0, arg1)
 }
@@ -66,7 +66,7 @@ func (m *MockBlockWithPtrs) ClearIndirectPtrSize(arg0 int) {
 }
 
 // ClearIndirectPtrSize indicates an expected call of ClearIndirectPtrSize.
-func (mr *MockBlockWithPtrsMockRecorder) ClearIndirectPtrSize(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) ClearIndirectPtrSize(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearIndirectPtrSize", reflect.TypeOf((*MockBlockWithPtrs)(nil).ClearIndirectPtrSize), arg0)
 }
@@ -123,7 +123,7 @@ func (m *MockBlockWithPtrs) IndirectPtr(arg0 int) (BlockInfo, Offset) {
 }
 
 // IndirectPtr indicates an expected call of IndirectPtr.
-func (mr *MockBlockWithPtrsMockRecorder) IndirectPtr(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) IndirectPtr(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IndirectPtr", reflect.TypeOf((*MockBlockWithPtrs)(nil).IndirectPtr), arg0)
 }
@@ -207,7 +207,7 @@ func (m *MockBlockWithPtrs) OffsetExceedsData(arg0, arg1 Offset) bool {
 }
 
 // OffsetExceedsData indicates an expected call of OffsetExceedsData.
-func (mr *MockBlockWithPtrsMockRecorder) OffsetExceedsData(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) OffsetExceedsData(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OffsetExceedsData", reflect.TypeOf((*MockBlockWithPtrs)(nil).OffsetExceedsData), arg0, arg1)
 }
@@ -219,7 +219,7 @@ func (m *MockBlockWithPtrs) Set(arg0 Block) {
 }
 
 // Set indicates an expected call of Set.
-func (mr *MockBlockWithPtrsMockRecorder) Set(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) Set(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockBlockWithPtrs)(nil).Set), arg0)
 }
@@ -231,7 +231,7 @@ func (m *MockBlockWithPtrs) SetEncodedSize(arg0 uint32) {
 }
 
 // SetEncodedSize indicates an expected call of SetEncodedSize.
-func (mr *MockBlockWithPtrsMockRecorder) SetEncodedSize(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetEncodedSize(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetEncodedSize", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetEncodedSize), arg0)
 }
@@ -243,7 +243,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrInfo(arg0 int, arg1 BlockInfo) {
 }
 
 // SetIndirectPtrInfo indicates an expected call of SetIndirectPtrInfo.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrInfo(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrInfo(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrInfo", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrInfo), arg0, arg1)
 }
@@ -255,7 +255,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrOff(arg0 int, arg1 Offset) {
 }
 
 // SetIndirectPtrOff indicates an expected call of SetIndirectPtrOff.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrOff(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrOff(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrOff", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrOff), arg0, arg1)
 }
@@ -267,7 +267,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrType(arg0 int, arg1 BlockDirectType) {
 }
 
 // SetIndirectPtrType indicates an expected call of SetIndirectPtrType.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrType(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrType(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrType", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrType), arg0, arg1)
 }
@@ -279,7 +279,7 @@ func (m *MockBlockWithPtrs) SwapIndirectPtrs(arg0 int, arg1 BlockWithPtrs, arg2 
 }
 
 // SwapIndirectPtrs indicates an expected call of SwapIndirectPtrs.
-func (mr *MockBlockWithPtrsMockRecorder) SwapIndirectPtrs(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SwapIndirectPtrs(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SwapIndirectPtrs", reflect.TypeOf((*MockBlockWithPtrs)(nil).SwapIndirectPtrs), arg0, arg1, arg2)
 }

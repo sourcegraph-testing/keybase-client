@@ -1627,7 +1627,7 @@ func (b *Boxer) preBoxCheck(ctx context.Context, messagePlaintext chat1.MessageP
 	if err != nil {
 		return err
 	}
-	e := func(format string, args ...interface{}) error {
+	e := func(format string, args ...any) error {
 		return errors.New(fmt.Sprintf("malformed %v message: ", typ) + fmt.Sprintf(format, args...))
 	}
 	switch typ {
@@ -1876,7 +1876,7 @@ func (b *Boxer) boxV2orV3orV4(ctx context.Context, messagePlaintext chat1.Messag
 }
 
 // seal encrypts data into chat1.EncryptedData.
-func (b *Boxer) seal(data interface{}, key libkb.NaclSecretBoxKey) (*chat1.EncryptedData, error) {
+func (b *Boxer) seal(data any, key libkb.NaclSecretBoxKey) (*chat1.EncryptedData, error) {
 	s, err := b.marshal(data)
 	if err != nil {
 		return nil, err
@@ -1916,7 +1916,7 @@ func (b *Boxer) open(data chat1.EncryptedData, key libkb.NaclSecretBoxKey) ([]by
 
 // signMarshal signs data with a NaclSigningKeyPair, returning a chat1.SignatureInfo.
 // It marshals data before signing.
-func (b *Boxer) signMarshal(data interface{}, kp libkb.NaclSigningKeyPair, prefix kbcrypto.SignaturePrefix) (chat1.SignatureInfo, error) {
+func (b *Boxer) signMarshal(data any, kp libkb.NaclSigningKeyPair, prefix kbcrypto.SignaturePrefix) (chat1.SignatureInfo, error) {
 	encoded, err := b.marshal(data)
 	if err != nil {
 		return chat1.SignatureInfo{}, err
@@ -1927,7 +1927,7 @@ func (b *Boxer) signMarshal(data interface{}, kp libkb.NaclSigningKeyPair, prefi
 
 // signEncryptMarshal signencrypts data given an encryption and signing key, returning a chat1.SignEncryptedData.
 // It marshals data before signing.
-func (b *Boxer) signEncryptMarshal(data interface{}, encryptionKey libkb.NaclSecretBoxKey,
+func (b *Boxer) signEncryptMarshal(data any, encryptionKey libkb.NaclSecretBoxKey,
 	signingKeyPair libkb.NaclSigningKeyPair, prefix kbcrypto.SignaturePrefix) (chat1.SignEncryptedData, error) {
 	encoded, err := b.marshal(data)
 	if err != nil {
@@ -2164,7 +2164,7 @@ func (b *Boxer) keybase1KeybaseTimeToTime(t1 keybase1.KeybaseTime) time.Time {
 	return t2
 }
 
-func (b *Boxer) marshal(v interface{}) ([]byte, error) {
+func (b *Boxer) marshal(v any) ([]byte, error) {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	var data []byte
 	enc := codec.NewEncoderBytes(&data, &mh)
@@ -2174,7 +2174,7 @@ func (b *Boxer) marshal(v interface{}) ([]byte, error) {
 	return data, nil
 }
 
-func (b *Boxer) unmarshal(data []byte, v interface{}) error {
+func (b *Boxer) unmarshal(data []byte, v any) error {
 	mh := codec.MsgpackHandle{WriteExt: true}
 	dec := codec.NewDecoderBytes(data, &mh)
 	return dec.Decode(&v)

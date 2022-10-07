@@ -68,7 +68,7 @@ func (v *VDebugLog) getLev() VDebugLevel {
 	return v.lev
 }
 
-func (v *VDebugLog) Log(lev VDebugLevel, fs string, args ...interface{}) {
+func (v *VDebugLog) Log(lev VDebugLevel, fs string, args ...any) {
 	if lev <= v.getLev() {
 		prfx := fmt.Sprintf("{VDL:%d} ", int(lev))
 		fs = prfx + fs
@@ -76,7 +76,7 @@ func (v *VDebugLog) Log(lev VDebugLevel, fs string, args ...interface{}) {
 	}
 }
 
-func (v *VDebugLog) CLogf(ctx context.Context, lev VDebugLevel, fs string, args ...interface{}) {
+func (v *VDebugLog) CLogf(ctx context.Context, lev VDebugLevel, fs string, args ...any) {
 	if lev <= v.getLev() {
 		prfx := fmt.Sprintf("{VDL:%d} ", int(lev))
 		fs = prfx + fs
@@ -84,7 +84,7 @@ func (v *VDebugLog) CLogf(ctx context.Context, lev VDebugLevel, fs string, args 
 	}
 }
 
-func (v *VDebugLog) CLogfWithAddedDepth(ctx context.Context, lev VDebugLevel, d int, fs string, args ...interface{}) {
+func (v *VDebugLog) CLogfWithAddedDepth(ctx context.Context, lev VDebugLevel, d int, fs string, args ...any) {
 	if lev <= v.getLev() {
 		prfx := fmt.Sprintf("{VDL:%d} ", int(lev))
 		fs = prfx + fs

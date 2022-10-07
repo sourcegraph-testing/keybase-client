@@ -46,7 +46,7 @@ func (m *MockKeyOps) DeleteTLFCryptKeyServerHalf(arg0 context.Context, arg1 keyb
 }
 
 // DeleteTLFCryptKeyServerHalf indicates an expected call of DeleteTLFCryptKeyServerHalf.
-func (mr *MockKeyOpsMockRecorder) DeleteTLFCryptKeyServerHalf(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeyOpsMockRecorder) DeleteTLFCryptKeyServerHalf(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteTLFCryptKeyServerHalf", reflect.TypeOf((*MockKeyOps)(nil).DeleteTLFCryptKeyServerHalf), arg0, arg1, arg2, arg3)
 }
@@ -61,7 +61,7 @@ func (m *MockKeyOps) GetTLFCryptKeyServerHalf(arg0 context.Context, arg1 kbfscry
 }
 
 // GetTLFCryptKeyServerHalf indicates an expected call of GetTLFCryptKeyServerHalf.
-func (mr *MockKeyOpsMockRecorder) GetTLFCryptKeyServerHalf(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyOpsMockRecorder) GetTLFCryptKeyServerHalf(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyServerHalf", reflect.TypeOf((*MockKeyOps)(nil).GetTLFCryptKeyServerHalf), arg0, arg1, arg2)
 }
@@ -75,7 +75,7 @@ func (m *MockKeyOps) PutTLFCryptKeyServerHalves(arg0 context.Context, arg1 kbfsm
 }
 
 // PutTLFCryptKeyServerHalves indicates an expected call of PutTLFCryptKeyServerHalves.
-func (mr *MockKeyOpsMockRecorder) PutTLFCryptKeyServerHalves(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyOpsMockRecorder) PutTLFCryptKeyServerHalves(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutTLFCryptKeyServerHalves", reflect.TypeOf((*MockKeyOps)(nil).PutTLFCryptKeyServerHalves), arg0, arg1)
 }
@@ -112,7 +112,7 @@ func (m *MockKeyServer) DeleteTLFCryptKeyServerHalf(arg0 context.Context, arg1 k
 }
 
 // DeleteTLFCryptKeyServerHalf indicates an expected call of DeleteTLFCryptKeyServerHalf.
-func (mr *MockKeyServerMockRecorder) DeleteTLFCryptKeyServerHalf(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeyServerMockRecorder) DeleteTLFCryptKeyServerHalf(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteTLFCryptKeyServerHalf", reflect.TypeOf((*MockKeyServer)(nil).DeleteTLFCryptKeyServerHalf), arg0, arg1, arg2, arg3)
 }
@@ -127,7 +127,7 @@ func (m *MockKeyServer) GetTLFCryptKeyServerHalf(arg0 context.Context, arg1 kbfs
 }
 
 // GetTLFCryptKeyServerHalf indicates an expected call of GetTLFCryptKeyServerHalf.
-func (mr *MockKeyServerMockRecorder) GetTLFCryptKeyServerHalf(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyServerMockRecorder) GetTLFCryptKeyServerHalf(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyServerHalf", reflect.TypeOf((*MockKeyServer)(nil).GetTLFCryptKeyServerHalf), arg0, arg1, arg2)
 }
@@ -141,7 +141,7 @@ func (m *MockKeyServer) PutTLFCryptKeyServerHalves(arg0 context.Context, arg1 kb
 }
 
 // PutTLFCryptKeyServerHalves indicates an expected call of PutTLFCryptKeyServerHalves.
-func (mr *MockKeyServerMockRecorder) PutTLFCryptKeyServerHalves(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyServerMockRecorder) PutTLFCryptKeyServerHalves(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutTLFCryptKeyServerHalves", reflect.TypeOf((*MockKeyServer)(nil).PutTLFCryptKeyServerHalves), arg0, arg1)
 }

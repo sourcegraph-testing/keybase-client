@@ -35,11 +35,11 @@ func TlfProtocol(i TlfInterface) rpc.Protocol {
 		Name: "keybase.1.tlf",
 		Methods: map[string]rpc.ServeHandlerDescription{
 			"CryptKeys": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]CryptKeysArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]CryptKeysArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]CryptKeysArg)(nil), args)
@@ -50,11 +50,11 @@ func TlfProtocol(i TlfInterface) rpc.Protocol {
 				},
 			},
 			"publicCanonicalTLFNameAndID": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]PublicCanonicalTLFNameAndIDArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]PublicCanonicalTLFNameAndIDArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]PublicCanonicalTLFNameAndIDArg)(nil), args)
@@ -65,11 +65,11 @@ func TlfProtocol(i TlfInterface) rpc.Protocol {
 				},
 			},
 			"completeAndCanonicalizePrivateTlfName": {
-				MakeArg: func() interface{} {
+				MakeArg: func() any {
 					var ret [1]CompleteAndCanonicalizePrivateTlfNameArg
 					return &ret
 				},
-				Handler: func(ctx context.Context, args interface{}) (ret interface{}, err error) {
+				Handler: func(ctx context.Context, args any) (ret any, err error) {
 					typedArgs, ok := args.(*[1]CompleteAndCanonicalizePrivateTlfNameArg)
 					if !ok {
 						err = rpc.NewTypeError((*[1]CompleteAndCanonicalizePrivateTlfNameArg)(nil), args)
@@ -90,7 +90,7 @@ type TlfClient struct {
 // CryptKeys returns TLF crypt keys from all generations.
 func (c TlfClient) CryptKeys(ctx context.Context, query TLFQuery) (res GetTLFCryptKeysRes, err error) {
 	__arg := CryptKeysArg{Query: query}
-	err = c.Cli.Call(ctx, "keybase.1.tlf.CryptKeys", []interface{}{__arg}, &res, 0*time.Millisecond)
+	err = c.Cli.Call(ctx, "keybase.1.tlf.CryptKeys", []any{__arg}, &res, 0*time.Millisecond)
 	return
 }
 
@@ -98,12 +98,12 @@ func (c TlfClient) CryptKeys(ctx context.Context, query TLFQuery) (res GetTLFCry
 // * TLFID should not be cached or stored persistently.
 func (c TlfClient) PublicCanonicalTLFNameAndID(ctx context.Context, query TLFQuery) (res CanonicalTLFNameAndIDWithBreaks, err error) {
 	__arg := PublicCanonicalTLFNameAndIDArg{Query: query}
-	err = c.Cli.Call(ctx, "keybase.1.tlf.publicCanonicalTLFNameAndID", []interface{}{__arg}, &res, 0*time.Millisecond)
+	err = c.Cli.Call(ctx, "keybase.1.tlf.publicCanonicalTLFNameAndID", []any{__arg}, &res, 0*time.Millisecond)
 	return
 }
 
 func (c TlfClient) CompleteAndCanonicalizePrivateTlfName(ctx context.Context, query TLFQuery) (res CanonicalTLFNameAndIDWithBreaks, err error) {
 	__arg := CompleteAndCanonicalizePrivateTlfNameArg{Query: query}
-	err = c.Cli.Call(ctx, "keybase.1.tlf.completeAndCanonicalizePrivateTlfName", []interface{}{__arg}, &res, 0*time.Millisecond)
+	err = c.Cli.Call(ctx, "keybase.1.tlf.completeAndCanonicalizePrivateTlfName", []any{__arg}, &res, 0*time.Millisecond)
 	return
 }

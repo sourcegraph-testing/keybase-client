@@ -47,7 +47,7 @@ func (m *MockBlockCache) CheckForKnownPtr(arg0 tlf.ID, arg1 *data.FileBlock, arg
 }
 
 // CheckForKnownPtr indicates an expected call of CheckForKnownPtr.
-func (mr *MockBlockCacheMockRecorder) CheckForKnownPtr(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) CheckForKnownPtr(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CheckForKnownPtr", reflect.TypeOf((*MockBlockCache)(nil).CheckForKnownPtr), arg0, arg1, arg2)
 }
@@ -61,7 +61,7 @@ func (m *MockBlockCache) DeleteKnownPtr(arg0 tlf.ID, arg1 *data.FileBlock) error
 }
 
 // DeleteKnownPtr indicates an expected call of DeleteKnownPtr.
-func (mr *MockBlockCacheMockRecorder) DeleteKnownPtr(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) DeleteKnownPtr(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteKnownPtr", reflect.TypeOf((*MockBlockCache)(nil).DeleteKnownPtr), arg0, arg1)
 }
@@ -75,7 +75,7 @@ func (m *MockBlockCache) DeletePermanent(arg0 kbfsblock.ID) error {
 }
 
 // DeletePermanent indicates an expected call of DeletePermanent.
-func (mr *MockBlockCacheMockRecorder) DeletePermanent(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) DeletePermanent(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeletePermanent", reflect.TypeOf((*MockBlockCache)(nil).DeletePermanent), arg0)
 }
@@ -89,7 +89,7 @@ func (m *MockBlockCache) DeleteTransient(arg0 kbfsblock.ID, arg1 tlf.ID) error {
 }
 
 // DeleteTransient indicates an expected call of DeleteTransient.
-func (mr *MockBlockCacheMockRecorder) DeleteTransient(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) DeleteTransient(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteTransient", reflect.TypeOf((*MockBlockCache)(nil).DeleteTransient), arg0, arg1)
 }
@@ -104,7 +104,7 @@ func (m *MockBlockCache) Get(arg0 data.BlockPointer) (data.Block, error) {
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockBlockCacheMockRecorder) Get(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) Get(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockBlockCache)(nil).Get), arg0)
 }
@@ -134,7 +134,7 @@ func (m *MockBlockCache) GetWithLifetime(arg0 data.BlockPointer) (data.Block, da
 }
 
 // GetWithLifetime indicates an expected call of GetWithLifetime.
-func (mr *MockBlockCacheMockRecorder) GetWithLifetime(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) GetWithLifetime(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetWithLifetime", reflect.TypeOf((*MockBlockCache)(nil).GetWithLifetime), arg0)
 }
@@ -148,7 +148,7 @@ func (m *MockBlockCache) Put(arg0 data.BlockPointer, arg1 tlf.ID, arg2 data.Bloc
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockBlockCacheMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockBlockCache)(nil).Put), arg0, arg1, arg2, arg3, arg4)
 }
@@ -160,7 +160,7 @@ func (m *MockBlockCache) SetCleanBytesCapacity(arg0 uint64) {
 }
 
 // SetCleanBytesCapacity indicates an expected call of SetCleanBytesCapacity.
-func (mr *MockBlockCacheMockRecorder) SetCleanBytesCapacity(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockCacheMockRecorder) SetCleanBytesCapacity(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetCleanBytesCapacity", reflect.TypeOf((*MockBlockCache)(nil).SetCleanBytesCapacity), arg0)
 }
@@ -197,7 +197,7 @@ func (m *MockBlockSplitter) CheckSplit(arg0 *data.FileBlock) int64 {
 }
 
 // CheckSplit indicates an expected call of CheckSplit.
-func (mr *MockBlockSplitterMockRecorder) CheckSplit(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockSplitterMockRecorder) CheckSplit(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CheckSplit", reflect.TypeOf((*MockBlockSplitter)(nil).CheckSplit), arg0)
 }
@@ -211,7 +211,7 @@ func (m *MockBlockSplitter) CopyUntilSplit(arg0 *data.FileBlock, arg1 bool, arg2
 }
 
 // CopyUntilSplit indicates an expected call of CopyUntilSplit.
-func (mr *MockBlockSplitterMockRecorder) CopyUntilSplit(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockBlockSplitterMockRecorder) CopyUntilSplit(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CopyUntilSplit", reflect.TypeOf((*MockBlockSplitter)(nil).CopyUntilSplit), arg0, arg1, arg2, arg3)
 }
@@ -239,7 +239,7 @@ func (m *MockBlockSplitter) ShouldEmbedData(arg0 uint64) bool {
 }
 
 // ShouldEmbedData indicates an expected call of ShouldEmbedData.
-func (mr *MockBlockSplitterMockRecorder) ShouldEmbedData(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockSplitterMockRecorder) ShouldEmbedData(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShouldEmbedData", reflect.TypeOf((*MockBlockSplitter)(nil).ShouldEmbedData), arg0)
 }
@@ -254,7 +254,7 @@ func (m *MockBlockSplitter) SplitDirIfNeeded(arg0 *data.DirBlock) ([]*data.DirBl
 }
 
 // SplitDirIfNeeded indicates an expected call of SplitDirIfNeeded.
-func (mr *MockBlockSplitterMockRecorder) SplitDirIfNeeded(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockSplitterMockRecorder) SplitDirIfNeeded(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SplitDirIfNeeded", reflect.TypeOf((*MockBlockSplitter)(nil).SplitDirIfNeeded), arg0)
 }
@@ -289,7 +289,7 @@ func (m *MockBlockWithPtrs) AppendNewIndirectPtr(arg0 data.BlockPointer, arg1 da
 }
 
 // AppendNewIndirectPtr indicates an expected call of AppendNewIndirectPtr.
-func (mr *MockBlockWithPtrsMockRecorder) AppendNewIndirectPtr(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) AppendNewIndirectPtr(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AppendNewIndirectPtr", reflect.TypeOf((*MockBlockWithPtrs)(nil).AppendNewIndirectPtr), arg0, arg1)
 }
@@ -315,7 +315,7 @@ func (m *MockBlockWithPtrs) ClearIndirectPtrSize(arg0 int) {
 }
 
 // ClearIndirectPtrSize indicates an expected call of ClearIndirectPtrSize.
-func (mr *MockBlockWithPtrsMockRecorder) ClearIndirectPtrSize(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) ClearIndirectPtrSize(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearIndirectPtrSize", reflect.TypeOf((*MockBlockWithPtrs)(nil).ClearIndirectPtrSize), arg0)
 }
@@ -372,7 +372,7 @@ func (m *MockBlockWithPtrs) IndirectPtr(arg0 int) (data.BlockInfo, data.Offset) 
 }
 
 // IndirectPtr indicates an expected call of IndirectPtr.
-func (mr *MockBlockWithPtrsMockRecorder) IndirectPtr(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) IndirectPtr(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IndirectPtr", reflect.TypeOf((*MockBlockWithPtrs)(nil).IndirectPtr), arg0)
 }
@@ -456,7 +456,7 @@ func (m *MockBlockWithPtrs) OffsetExceedsData(arg0, arg1 data.Offset) bool {
 }
 
 // OffsetExceedsData indicates an expected call of OffsetExceedsData.
-func (mr *MockBlockWithPtrsMockRecorder) OffsetExceedsData(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) OffsetExceedsData(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OffsetExceedsData", reflect.TypeOf((*MockBlockWithPtrs)(nil).OffsetExceedsData), arg0, arg1)
 }
@@ -468,7 +468,7 @@ func (m *MockBlockWithPtrs) Set(arg0 data.Block) {
 }
 
 // Set indicates an expected call of Set.
-func (mr *MockBlockWithPtrsMockRecorder) Set(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) Set(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockBlockWithPtrs)(nil).Set), arg0)
 }
@@ -480,7 +480,7 @@ func (m *MockBlockWithPtrs) SetEncodedSize(arg0 uint32) {
 }
 
 // SetEncodedSize indicates an expected call of SetEncodedSize.
-func (mr *MockBlockWithPtrsMockRecorder) SetEncodedSize(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetEncodedSize(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetEncodedSize", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetEncodedSize), arg0)
 }
@@ -492,7 +492,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrInfo(arg0 int, arg1 data.BlockInfo) {
 }
 
 // SetIndirectPtrInfo indicates an expected call of SetIndirectPtrInfo.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrInfo(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrInfo(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrInfo", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrInfo), arg0, arg1)
 }
@@ -504,7 +504,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrOff(arg0 int, arg1 data.Offset) {
 }
 
 // SetIndirectPtrOff indicates an expected call of SetIndirectPtrOff.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrOff(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrOff(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrOff", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrOff), arg0, arg1)
 }
@@ -516,7 +516,7 @@ func (m *MockBlockWithPtrs) SetIndirectPtrType(arg0 int, arg1 data.BlockDirectTy
 }
 
 // SetIndirectPtrType indicates an expected call of SetIndirectPtrType.
-func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrType(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SetIndirectPtrType(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetIndirectPtrType", reflect.TypeOf((*MockBlockWithPtrs)(nil).SetIndirectPtrType), arg0, arg1)
 }
@@ -528,7 +528,7 @@ func (m *MockBlockWithPtrs) SwapIndirectPtrs(arg0 int, arg1 data.BlockWithPtrs, 
 }
 
 // SwapIndirectPtrs indicates an expected call of SwapIndirectPtrs.
-func (mr *MockBlockWithPtrsMockRecorder) SwapIndirectPtrs(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockWithPtrsMockRecorder) SwapIndirectPtrs(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SwapIndirectPtrs", reflect.TypeOf((*MockBlockWithPtrs)(nil).SwapIndirectPtrs), arg0, arg1, arg2)
 }
@@ -577,7 +577,7 @@ func (m *MockDirtyBlockCache) BlockSyncFinished(arg0 tlf.ID, arg1 int64) {
 }
 
 // BlockSyncFinished indicates an expected call of BlockSyncFinished.
-func (mr *MockDirtyBlockCacheMockRecorder) BlockSyncFinished(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) BlockSyncFinished(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BlockSyncFinished", reflect.TypeOf((*MockDirtyBlockCache)(nil).BlockSyncFinished), arg0, arg1)
 }
@@ -591,7 +591,7 @@ func (m *MockDirtyBlockCache) Delete(arg0 tlf.ID, arg1 data.BlockPointer, arg2 d
 }
 
 // Delete indicates an expected call of Delete.
-func (mr *MockDirtyBlockCacheMockRecorder) Delete(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) Delete(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockDirtyBlockCache)(nil).Delete), arg0, arg1, arg2)
 }
@@ -606,7 +606,7 @@ func (m *MockDirtyBlockCache) Get(arg0 context.Context, arg1 tlf.ID, arg2 data.B
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockDirtyBlockCacheMockRecorder) Get(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) Get(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockDirtyBlockCache)(nil).Get), arg0, arg1, arg2, arg3)
 }
@@ -620,7 +620,7 @@ func (m *MockDirtyBlockCache) IsAnyDirty(arg0 tlf.ID) bool {
 }
 
 // IsAnyDirty indicates an expected call of IsAnyDirty.
-func (mr *MockDirtyBlockCacheMockRecorder) IsAnyDirty(arg0 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) IsAnyDirty(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsAnyDirty", reflect.TypeOf((*MockDirtyBlockCache)(nil).IsAnyDirty), arg0)
 }
@@ -634,7 +634,7 @@ func (m *MockDirtyBlockCache) IsDirty(arg0 tlf.ID, arg1 data.BlockPointer, arg2 
 }
 
 // IsDirty indicates an expected call of IsDirty.
-func (mr *MockDirtyBlockCacheMockRecorder) IsDirty(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) IsDirty(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsDirty", reflect.TypeOf((*MockDirtyBlockCache)(nil).IsDirty), arg0, arg1, arg2)
 }
@@ -648,7 +648,7 @@ func (m *MockDirtyBlockCache) Put(arg0 context.Context, arg1 tlf.ID, arg2 data.B
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockDirtyBlockCacheMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockDirtyBlockCache)(nil).Put), arg0, arg1, arg2, arg3, arg4)
 }
@@ -663,7 +663,7 @@ func (m *MockDirtyBlockCache) RequestPermissionToDirty(arg0 context.Context, arg
 }
 
 // RequestPermissionToDirty indicates an expected call of RequestPermissionToDirty.
-func (mr *MockDirtyBlockCacheMockRecorder) RequestPermissionToDirty(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) RequestPermissionToDirty(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RequestPermissionToDirty", reflect.TypeOf((*MockDirtyBlockCache)(nil).RequestPermissionToDirty), arg0, arg1, arg2)
 }
@@ -677,7 +677,7 @@ func (m *MockDirtyBlockCache) ShouldForceSync(arg0 tlf.ID) bool {
 }
 
 // ShouldForceSync indicates an expected call of ShouldForceSync.
-func (mr *MockDirtyBlockCacheMockRecorder) ShouldForceSync(arg0 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) ShouldForceSync(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShouldForceSync", reflect.TypeOf((*MockDirtyBlockCache)(nil).ShouldForceSync), arg0)
 }
@@ -703,7 +703,7 @@ func (m *MockDirtyBlockCache) SyncFinished(arg0 tlf.ID, arg1 int64) {
 }
 
 // SyncFinished indicates an expected call of SyncFinished.
-func (mr *MockDirtyBlockCacheMockRecorder) SyncFinished(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) SyncFinished(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SyncFinished", reflect.TypeOf((*MockDirtyBlockCache)(nil).SyncFinished), arg0, arg1)
 }
@@ -715,7 +715,7 @@ func (m *MockDirtyBlockCache) UpdateSyncingBytes(arg0 tlf.ID, arg1 int64) {
 }
 
 // UpdateSyncingBytes indicates an expected call of UpdateSyncingBytes.
-func (mr *MockDirtyBlockCacheMockRecorder) UpdateSyncingBytes(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) UpdateSyncingBytes(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateSyncingBytes", reflect.TypeOf((*MockDirtyBlockCache)(nil).UpdateSyncingBytes), arg0, arg1)
 }
@@ -727,7 +727,7 @@ func (m *MockDirtyBlockCache) UpdateUnsyncedBytes(arg0 tlf.ID, arg1 int64, arg2 
 }
 
 // UpdateUnsyncedBytes indicates an expected call of UpdateUnsyncedBytes.
-func (mr *MockDirtyBlockCacheMockRecorder) UpdateUnsyncedBytes(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockDirtyBlockCacheMockRecorder) UpdateUnsyncedBytes(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUnsyncedBytes", reflect.TypeOf((*MockDirtyBlockCache)(nil).UpdateUnsyncedBytes), arg0, arg1, arg2)
 }

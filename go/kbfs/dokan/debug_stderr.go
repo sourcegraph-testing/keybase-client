@@ -13,10 +13,10 @@ import (
 
 const isDebug = true
 
-func debug(args ...interface{}) {
+func debug(args ...any) {
 	log.Println(args...)
 }
 
-func debugf(s string, args ...interface{}) {
+func debugf(s string, args ...any) {
 	log.Printf(s, args...)
 }

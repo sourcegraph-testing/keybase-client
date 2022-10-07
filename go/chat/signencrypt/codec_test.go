@@ -31,7 +31,7 @@ type arbitraryNested struct {
 	Boring arbitraryMsg `codec:"b" json:"b"`
 }
 
-var associatedDataInputs = []interface{}{
+var associatedDataInputs = []any{
 	"",
 	nil,
 	map[string]map[float64]map[string]string{"first": {2.22000222: {"third": "fourth"}}},
@@ -90,7 +90,7 @@ func zeroOpenWhole(plaintext []byte) ([]byte, error) {
 	return OpenWhole(plaintext, zeroSecretboxKey(), zeroVerifyKey(), testingPrefix(), zeroNonce())
 }
 
-func zeroSealWithAssociatedData(plaintext []byte, associatedData interface{}) []byte {
+func zeroSealWithAssociatedData(plaintext []byte, associatedData any) []byte {
 	res, err := SealWithAssociatedData(plaintext, associatedData, zeroSecretboxKey(), zeroSignKey(), testingPrefix(), zeroNonce())
 	if err != nil {
 		// this should never actually error
@@ -99,7 +99,7 @@ func zeroSealWithAssociatedData(plaintext []byte, associatedData interface{}) []
 	return res
 }
 
-func zeroOpenWithAssociatedData(plaintext []byte, associatedData interface{}) ([]byte, error) {
+func zeroOpenWithAssociatedData(plaintext []byte, associatedData any) ([]byte, error) {
 	return OpenWithAssociatedData(plaintext, associatedData, zeroSecretboxKey(), zeroVerifyKey(), testingPrefix(), zeroNonce())
 }
 

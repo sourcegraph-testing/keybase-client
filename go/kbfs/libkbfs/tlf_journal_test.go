@@ -1066,7 +1066,7 @@ func testTLFJournalFlushMDConflict(t *testing.T, ver kbfsmd.MetadataVer) {
 type orderedBlockServer struct {
 	BlockServer
 	lock      *sync.Mutex
-	puts      *[]interface{}
+	puts      *[]any
 	onceOnPut func()
 }
 
@@ -1090,7 +1090,7 @@ func (s *orderedBlockServer) Shutdown(context.Context) {}
 type orderedMDServer struct {
 	MDServer
 	lock      *sync.Mutex
-	puts      *[]interface{}
+	puts      *[]any
 	onceOnPut func() error
 }
 
@@ -1150,7 +1150,7 @@ func testTLFJournalFlushOrdering(t *testing.T, ver kbfsmd.MetadataVer) {
 	md1 := config.makeMD(kbfsmd.Revision(10), kbfsmd.FakeID(1))
 
 	var lock sync.Mutex
-	var puts []interface{}
+	var puts []any
 
 	bserver := orderedBlockServer{
 		lock: &lock,
@@ -1206,12 +1206,12 @@ func testTLFJournalFlushOrdering(t *testing.T, ver kbfsmd.MetadataVer) {
 	// but there are other possible orderings which respect the
 	// above is-put-before constraints and also respect the
 	// kbfsmd.Revision ordering.
-	expectedPuts1 := []interface{}{
+	expectedPuts1 := []any{
 		bid1, kbfsmd.Revision(10), bid2, bid3,
 		kbfsmd.Revision(11), kbfsmd.Revision(12),
 	}
 	// This is possible since block puts are done in parallel.
-	expectedPuts2 := []interface{}{
+	expectedPuts2 := []any{
 		bid1, kbfsmd.Revision(10), bid3, bid2,
 		kbfsmd.Revision(11), kbfsmd.Revision(12),
 	}
@@ -1237,7 +1237,7 @@ func testTLFJournalFlushOrderingAfterSquashAndCR(
 	md1 := config.makeMD(firstRev, firstPrevRoot)
 
 	var lock sync.Mutex
-	var puts []interface{}
+	var puts []any
 
 	bserver := orderedBlockServer{
 		lock: &lock,
@@ -1370,7 +1370,7 @@ func testTLFJournalFlushInterleaving(t *testing.T, ver kbfsmd.MetadataVer) {
 		ctx, tempdir, config, cancel, tlfJournal, delegate)
 
 	var lock sync.Mutex
-	var puts []interface{}
+	var puts []any
 
 	bserver := orderedBlockServer{
 		lock: &lock,
@@ -1473,7 +1473,7 @@ func testTLFJournalPauseBlocksAndConvertBranch(ctx context.Context,
 	tlfJournal.onBranchChange = testBranchChangeListener{branchCh}
 
 	var lock sync.Mutex
-	var puts []interface{}
+	var puts []any
 
 	unpauseBlockPutCh := make(chan struct{})
 	noticeBlockPutCh := make(chan struct{})

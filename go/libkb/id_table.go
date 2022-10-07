@@ -177,8 +177,8 @@ func ParseWotReact(base GenericChainLink) (ret *WotReactChainLink, err error) {
 }
 
 type sigExpansion struct {
-	Key string      `json:"key"`
-	Obj interface{} `json:"obj"`
+	Key string `json:"key"`
+	Obj any    `json:"obj"`
 }
 
 // ExtractExpansionObj extracts the `obj` field from a sig expansion and verifies the
@@ -246,7 +246,6 @@ func EmbedExpansionObj(statement *jsonw.Wrapper) (expansion *jsonw.Wrapper, sum 
 
 // =========================================================================
 // Remote, Web and Social
-//
 type RemoteProofChainLink interface {
 	TypedChainLink
 	DisplayPriorityKey() string
@@ -538,7 +537,6 @@ func remoteProofInsertIntoTable(l RemoteProofChainLink, tab *IdentityTable) {
 
 // =========================================================================
 // TrackChainLink
-//
 type TrackChainLink struct {
 	GenericChainLink
 	whomUsername  NormalizedUsername
@@ -1045,7 +1043,7 @@ type WalletStellarChainLink struct {
 
 func ParseWalletStellarChainLink(b GenericChainLink) (ret *WalletStellarChainLink, err error) {
 	ret = &WalletStellarChainLink{GenericChainLink: b}
-	mkErr := func(format string, args ...interface{}) error {
+	mkErr := func(format string, args ...any) error {
 		return ChainLinkError{fmt.Sprintf(format, args...) + fmt.Sprintf(" @%s", b.ToDebugString())}
 	}
 	bodyW := b.UnmarshalPayloadJSON()

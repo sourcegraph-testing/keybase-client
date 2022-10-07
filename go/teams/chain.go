@@ -264,7 +264,7 @@ func findRoleDowngrade(points []keybase1.UserLogPoint, role keybase1.TeamRole) *
 // If there was, return a PermissionError. If no adminship was found at all, return a PermissionError.
 func (t TeamSigChainState) AssertWasRoleOrAboveAt(uv keybase1.UserVersion,
 	role keybase1.TeamRole, scl keybase1.SigChainLocation) (err error) {
-	mkErr := func(format string, args ...interface{}) error {
+	mkErr := func(format string, args ...any) error {
 		msg := fmt.Sprintf(format, args...)
 		if role.IsOrAbove(keybase1.TeamRole_ADMIN) {
 			return NewAdminPermissionError(t.GetID(), uv, msg)
@@ -1893,12 +1893,13 @@ var hardcodedInviteRuleExceptionSigIDs = map[keybase1.SigIDMapKey]bool{
 
 // sanityCheckInvites sanity checks a raw SCTeamInvites section and coerces it into a
 // format that we can use. It checks:
-//  - inviting owners is sometimes banned
-//  - invite IDs aren't repeated
-//  - <name,type> pairs aren't reused
-//  - IDs parse into proper keybase1.TeamInviteIDs
-//  - the invite type parses into proper TeamInviteType, or that it's an unknown
-//    invite that we're OK to not act upon.
+//   - inviting owners is sometimes banned
+//   - invite IDs aren't repeated
+//   - <name,type> pairs aren't reused
+//   - IDs parse into proper keybase1.TeamInviteIDs
+//   - the invite type parses into proper TeamInviteType, or that it's an unknown
+//     invite that we're OK to not act upon.
+//
 // Implicit teams are different:
 // - owners and readers are the only allowed roles
 func (t *teamSigchainPlayer) sanityCheckInvites(mctx libkb.MetaContext,

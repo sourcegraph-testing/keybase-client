@@ -97,7 +97,7 @@ func newPerUserKeyPrev(contents PerUserKeySeed, symmetricKey NaclSecretBoxKey) (
 	// secretbox
 	sealed := secretbox.Seal(nil, contents[:], &nonce, (*[NaclSecretBoxKeySize]byte)(&symmetricKey))
 
-	parts := []interface{}{version, nonce, sealed}
+	parts := []any{version, nonce, sealed}
 
 	// msgpack
 	mh := codec.MsgpackHandle{WriteExt: true}

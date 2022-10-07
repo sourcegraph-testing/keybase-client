@@ -95,7 +95,7 @@ type JournalManagerStatus struct {
 	UnflushedBytes    int64
 	UnflushedPaths    []string
 	EndEstimate       *time.Time
-	DiskLimiterStatus interface{}
+	DiskLimiterStatus any
 	Conflicts         []ConflictJournalRecord `json:",omitempty"`
 	ClearedConflicts  []ConflictJournalRecord `json:",omitempty"`
 }
@@ -141,7 +141,7 @@ type clearedConflictVal struct {
 // server journal is 108: 51 for the TLF journal, and 57 for
 // everything else.
 //
-//   /v1/de...-...(53 characters total)...ff(/tlf journal)
+//	/v1/de...-...(53 characters total)...ff(/tlf journal)
 type JournalManager struct {
 	config     Config
 	defaultBWS TLFJournalBackgroundWorkStatus

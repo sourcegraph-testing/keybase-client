@@ -33,7 +33,7 @@ func (t *DebuggingHandler) scriptExtras(ctx context.Context, arg keybase1.Script
 	ctx = libkb.WithLogTag(ctx, "DG")
 	m := libkb.NewMetaContext(ctx, t.G())
 	args := arg.Args
-	log := func(format string, args ...interface{}) {
+	log := func(format string, args ...any) {
 		t.G().Log.CInfof(ctx, format, args...)
 	}
 	defer time.Sleep(100 * time.Millisecond) // Without this CInfof often doesn't reach the CLI

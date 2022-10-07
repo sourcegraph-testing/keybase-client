@@ -1270,7 +1270,7 @@ type ToStatusAble interface {
 // status object. If it is something that can be made into a Status object via the
 // ToStatusAble interface, then we'll try that. Otherwise, we'll just make a generic
 // Error type.
-func WrapError(e error) interface{} {
+func WrapError(e error) any {
 
 	if e == nil {
 		return nil
@@ -1311,13 +1311,13 @@ type ErrorUnwrapper struct {
 
 // MakeArg just makes a dummy object that we can unmarshal into, as needed by the
 // underlying RPC library.
-func (eu ErrorUnwrapper) MakeArg() interface{} {
+func (eu ErrorUnwrapper) MakeArg() any {
 	return &Status{}
 }
 
 // UnwrapError takes an incoming RPC object, attempts to coerce it into a Status
 // object, and then Upcasts via the Upcaster or just returns if not was provided.
-func (eu ErrorUnwrapper) UnwrapError(arg interface{}) (appError, dispatchError error) {
+func (eu ErrorUnwrapper) UnwrapError(arg any) (appError, dispatchError error) {
 	targ, ok := arg.(*Status)
 	if !ok {
 		dispatchError = errors.New("Error converting status to keybase1.Status object")
@@ -1907,10 +1907,12 @@ func (ut UserOrTeamID) IsValidID() bool {
 }
 
 // Preconditions:
-// 	-first four bits (in Little Endian) of UserOrTeamID are
-// 	 	independent and uniformly distributed
-//	-UserOrTeamID must have an even number of bits, or this will always
-//   	return 0
+//
+//		-first four bits (in Little Endian) of UserOrTeamID are
+//		 	independent and uniformly distributed
+//		-UserOrTeamID must have an even number of bits, or this will always
+//	  	return 0
+//
 // Returns a number in [0, shardCount) which can be treated as roughly
 // uniformly distributed. Used for things that need to shard by user.
 func (ut UserOrTeamID) GetShard(shardCount int) (int, error) {

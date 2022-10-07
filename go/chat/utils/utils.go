@@ -533,21 +533,21 @@ func (d DebugLabeler) showLog() bool {
 	return true
 }
 
-func (d DebugLabeler) Debug(ctx context.Context, msg string, args ...interface{}) {
+func (d DebugLabeler) Debug(ctx context.Context, msg string, args ...any) {
 	if d.showLog() {
 		d.G().GetLog().CDebugf(ctx, "++Chat: | "+d.label+": "+msg, args...)
 	}
 }
 
-func (d DebugLabeler) Trace(ctx context.Context, err *error, format string, args ...interface{}) func() {
+func (d DebugLabeler) Trace(ctx context.Context, err *error, format string, args ...any) func() {
 	return d.trace(ctx, d.G().GetLog(), err, format, args...)
 }
 
-func (d DebugLabeler) PerfTrace(ctx context.Context, err *error, format string, args ...interface{}) func() {
+func (d DebugLabeler) PerfTrace(ctx context.Context, err *error, format string, args ...any) func() {
 	return d.trace(ctx, d.G().GetPerfLog(), err, format, args...)
 }
 
-func (d DebugLabeler) trace(ctx context.Context, log logger.Logger, err *error, format string, args ...interface{}) func() {
+func (d DebugLabeler) trace(ctx context.Context, log logger.Logger, err *error, format string, args ...any) func() {
 	if d.showLog() {
 		msg := fmt.Sprintf(format, args...)
 		start := time.Now()
@@ -2555,7 +2555,7 @@ func EscapeForDecorate(ctx context.Context, body string) string {
 	})
 }
 
-func DecorateBody(ctx context.Context, body string, offset, length int, decoration interface{}) (res string, added int) {
+func DecorateBody(ctx context.Context, body string, offset, length int, decoration any) (res string, added int) {
 	out, err := json.Marshal(decoration)
 	if err != nil {
 		return res, 0

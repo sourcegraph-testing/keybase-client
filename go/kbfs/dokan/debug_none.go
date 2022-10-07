@@ -9,5 +9,5 @@ package dokan
 
 const isDebug = false //nolint
 
-func debug(...interface{})          {} // nolint
-func debugf(string, ...interface{}) {} // nolint
+func debug(...any)          {} // nolint
+func debugf(string, ...any) {} // nolint

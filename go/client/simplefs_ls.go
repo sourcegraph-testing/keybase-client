@@ -91,7 +91,7 @@ func (d DirentFileInfo) IsDir() bool {
 }
 
 // Sys - underlying data source (can return nil)
-func (d DirentFileInfo) Sys() interface{} {
+func (d DirentFileInfo) Sys() any {
 	return nil
 }
 

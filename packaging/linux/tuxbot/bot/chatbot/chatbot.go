@@ -105,7 +105,7 @@ type ChatLogger struct {
 
 var _ Logger = (*ChatLogger)(nil)
 
-func (l ChatLogger) msg(format string, args ...interface{}) string {
+func (l ChatLogger) msg(format string, args ...any) string {
 	m := fmt.Sprintf(format, args...)
 	if l.Name == "" {
 		return m
@@ -113,12 +113,12 @@ func (l ChatLogger) msg(format string, args ...interface{}) string {
 	return fmt.Sprintf("`(%s)` %s", l.Name, m)
 }
 
-func (l ChatLogger) VDebug(format string, args ...interface{}) {
+func (l ChatLogger) VDebug(format string, args ...any) {
 	msg := l.msg(format, args...)
 	fmt.Println(msg)
 }
 
-func (l ChatLogger) Debug(format string, args ...interface{}) {
+func (l ChatLogger) Debug(format string, args ...any) {
 	msg := l.msg(format, args...)
 	fmt.Println(msg)
 	if _, err := l.API.SendMessage(l.DebugChannel, msg); err != nil {
@@ -126,7 +126,7 @@ func (l ChatLogger) Debug(format string, args ...interface{}) {
 	}
 }
 
-func (l ChatLogger) Info(format string, args ...interface{}) {
+func (l ChatLogger) Info(format string, args ...any) {
 	if _, err := l.API.SendMessage(l.InfoChannel, l.msg(format, args...)); err != nil {
 		fmt.Printf("unable to SendMessage: %v", err)
 	}

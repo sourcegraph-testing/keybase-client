@@ -121,7 +121,7 @@ func removePunct(r rune) rune {
 }
 
 func makeNameDocWithBase(
-	n libkbfs.Node, base indexedBase) (nameDoc interface{}) {
+	n libkbfs.Node, base indexedBase) (nameDoc any) {
 	// Turn all punctuation into spaces to allow for matching
 	// individual words within the filename.
 	fullName := n.GetBasename().Plaintext()
@@ -135,7 +135,7 @@ func makeNameDocWithBase(
 
 func makeNameDoc(
 	n libkbfs.Node, revision kbfsmd.Revision, mtime time.Time) (
-	nameDoc interface{}) {
+	nameDoc any) {
 	base := indexedBase{
 		TlfID:    n.GetFolderBranch().Tlf,
 		Revision: revision,
@@ -147,7 +147,7 @@ func makeNameDoc(
 func makeDoc(
 	ctx context.Context, config libkbfs.Config, n libkbfs.Node,
 	ei data.EntryInfo, revision kbfsmd.Revision, mtime time.Time) (
-	doc, nameDoc interface{}, err error) {
+	doc, nameDoc any, err error) {
 	base := indexedBase{
 		TlfID:    n.GetFolderBranch().Tlf,
 		Revision: revision,

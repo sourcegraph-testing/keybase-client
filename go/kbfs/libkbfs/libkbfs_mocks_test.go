@@ -58,7 +58,7 @@ func (m *MockBlockOps) Archive(arg0 context.Context, arg1 tlf.ID, arg2 []data.Bl
 }
 
 // Archive indicates an expected call of Archive.
-func (mr *MockBlockOpsMockRecorder) Archive(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) Archive(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Archive", reflect.TypeOf((*MockBlockOps)(nil).Archive), arg0, arg1, arg2)
 }
@@ -87,7 +87,7 @@ func (m *MockBlockOps) Delete(arg0 context.Context, arg1 tlf.ID, arg2 []data.Blo
 }
 
 // Delete indicates an expected call of Delete.
-func (mr *MockBlockOpsMockRecorder) Delete(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) Delete(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockBlockOps)(nil).Delete), arg0, arg1, arg2)
 }
@@ -101,7 +101,7 @@ func (m *MockBlockOps) Get(arg0 context.Context, arg1 libkey.KeyMetadata, arg2 d
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockBlockOpsMockRecorder) Get(arg0, arg1, arg2, arg3, arg4, arg5 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) Get(arg0, arg1, arg2, arg3, arg4, arg5 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockBlockOps)(nil).Get), arg0, arg1, arg2, arg3, arg4, arg5)
 }
@@ -117,7 +117,7 @@ func (m *MockBlockOps) GetEncodedSizes(arg0 context.Context, arg1 libkey.KeyMeta
 }
 
 // GetEncodedSizes indicates an expected call of GetEncodedSizes.
-func (mr *MockBlockOpsMockRecorder) GetEncodedSizes(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) GetEncodedSizes(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetEncodedSizes", reflect.TypeOf((*MockBlockOps)(nil).GetEncodedSizes), arg0, arg1, arg2)
 }
@@ -132,7 +132,7 @@ func (m *MockBlockOps) GetLiveCount(arg0 context.Context, arg1 tlf.ID, arg2 []da
 }
 
 // GetLiveCount indicates an expected call of GetLiveCount.
-func (mr *MockBlockOpsMockRecorder) GetLiveCount(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) GetLiveCount(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetLiveCount", reflect.TypeOf((*MockBlockOps)(nil).GetLiveCount), arg0, arg1, arg2)
 }
@@ -163,7 +163,7 @@ func (m *MockBlockOps) Ready(arg0 context.Context, arg1 libkey.KeyMetadata, arg2
 }
 
 // Ready indicates an expected call of Ready.
-func (mr *MockBlockOpsMockRecorder) Ready(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) Ready(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Ready", reflect.TypeOf((*MockBlockOps)(nil).Ready), arg0, arg1, arg2)
 }
@@ -177,7 +177,7 @@ func (m *MockBlockOps) Shutdown(arg0 context.Context) error {
 }
 
 // Shutdown indicates an expected call of Shutdown.
-func (mr *MockBlockOpsMockRecorder) Shutdown(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) Shutdown(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Shutdown", reflect.TypeOf((*MockBlockOps)(nil).Shutdown), arg0)
 }
@@ -191,7 +191,7 @@ func (m *MockBlockOps) TogglePrefetcher(arg0 bool) <-chan struct{} {
 }
 
 // TogglePrefetcher indicates an expected call of TogglePrefetcher.
-func (mr *MockBlockOpsMockRecorder) TogglePrefetcher(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockOpsMockRecorder) TogglePrefetcher(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TogglePrefetcher", reflect.TypeOf((*MockBlockOps)(nil).TogglePrefetcher), arg0)
 }
@@ -228,7 +228,7 @@ func (m *MockBlockServer) AddBlockReference(arg0 context.Context, arg1 tlf.ID, a
 }
 
 // AddBlockReference indicates an expected call of AddBlockReference.
-func (mr *MockBlockServerMockRecorder) AddBlockReference(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) AddBlockReference(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddBlockReference", reflect.TypeOf((*MockBlockServer)(nil).AddBlockReference), arg0, arg1, arg2, arg3)
 }
@@ -242,7 +242,7 @@ func (m *MockBlockServer) ArchiveBlockReferences(arg0 context.Context, arg1 tlf.
 }
 
 // ArchiveBlockReferences indicates an expected call of ArchiveBlockReferences.
-func (mr *MockBlockServerMockRecorder) ArchiveBlockReferences(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) ArchiveBlockReferences(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ArchiveBlockReferences", reflect.TypeOf((*MockBlockServer)(nil).ArchiveBlockReferences), arg0, arg1, arg2)
 }
@@ -270,7 +270,7 @@ func (m *MockBlockServer) Get(arg0 context.Context, arg1 tlf.ID, arg2 kbfsblock.
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockBlockServerMockRecorder) Get(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) Get(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockBlockServer)(nil).Get), arg0, arg1, arg2, arg3, arg4)
 }
@@ -286,7 +286,7 @@ func (m *MockBlockServer) GetEncodedSizes(arg0 context.Context, arg1 tlf.ID, arg
 }
 
 // GetEncodedSizes indicates an expected call of GetEncodedSizes.
-func (mr *MockBlockServerMockRecorder) GetEncodedSizes(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) GetEncodedSizes(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetEncodedSizes", reflect.TypeOf((*MockBlockServer)(nil).GetEncodedSizes), arg0, arg1, arg2, arg3)
 }
@@ -301,7 +301,7 @@ func (m *MockBlockServer) GetLiveBlockReferences(arg0 context.Context, arg1 tlf.
 }
 
 // GetLiveBlockReferences indicates an expected call of GetLiveBlockReferences.
-func (mr *MockBlockServerMockRecorder) GetLiveBlockReferences(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) GetLiveBlockReferences(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetLiveBlockReferences", reflect.TypeOf((*MockBlockServer)(nil).GetLiveBlockReferences), arg0, arg1, arg2)
 }
@@ -316,7 +316,7 @@ func (m *MockBlockServer) GetTeamQuotaInfo(arg0 context.Context, arg1 keybase1.T
 }
 
 // GetTeamQuotaInfo indicates an expected call of GetTeamQuotaInfo.
-func (mr *MockBlockServerMockRecorder) GetTeamQuotaInfo(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) GetTeamQuotaInfo(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTeamQuotaInfo", reflect.TypeOf((*MockBlockServer)(nil).GetTeamQuotaInfo), arg0, arg1)
 }
@@ -331,7 +331,7 @@ func (m *MockBlockServer) GetUserQuotaInfo(arg0 context.Context) (*kbfsblock.Quo
 }
 
 // GetUserQuotaInfo indicates an expected call of GetUserQuotaInfo.
-func (mr *MockBlockServerMockRecorder) GetUserQuotaInfo(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) GetUserQuotaInfo(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUserQuotaInfo", reflect.TypeOf((*MockBlockServer)(nil).GetUserQuotaInfo), arg0)
 }
@@ -346,7 +346,7 @@ func (m *MockBlockServer) IsUnflushed(arg0 context.Context, arg1 tlf.ID, arg2 kb
 }
 
 // IsUnflushed indicates an expected call of IsUnflushed.
-func (mr *MockBlockServerMockRecorder) IsUnflushed(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) IsUnflushed(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsUnflushed", reflect.TypeOf((*MockBlockServer)(nil).IsUnflushed), arg0, arg1, arg2)
 }
@@ -360,7 +360,7 @@ func (m *MockBlockServer) Put(arg0 context.Context, arg1 tlf.ID, arg2 kbfsblock.
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockBlockServerMockRecorder) Put(arg0, arg1, arg2, arg3, arg4, arg5, arg6 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) Put(arg0, arg1, arg2, arg3, arg4, arg5, arg6 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockBlockServer)(nil).Put), arg0, arg1, arg2, arg3, arg4, arg5, arg6)
 }
@@ -374,7 +374,7 @@ func (m *MockBlockServer) PutAgain(arg0 context.Context, arg1 tlf.ID, arg2 kbfsb
 }
 
 // PutAgain indicates an expected call of PutAgain.
-func (mr *MockBlockServerMockRecorder) PutAgain(arg0, arg1, arg2, arg3, arg4, arg5, arg6 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) PutAgain(arg0, arg1, arg2, arg3, arg4, arg5, arg6 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutAgain", reflect.TypeOf((*MockBlockServer)(nil).PutAgain), arg0, arg1, arg2, arg3, arg4, arg5, arg6)
 }
@@ -386,7 +386,7 @@ func (m *MockBlockServer) RefreshAuthToken(arg0 context.Context) {
 }
 
 // RefreshAuthToken indicates an expected call of RefreshAuthToken.
-func (mr *MockBlockServerMockRecorder) RefreshAuthToken(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) RefreshAuthToken(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RefreshAuthToken", reflect.TypeOf((*MockBlockServer)(nil).RefreshAuthToken), arg0)
 }
@@ -401,7 +401,7 @@ func (m *MockBlockServer) RemoveBlockReferences(arg0 context.Context, arg1 tlf.I
 }
 
 // RemoveBlockReferences indicates an expected call of RemoveBlockReferences.
-func (mr *MockBlockServerMockRecorder) RemoveBlockReferences(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) RemoveBlockReferences(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveBlockReferences", reflect.TypeOf((*MockBlockServer)(nil).RemoveBlockReferences), arg0, arg1, arg2)
 }
@@ -413,7 +413,7 @@ func (m *MockBlockServer) Shutdown(arg0 context.Context) {
 }
 
 // Shutdown indicates an expected call of Shutdown.
-func (mr *MockBlockServerMockRecorder) Shutdown(arg0 interface{}) *gomock.Call {
+func (mr *MockBlockServerMockRecorder) Shutdown(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Shutdown", reflect.TypeOf((*MockBlockServer)(nil).Shutdown), arg0)
 }
@@ -464,7 +464,7 @@ func (m *MockChat) GetChannels(arg0 context.Context, arg1 tlf.CanonicalName, arg
 }
 
 // GetChannels indicates an expected call of GetChannels.
-func (mr *MockChatMockRecorder) GetChannels(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) GetChannels(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetChannels", reflect.TypeOf((*MockChat)(nil).GetChannels), arg0, arg1, arg2, arg3)
 }
@@ -479,7 +479,7 @@ func (m *MockChat) GetConversationID(arg0 context.Context, arg1 tlf.CanonicalNam
 }
 
 // GetConversationID indicates an expected call of GetConversationID.
-func (mr *MockChatMockRecorder) GetConversationID(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) GetConversationID(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetConversationID", reflect.TypeOf((*MockChat)(nil).GetConversationID), arg0, arg1, arg2, arg3, arg4)
 }
@@ -494,7 +494,7 @@ func (m *MockChat) GetGroupedInbox(arg0 context.Context, arg1 chat1.TopicType, a
 }
 
 // GetGroupedInbox indicates an expected call of GetGroupedInbox.
-func (mr *MockChatMockRecorder) GetGroupedInbox(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) GetGroupedInbox(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetGroupedInbox", reflect.TypeOf((*MockChat)(nil).GetGroupedInbox), arg0, arg1, arg2)
 }
@@ -510,7 +510,7 @@ func (m *MockChat) ReadChannel(arg0 context.Context, arg1 chat1.ConversationID, 
 }
 
 // ReadChannel indicates an expected call of ReadChannel.
-func (mr *MockChatMockRecorder) ReadChannel(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) ReadChannel(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadChannel", reflect.TypeOf((*MockChat)(nil).ReadChannel), arg0, arg1, arg2)
 }
@@ -522,7 +522,7 @@ func (m *MockChat) RegisterForMessages(arg0 chat1.ConversationID, arg1 ChatChann
 }
 
 // RegisterForMessages indicates an expected call of RegisterForMessages.
-func (mr *MockChatMockRecorder) RegisterForMessages(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) RegisterForMessages(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterForMessages", reflect.TypeOf((*MockChat)(nil).RegisterForMessages), arg0, arg1)
 }
@@ -536,7 +536,7 @@ func (m *MockChat) SendTextMessage(arg0 context.Context, arg1 tlf.CanonicalName,
 }
 
 // SendTextMessage indicates an expected call of SendTextMessage.
-func (mr *MockChatMockRecorder) SendTextMessage(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockChatMockRecorder) SendTextMessage(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendTextMessage", reflect.TypeOf((*MockChat)(nil).SendTextMessage), arg0, arg1, arg2, arg3, arg4)
 }
@@ -610,7 +610,7 @@ func (m *MockCrypto) DecryptBlock(arg0 kbfscrypto.EncryptedBlock, arg1 kbfscrypt
 }
 
 // DecryptBlock indicates an expected call of DecryptBlock.
-func (mr *MockCryptoMockRecorder) DecryptBlock(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) DecryptBlock(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptBlock", reflect.TypeOf((*MockCrypto)(nil).DecryptBlock), arg0, arg1, arg2, arg3)
 }
@@ -625,7 +625,7 @@ func (m *MockCrypto) DecryptPrivateMetadata(arg0 kbfscrypto.EncryptedPrivateMeta
 }
 
 // DecryptPrivateMetadata indicates an expected call of DecryptPrivateMetadata.
-func (mr *MockCryptoMockRecorder) DecryptPrivateMetadata(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) DecryptPrivateMetadata(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptPrivateMetadata", reflect.TypeOf((*MockCrypto)(nil).DecryptPrivateMetadata), arg0, arg1)
 }
@@ -640,7 +640,7 @@ func (m *MockCrypto) DecryptTLFCryptKeyClientHalf(arg0 context.Context, arg1 kbf
 }
 
 // DecryptTLFCryptKeyClientHalf indicates an expected call of DecryptTLFCryptKeyClientHalf.
-func (mr *MockCryptoMockRecorder) DecryptTLFCryptKeyClientHalf(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) DecryptTLFCryptKeyClientHalf(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptTLFCryptKeyClientHalf", reflect.TypeOf((*MockCrypto)(nil).DecryptTLFCryptKeyClientHalf), arg0, arg1, arg2)
 }
@@ -656,7 +656,7 @@ func (m *MockCrypto) DecryptTLFCryptKeyClientHalfAny(arg0 context.Context, arg1 
 }
 
 // DecryptTLFCryptKeyClientHalfAny indicates an expected call of DecryptTLFCryptKeyClientHalfAny.
-func (mr *MockCryptoMockRecorder) DecryptTLFCryptKeyClientHalfAny(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) DecryptTLFCryptKeyClientHalfAny(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptTLFCryptKeyClientHalfAny", reflect.TypeOf((*MockCrypto)(nil).DecryptTLFCryptKeyClientHalfAny), arg0, arg1, arg2)
 }
@@ -671,7 +671,7 @@ func (m *MockCrypto) DecryptTeamMerkleLeaf(arg0 context.Context, arg1 keybase1.T
 }
 
 // DecryptTeamMerkleLeaf indicates an expected call of DecryptTeamMerkleLeaf.
-func (mr *MockCryptoMockRecorder) DecryptTeamMerkleLeaf(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) DecryptTeamMerkleLeaf(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptTeamMerkleLeaf", reflect.TypeOf((*MockCrypto)(nil).DecryptTeamMerkleLeaf), arg0, arg1, arg2, arg3, arg4)
 }
@@ -687,7 +687,7 @@ func (m *MockCrypto) EncryptBlock(arg0 data.Block, arg1 kbfscrypto.TLFCryptKey, 
 }
 
 // EncryptBlock indicates an expected call of EncryptBlock.
-func (mr *MockCryptoMockRecorder) EncryptBlock(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) EncryptBlock(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EncryptBlock", reflect.TypeOf((*MockCrypto)(nil).EncryptBlock), arg0, arg1, arg2)
 }
@@ -702,7 +702,7 @@ func (m *MockCrypto) EncryptPrivateMetadata(arg0 PrivateMetadata, arg1 kbfscrypt
 }
 
 // EncryptPrivateMetadata indicates an expected call of EncryptPrivateMetadata.
-func (mr *MockCryptoMockRecorder) EncryptPrivateMetadata(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) EncryptPrivateMetadata(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EncryptPrivateMetadata", reflect.TypeOf((*MockCrypto)(nil).EncryptPrivateMetadata), arg0, arg1)
 }
@@ -795,7 +795,7 @@ func (m *MockCrypto) MakeRandomTlfID(arg0 tlf.Type) (tlf.ID, error) {
 }
 
 // MakeRandomTlfID indicates an expected call of MakeRandomTlfID.
-func (mr *MockCryptoMockRecorder) MakeRandomTlfID(arg0 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) MakeRandomTlfID(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MakeRandomTlfID", reflect.TypeOf((*MockCrypto)(nil).MakeRandomTlfID), arg0)
 }
@@ -837,7 +837,7 @@ func (m *MockCrypto) Sign(arg0 context.Context, arg1 []byte) (kbfscrypto.Signatu
 }
 
 // Sign indicates an expected call of Sign.
-func (mr *MockCryptoMockRecorder) Sign(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) Sign(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Sign", reflect.TypeOf((*MockCrypto)(nil).Sign), arg0, arg1)
 }
@@ -852,7 +852,7 @@ func (m *MockCrypto) SignForKBFS(arg0 context.Context, arg1 []byte) (kbfscrypto.
 }
 
 // SignForKBFS indicates an expected call of SignForKBFS.
-func (mr *MockCryptoMockRecorder) SignForKBFS(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) SignForKBFS(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SignForKBFS", reflect.TypeOf((*MockCrypto)(nil).SignForKBFS), arg0, arg1)
 }
@@ -867,7 +867,7 @@ func (m *MockCrypto) SignToString(arg0 context.Context, arg1 []byte) (string, er
 }
 
 // SignToString indicates an expected call of SignToString.
-func (mr *MockCryptoMockRecorder) SignToString(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockCryptoMockRecorder) SignToString(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SignToString", reflect.TypeOf((*MockCrypto)(nil).SignToString), arg0, arg1)
 }
@@ -904,7 +904,7 @@ func (m *MockKBFSOps) AddFavorite(arg0 context.Context, arg1 favorites.Folder, a
 }
 
 // AddFavorite indicates an expected call of AddFavorite.
-func (mr *MockKBFSOpsMockRecorder) AddFavorite(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) AddFavorite(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddFavorite", reflect.TypeOf((*MockKBFSOps)(nil).AddFavorite), arg0, arg1, arg2)
 }
@@ -916,7 +916,7 @@ func (m *MockKBFSOps) AddRootNodeWrapper(arg0 func(Node) Node) {
 }
 
 // AddRootNodeWrapper indicates an expected call of AddRootNodeWrapper.
-func (mr *MockKBFSOpsMockRecorder) AddRootNodeWrapper(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) AddRootNodeWrapper(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddRootNodeWrapper", reflect.TypeOf((*MockKBFSOps)(nil).AddRootNodeWrapper), arg0)
 }
@@ -930,7 +930,7 @@ func (m *MockKBFSOps) CancelUploads(arg0 context.Context, arg1 data.FolderBranch
 }
 
 // CancelUploads indicates an expected call of CancelUploads.
-func (mr *MockKBFSOpsMockRecorder) CancelUploads(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) CancelUploads(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelUploads", reflect.TypeOf((*MockKBFSOps)(nil).CancelUploads), arg0, arg1)
 }
@@ -944,7 +944,7 @@ func (m *MockKBFSOps) CheckMigrationPerms(arg0 context.Context, arg1 tlf.ID) err
 }
 
 // CheckMigrationPerms indicates an expected call of CheckMigrationPerms.
-func (mr *MockKBFSOpsMockRecorder) CheckMigrationPerms(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) CheckMigrationPerms(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CheckMigrationPerms", reflect.TypeOf((*MockKBFSOps)(nil).CheckMigrationPerms), arg0, arg1)
 }
@@ -956,7 +956,7 @@ func (m *MockKBFSOps) ClearCachedFavorites(arg0 context.Context) {
 }
 
 // ClearCachedFavorites indicates an expected call of ClearCachedFavorites.
-func (mr *MockKBFSOpsMockRecorder) ClearCachedFavorites(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) ClearCachedFavorites(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearCachedFavorites", reflect.TypeOf((*MockKBFSOps)(nil).ClearCachedFavorites), arg0)
 }
@@ -970,7 +970,7 @@ func (m *MockKBFSOps) ClearConflictView(arg0 context.Context, arg1 tlf.ID) error
 }
 
 // ClearConflictView indicates an expected call of ClearConflictView.
-func (mr *MockKBFSOpsMockRecorder) ClearConflictView(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) ClearConflictView(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearConflictView", reflect.TypeOf((*MockKBFSOps)(nil).ClearConflictView), arg0, arg1)
 }
@@ -982,7 +982,7 @@ func (m *MockKBFSOps) ClearPrivateFolderMD(arg0 context.Context) {
 }
 
 // ClearPrivateFolderMD indicates an expected call of ClearPrivateFolderMD.
-func (mr *MockKBFSOpsMockRecorder) ClearPrivateFolderMD(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) ClearPrivateFolderMD(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearPrivateFolderMD", reflect.TypeOf((*MockKBFSOps)(nil).ClearPrivateFolderMD), arg0)
 }
@@ -998,7 +998,7 @@ func (m *MockKBFSOps) CreateDir(arg0 context.Context, arg1 Node, arg2 data.PathP
 }
 
 // CreateDir indicates an expected call of CreateDir.
-func (mr *MockKBFSOpsMockRecorder) CreateDir(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) CreateDir(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDir", reflect.TypeOf((*MockKBFSOps)(nil).CreateDir), arg0, arg1, arg2)
 }
@@ -1014,7 +1014,7 @@ func (m *MockKBFSOps) CreateFile(arg0 context.Context, arg1 Node, arg2 data.Path
 }
 
 // CreateFile indicates an expected call of CreateFile.
-func (mr *MockKBFSOpsMockRecorder) CreateFile(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) CreateFile(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateFile", reflect.TypeOf((*MockKBFSOps)(nil).CreateFile), arg0, arg1, arg2, arg3, arg4)
 }
@@ -1029,7 +1029,7 @@ func (m *MockKBFSOps) CreateLink(arg0 context.Context, arg1 Node, arg2, arg3 dat
 }
 
 // CreateLink indicates an expected call of CreateLink.
-func (mr *MockKBFSOpsMockRecorder) CreateLink(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) CreateLink(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateLink", reflect.TypeOf((*MockKBFSOps)(nil).CreateLink), arg0, arg1, arg2, arg3)
 }
@@ -1043,7 +1043,7 @@ func (m *MockKBFSOps) DeleteFavorite(arg0 context.Context, arg1 favorites.Folder
 }
 
 // DeleteFavorite indicates an expected call of DeleteFavorite.
-func (mr *MockKBFSOpsMockRecorder) DeleteFavorite(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) DeleteFavorite(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteFavorite", reflect.TypeOf((*MockKBFSOps)(nil).DeleteFavorite), arg0, arg1)
 }
@@ -1057,7 +1057,7 @@ func (m *MockKBFSOps) FinishResolvingConflict(arg0 context.Context, arg1 data.Fo
 }
 
 // FinishResolvingConflict indicates an expected call of FinishResolvingConflict.
-func (mr *MockKBFSOpsMockRecorder) FinishResolvingConflict(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) FinishResolvingConflict(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FinishResolvingConflict", reflect.TypeOf((*MockKBFSOps)(nil).FinishResolvingConflict), arg0, arg1)
 }
@@ -1072,7 +1072,7 @@ func (m *MockKBFSOps) FolderConflictStatus(arg0 context.Context, arg1 data.Folde
 }
 
 // FolderConflictStatus indicates an expected call of FolderConflictStatus.
-func (mr *MockKBFSOpsMockRecorder) FolderConflictStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) FolderConflictStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FolderConflictStatus", reflect.TypeOf((*MockKBFSOps)(nil).FolderConflictStatus), arg0, arg1)
 }
@@ -1088,7 +1088,7 @@ func (m *MockKBFSOps) FolderStatus(arg0 context.Context, arg1 data.FolderBranch)
 }
 
 // FolderStatus indicates an expected call of FolderStatus.
-func (mr *MockKBFSOpsMockRecorder) FolderStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) FolderStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FolderStatus", reflect.TypeOf((*MockKBFSOps)(nil).FolderStatus), arg0, arg1)
 }
@@ -1100,7 +1100,7 @@ func (m *MockKBFSOps) ForceFastForward(arg0 context.Context) {
 }
 
 // ForceFastForward indicates an expected call of ForceFastForward.
-func (mr *MockKBFSOpsMockRecorder) ForceFastForward(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) ForceFastForward(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ForceFastForward", reflect.TypeOf((*MockKBFSOps)(nil).ForceFastForward), arg0)
 }
@@ -1114,7 +1114,7 @@ func (m *MockKBFSOps) ForceStuckConflictForTesting(arg0 context.Context, arg1 tl
 }
 
 // ForceStuckConflictForTesting indicates an expected call of ForceStuckConflictForTesting.
-func (mr *MockKBFSOpsMockRecorder) ForceStuckConflictForTesting(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) ForceStuckConflictForTesting(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ForceStuckConflictForTesting", reflect.TypeOf((*MockKBFSOps)(nil).ForceStuckConflictForTesting), arg0, arg1)
 }
@@ -1128,7 +1128,7 @@ func (m *MockKBFSOps) GetAllSyncedTlfMDs(arg0 context.Context) map[tlf.ID]Synced
 }
 
 // GetAllSyncedTlfMDs indicates an expected call of GetAllSyncedTlfMDs.
-func (mr *MockKBFSOpsMockRecorder) GetAllSyncedTlfMDs(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetAllSyncedTlfMDs(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAllSyncedTlfMDs", reflect.TypeOf((*MockKBFSOps)(nil).GetAllSyncedTlfMDs), arg0)
 }
@@ -1143,7 +1143,7 @@ func (m *MockKBFSOps) GetBadge(arg0 context.Context) (keybase1.FilesTabBadge, er
 }
 
 // GetBadge indicates an expected call of GetBadge.
-func (mr *MockKBFSOpsMockRecorder) GetBadge(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetBadge(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetBadge", reflect.TypeOf((*MockKBFSOps)(nil).GetBadge), arg0)
 }
@@ -1158,7 +1158,7 @@ func (m *MockKBFSOps) GetDirChildren(arg0 context.Context, arg1 Node) (map[data.
 }
 
 // GetDirChildren indicates an expected call of GetDirChildren.
-func (mr *MockKBFSOpsMockRecorder) GetDirChildren(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetDirChildren(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetDirChildren", reflect.TypeOf((*MockKBFSOps)(nil).GetDirChildren), arg0, arg1)
 }
@@ -1173,7 +1173,7 @@ func (m *MockKBFSOps) GetEditHistory(arg0 context.Context, arg1 data.FolderBranc
 }
 
 // GetEditHistory indicates an expected call of GetEditHistory.
-func (mr *MockKBFSOpsMockRecorder) GetEditHistory(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetEditHistory(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetEditHistory", reflect.TypeOf((*MockKBFSOps)(nil).GetEditHistory), arg0, arg1)
 }
@@ -1188,7 +1188,7 @@ func (m *MockKBFSOps) GetFavorites(arg0 context.Context) ([]favorites.Folder, er
 }
 
 // GetFavorites indicates an expected call of GetFavorites.
-func (mr *MockKBFSOpsMockRecorder) GetFavorites(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetFavorites(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFavorites", reflect.TypeOf((*MockKBFSOps)(nil).GetFavorites), arg0)
 }
@@ -1203,7 +1203,7 @@ func (m *MockKBFSOps) GetFavoritesAll(arg0 context.Context) (keybase1.FavoritesR
 }
 
 // GetFavoritesAll indicates an expected call of GetFavoritesAll.
-func (mr *MockKBFSOpsMockRecorder) GetFavoritesAll(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetFavoritesAll(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFavoritesAll", reflect.TypeOf((*MockKBFSOps)(nil).GetFavoritesAll), arg0)
 }
@@ -1218,7 +1218,7 @@ func (m *MockKBFSOps) GetFolderWithFavFlags(arg0 context.Context, arg1 *tlfhandl
 }
 
 // GetFolderWithFavFlags indicates an expected call of GetFolderWithFavFlags.
-func (mr *MockKBFSOpsMockRecorder) GetFolderWithFavFlags(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetFolderWithFavFlags(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFolderWithFavFlags", reflect.TypeOf((*MockKBFSOps)(nil).GetFolderWithFavFlags), arg0, arg1)
 }
@@ -1233,7 +1233,7 @@ func (m *MockKBFSOps) GetNodeMetadata(arg0 context.Context, arg1 Node) (NodeMeta
 }
 
 // GetNodeMetadata indicates an expected call of GetNodeMetadata.
-func (mr *MockKBFSOpsMockRecorder) GetNodeMetadata(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetNodeMetadata(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNodeMetadata", reflect.TypeOf((*MockKBFSOps)(nil).GetNodeMetadata), arg0, arg1)
 }
@@ -1249,7 +1249,7 @@ func (m *MockKBFSOps) GetOrCreateRootNode(arg0 context.Context, arg1 *tlfhandle.
 }
 
 // GetOrCreateRootNode indicates an expected call of GetOrCreateRootNode.
-func (mr *MockKBFSOpsMockRecorder) GetOrCreateRootNode(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetOrCreateRootNode(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetOrCreateRootNode", reflect.TypeOf((*MockKBFSOps)(nil).GetOrCreateRootNode), arg0, arg1, arg2)
 }
@@ -1265,7 +1265,7 @@ func (m *MockKBFSOps) GetRootNode(arg0 context.Context, arg1 *tlfhandle.Handle, 
 }
 
 // GetRootNode indicates an expected call of GetRootNode.
-func (mr *MockKBFSOpsMockRecorder) GetRootNode(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetRootNode(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRootNode", reflect.TypeOf((*MockKBFSOps)(nil).GetRootNode), arg0, arg1, arg2)
 }
@@ -1281,7 +1281,7 @@ func (m *MockKBFSOps) GetRootNodeMetadata(arg0 context.Context, arg1 data.Folder
 }
 
 // GetRootNodeMetadata indicates an expected call of GetRootNodeMetadata.
-func (mr *MockKBFSOpsMockRecorder) GetRootNodeMetadata(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetRootNodeMetadata(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRootNodeMetadata", reflect.TypeOf((*MockKBFSOps)(nil).GetRootNodeMetadata), arg0, arg1)
 }
@@ -1296,7 +1296,7 @@ func (m *MockKBFSOps) GetSyncConfig(arg0 context.Context, arg1 tlf.ID) (keybase1
 }
 
 // GetSyncConfig indicates an expected call of GetSyncConfig.
-func (mr *MockKBFSOpsMockRecorder) GetSyncConfig(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetSyncConfig(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetSyncConfig", reflect.TypeOf((*MockKBFSOps)(nil).GetSyncConfig), arg0, arg1)
 }
@@ -1312,7 +1312,7 @@ func (m *MockKBFSOps) GetTLFCryptKeys(arg0 context.Context, arg1 *tlfhandle.Hand
 }
 
 // GetTLFCryptKeys indicates an expected call of GetTLFCryptKeys.
-func (mr *MockKBFSOpsMockRecorder) GetTLFCryptKeys(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetTLFCryptKeys(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeys", reflect.TypeOf((*MockKBFSOps)(nil).GetTLFCryptKeys), arg0, arg1)
 }
@@ -1327,7 +1327,7 @@ func (m *MockKBFSOps) GetTLFHandle(arg0 context.Context, arg1 Node) (*tlfhandle.
 }
 
 // GetTLFHandle indicates an expected call of GetTLFHandle.
-func (mr *MockKBFSOpsMockRecorder) GetTLFHandle(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetTLFHandle(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFHandle", reflect.TypeOf((*MockKBFSOps)(nil).GetTLFHandle), arg0, arg1)
 }
@@ -1342,7 +1342,7 @@ func (m *MockKBFSOps) GetTLFID(arg0 context.Context, arg1 *tlfhandle.Handle) (tl
 }
 
 // GetTLFID indicates an expected call of GetTLFID.
-func (mr *MockKBFSOpsMockRecorder) GetTLFID(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetTLFID(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFID", reflect.TypeOf((*MockKBFSOps)(nil).GetTLFID), arg0, arg1)
 }
@@ -1357,7 +1357,7 @@ func (m *MockKBFSOps) GetUpdateHistory(arg0 context.Context, arg1 data.FolderBra
 }
 
 // GetUpdateHistory indicates an expected call of GetUpdateHistory.
-func (mr *MockKBFSOpsMockRecorder) GetUpdateHistory(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) GetUpdateHistory(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUpdateHistory", reflect.TypeOf((*MockKBFSOps)(nil).GetUpdateHistory), arg0, arg1, arg2, arg3)
 }
@@ -1371,7 +1371,7 @@ func (m *MockKBFSOps) InvalidateNodeAndChildren(arg0 context.Context, arg1 Node)
 }
 
 // InvalidateNodeAndChildren indicates an expected call of InvalidateNodeAndChildren.
-func (mr *MockKBFSOpsMockRecorder) InvalidateNodeAndChildren(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) InvalidateNodeAndChildren(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvalidateNodeAndChildren", reflect.TypeOf((*MockKBFSOps)(nil).InvalidateNodeAndChildren), arg0, arg1)
 }
@@ -1401,7 +1401,7 @@ func (m *MockKBFSOps) Lookup(arg0 context.Context, arg1 Node, arg2 data.PathPart
 }
 
 // Lookup indicates an expected call of Lookup.
-func (mr *MockKBFSOpsMockRecorder) Lookup(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Lookup(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Lookup", reflect.TypeOf((*MockKBFSOps)(nil).Lookup), arg0, arg1, arg2)
 }
@@ -1415,7 +1415,7 @@ func (m *MockKBFSOps) MigrateToImplicitTeam(arg0 context.Context, arg1 tlf.ID) e
 }
 
 // MigrateToImplicitTeam indicates an expected call of MigrateToImplicitTeam.
-func (mr *MockKBFSOpsMockRecorder) MigrateToImplicitTeam(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) MigrateToImplicitTeam(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MigrateToImplicitTeam", reflect.TypeOf((*MockKBFSOps)(nil).MigrateToImplicitTeam), arg0, arg1)
 }
@@ -1427,7 +1427,7 @@ func (m *MockKBFSOps) NewNotificationChannel(arg0 context.Context, arg1 *tlfhand
 }
 
 // NewNotificationChannel indicates an expected call of NewNotificationChannel.
-func (mr *MockKBFSOpsMockRecorder) NewNotificationChannel(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) NewNotificationChannel(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewNotificationChannel", reflect.TypeOf((*MockKBFSOps)(nil).NewNotificationChannel), arg0, arg1, arg2, arg3)
 }
@@ -1439,7 +1439,7 @@ func (m *MockKBFSOps) PushConnectionStatusChange(arg0 string, arg1 error) {
 }
 
 // PushConnectionStatusChange indicates an expected call of PushConnectionStatusChange.
-func (mr *MockKBFSOpsMockRecorder) PushConnectionStatusChange(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) PushConnectionStatusChange(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PushConnectionStatusChange", reflect.TypeOf((*MockKBFSOps)(nil).PushConnectionStatusChange), arg0, arg1)
 }
@@ -1466,7 +1466,7 @@ func (m *MockKBFSOps) Read(arg0 context.Context, arg1 Node, arg2 []byte, arg3 in
 }
 
 // Read indicates an expected call of Read.
-func (mr *MockKBFSOpsMockRecorder) Read(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Read(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Read", reflect.TypeOf((*MockKBFSOps)(nil).Read), arg0, arg1, arg2, arg3)
 }
@@ -1478,7 +1478,7 @@ func (m *MockKBFSOps) RefreshCachedFavorites(arg0 context.Context, arg1 Favorite
 }
 
 // RefreshCachedFavorites indicates an expected call of RefreshCachedFavorites.
-func (mr *MockKBFSOpsMockRecorder) RefreshCachedFavorites(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) RefreshCachedFavorites(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RefreshCachedFavorites", reflect.TypeOf((*MockKBFSOps)(nil).RefreshCachedFavorites), arg0, arg1)
 }
@@ -1490,7 +1490,7 @@ func (m *MockKBFSOps) RefreshEditHistory(arg0 favorites.Folder) {
 }
 
 // RefreshEditHistory indicates an expected call of RefreshEditHistory.
-func (mr *MockKBFSOpsMockRecorder) RefreshEditHistory(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) RefreshEditHistory(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RefreshEditHistory", reflect.TypeOf((*MockKBFSOps)(nil).RefreshEditHistory), arg0)
 }
@@ -1504,7 +1504,7 @@ func (m *MockKBFSOps) RemoveDir(arg0 context.Context, arg1 Node, arg2 data.PathP
 }
 
 // RemoveDir indicates an expected call of RemoveDir.
-func (mr *MockKBFSOpsMockRecorder) RemoveDir(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) RemoveDir(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveDir", reflect.TypeOf((*MockKBFSOps)(nil).RemoveDir), arg0, arg1, arg2)
 }
@@ -1518,7 +1518,7 @@ func (m *MockKBFSOps) RemoveEntry(arg0 context.Context, arg1 Node, arg2 data.Pat
 }
 
 // RemoveEntry indicates an expected call of RemoveEntry.
-func (mr *MockKBFSOpsMockRecorder) RemoveEntry(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) RemoveEntry(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveEntry", reflect.TypeOf((*MockKBFSOps)(nil).RemoveEntry), arg0, arg1, arg2)
 }
@@ -1532,7 +1532,7 @@ func (m *MockKBFSOps) Rename(arg0 context.Context, arg1 Node, arg2 data.PathPart
 }
 
 // Rename indicates an expected call of Rename.
-func (mr *MockKBFSOpsMockRecorder) Rename(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Rename(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Rename", reflect.TypeOf((*MockKBFSOps)(nil).Rename), arg0, arg1, arg2, arg3, arg4)
 }
@@ -1544,7 +1544,7 @@ func (m *MockKBFSOps) RequestRekey(arg0 context.Context, arg1 tlf.ID) {
 }
 
 // RequestRekey indicates an expected call of RequestRekey.
-func (mr *MockKBFSOpsMockRecorder) RequestRekey(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) RequestRekey(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RequestRekey", reflect.TypeOf((*MockKBFSOps)(nil).RequestRekey), arg0, arg1)
 }
@@ -1558,7 +1558,7 @@ func (m *MockKBFSOps) Reset(arg0 context.Context, arg1 *tlfhandle.Handle, arg2 *
 }
 
 // Reset indicates an expected call of Reset.
-func (mr *MockKBFSOpsMockRecorder) Reset(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Reset(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Reset", reflect.TypeOf((*MockKBFSOps)(nil).Reset), arg0, arg1, arg2)
 }
@@ -1572,7 +1572,7 @@ func (m *MockKBFSOps) SetEx(arg0 context.Context, arg1 Node, arg2 bool) error {
 }
 
 // SetEx indicates an expected call of SetEx.
-func (mr *MockKBFSOpsMockRecorder) SetEx(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SetEx(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetEx", reflect.TypeOf((*MockKBFSOps)(nil).SetEx), arg0, arg1, arg2)
 }
@@ -1584,7 +1584,7 @@ func (m *MockKBFSOps) SetFavoritesHomeTLFInfo(arg0 context.Context, arg1 homeTLF
 }
 
 // SetFavoritesHomeTLFInfo indicates an expected call of SetFavoritesHomeTLFInfo.
-func (mr *MockKBFSOpsMockRecorder) SetFavoritesHomeTLFInfo(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SetFavoritesHomeTLFInfo(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetFavoritesHomeTLFInfo", reflect.TypeOf((*MockKBFSOps)(nil).SetFavoritesHomeTLFInfo), arg0, arg1)
 }
@@ -1598,7 +1598,7 @@ func (m *MockKBFSOps) SetMtime(arg0 context.Context, arg1 Node, arg2 *time.Time)
 }
 
 // SetMtime indicates an expected call of SetMtime.
-func (mr *MockKBFSOpsMockRecorder) SetMtime(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SetMtime(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetMtime", reflect.TypeOf((*MockKBFSOps)(nil).SetMtime), arg0, arg1, arg2)
 }
@@ -1613,7 +1613,7 @@ func (m *MockKBFSOps) SetSyncConfig(arg0 context.Context, arg1 tlf.ID, arg2 keyb
 }
 
 // SetSyncConfig indicates an expected call of SetSyncConfig.
-func (mr *MockKBFSOpsMockRecorder) SetSyncConfig(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SetSyncConfig(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetSyncConfig", reflect.TypeOf((*MockKBFSOps)(nil).SetSyncConfig), arg0, arg1, arg2)
 }
@@ -1627,7 +1627,7 @@ func (m *MockKBFSOps) Shutdown(arg0 context.Context) error {
 }
 
 // Shutdown indicates an expected call of Shutdown.
-func (mr *MockKBFSOpsMockRecorder) Shutdown(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Shutdown(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Shutdown", reflect.TypeOf((*MockKBFSOps)(nil).Shutdown), arg0)
 }
@@ -1642,7 +1642,7 @@ func (m *MockKBFSOps) Stat(arg0 context.Context, arg1 Node) (data.EntryInfo, err
 }
 
 // Stat indicates an expected call of Stat.
-func (mr *MockKBFSOpsMockRecorder) Stat(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Stat(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Stat", reflect.TypeOf((*MockKBFSOps)(nil).Stat), arg0, arg1)
 }
@@ -1658,7 +1658,7 @@ func (m *MockKBFSOps) Status(arg0 context.Context) (KBFSStatus, <-chan StatusUpd
 }
 
 // Status indicates an expected call of Status.
-func (mr *MockKBFSOpsMockRecorder) Status(arg0 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Status(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Status", reflect.TypeOf((*MockKBFSOps)(nil).Status), arg0)
 }
@@ -1687,7 +1687,7 @@ func (m *MockKBFSOps) SyncAll(arg0 context.Context, arg1 data.FolderBranch) erro
 }
 
 // SyncAll indicates an expected call of SyncAll.
-func (mr *MockKBFSOpsMockRecorder) SyncAll(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SyncAll(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SyncAll", reflect.TypeOf((*MockKBFSOps)(nil).SyncAll), arg0, arg1)
 }
@@ -1701,7 +1701,7 @@ func (m *MockKBFSOps) SyncFromServer(arg0 context.Context, arg1 data.FolderBranc
 }
 
 // SyncFromServer indicates an expected call of SyncFromServer.
-func (mr *MockKBFSOpsMockRecorder) SyncFromServer(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) SyncFromServer(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SyncFromServer", reflect.TypeOf((*MockKBFSOps)(nil).SyncFromServer), arg0, arg1, arg2)
 }
@@ -1713,7 +1713,7 @@ func (m *MockKBFSOps) TeamAbandoned(arg0 context.Context, arg1 keybase1.TeamID) 
 }
 
 // TeamAbandoned indicates an expected call of TeamAbandoned.
-func (mr *MockKBFSOpsMockRecorder) TeamAbandoned(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) TeamAbandoned(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TeamAbandoned", reflect.TypeOf((*MockKBFSOps)(nil).TeamAbandoned), arg0, arg1)
 }
@@ -1725,7 +1725,7 @@ func (m *MockKBFSOps) TeamNameChanged(arg0 context.Context, arg1 keybase1.TeamID
 }
 
 // TeamNameChanged indicates an expected call of TeamNameChanged.
-func (mr *MockKBFSOpsMockRecorder) TeamNameChanged(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) TeamNameChanged(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TeamNameChanged", reflect.TypeOf((*MockKBFSOps)(nil).TeamNameChanged), arg0, arg1)
 }
@@ -1739,7 +1739,7 @@ func (m *MockKBFSOps) Truncate(arg0 context.Context, arg1 Node, arg2 uint64) err
 }
 
 // Truncate indicates an expected call of Truncate.
-func (mr *MockKBFSOpsMockRecorder) Truncate(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Truncate(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Truncate", reflect.TypeOf((*MockKBFSOps)(nil).Truncate), arg0, arg1, arg2)
 }
@@ -1753,7 +1753,7 @@ func (m *MockKBFSOps) UnstageForTesting(arg0 context.Context, arg1 data.FolderBr
 }
 
 // UnstageForTesting indicates an expected call of UnstageForTesting.
-func (mr *MockKBFSOpsMockRecorder) UnstageForTesting(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) UnstageForTesting(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UnstageForTesting", reflect.TypeOf((*MockKBFSOps)(nil).UnstageForTesting), arg0, arg1)
 }
@@ -1767,7 +1767,7 @@ func (m *MockKBFSOps) Write(arg0 context.Context, arg1 Node, arg2 []byte, arg3 i
 }
 
 // Write indicates an expected call of Write.
-func (mr *MockKBFSOpsMockRecorder) Write(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBFSOpsMockRecorder) Write(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Write", reflect.TypeOf((*MockKBFSOps)(nil).Write), arg0, arg1, arg2, arg3)
 }
@@ -1804,7 +1804,7 @@ func (m *MockKBPKI) CreateTeamTLF(arg0 context.Context, arg1 keybase1.TeamID, ar
 }
 
 // CreateTeamTLF indicates an expected call of CreateTeamTLF.
-func (mr *MockKBPKIMockRecorder) CreateTeamTLF(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) CreateTeamTLF(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateTeamTLF", reflect.TypeOf((*MockKBPKI)(nil).CreateTeamTLF), arg0, arg1, arg2)
 }
@@ -1818,7 +1818,7 @@ func (m *MockKBPKI) FavoriteAdd(arg0 context.Context, arg1 keybase1.FolderHandle
 }
 
 // FavoriteAdd indicates an expected call of FavoriteAdd.
-func (mr *MockKBPKIMockRecorder) FavoriteAdd(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) FavoriteAdd(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteAdd", reflect.TypeOf((*MockKBPKI)(nil).FavoriteAdd), arg0, arg1)
 }
@@ -1832,7 +1832,7 @@ func (m *MockKBPKI) FavoriteDelete(arg0 context.Context, arg1 keybase1.FolderHan
 }
 
 // FavoriteDelete indicates an expected call of FavoriteDelete.
-func (mr *MockKBPKIMockRecorder) FavoriteDelete(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) FavoriteDelete(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteDelete", reflect.TypeOf((*MockKBPKI)(nil).FavoriteDelete), arg0, arg1)
 }
@@ -1847,7 +1847,7 @@ func (m *MockKBPKI) FavoriteList(arg0 context.Context) (keybase1.FavoritesResult
 }
 
 // FavoriteList indicates an expected call of FavoriteList.
-func (mr *MockKBPKIMockRecorder) FavoriteList(arg0 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) FavoriteList(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteList", reflect.TypeOf((*MockKBPKI)(nil).FavoriteList), arg0)
 }
@@ -1862,7 +1862,7 @@ func (m *MockKBPKI) GetCryptPublicKeys(arg0 context.Context, arg1 keybase1.UID, 
 }
 
 // GetCryptPublicKeys indicates an expected call of GetCryptPublicKeys.
-func (mr *MockKBPKIMockRecorder) GetCryptPublicKeys(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetCryptPublicKeys(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetCryptPublicKeys", reflect.TypeOf((*MockKBPKI)(nil).GetCryptPublicKeys), arg0, arg1, arg2)
 }
@@ -1878,7 +1878,7 @@ func (m *MockKBPKI) GetCurrentMerkleRoot(arg0 context.Context) (keybase1.MerkleR
 }
 
 // GetCurrentMerkleRoot indicates an expected call of GetCurrentMerkleRoot.
-func (mr *MockKBPKIMockRecorder) GetCurrentMerkleRoot(arg0 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetCurrentMerkleRoot(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetCurrentMerkleRoot", reflect.TypeOf((*MockKBPKI)(nil).GetCurrentMerkleRoot), arg0)
 }
@@ -1893,7 +1893,7 @@ func (m *MockKBPKI) GetCurrentSession(arg0 context.Context) (idutil.SessionInfo,
 }
 
 // GetCurrentSession indicates an expected call of GetCurrentSession.
-func (mr *MockKBPKIMockRecorder) GetCurrentSession(arg0 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetCurrentSession(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetCurrentSession", reflect.TypeOf((*MockKBPKI)(nil).GetCurrentSession), arg0)
 }
@@ -1908,7 +1908,7 @@ func (m *MockKBPKI) GetNormalizedUsername(arg0 context.Context, arg1 keybase1.Us
 }
 
 // GetNormalizedUsername indicates an expected call of GetNormalizedUsername.
-func (mr *MockKBPKIMockRecorder) GetNormalizedUsername(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetNormalizedUsername(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNormalizedUsername", reflect.TypeOf((*MockKBPKI)(nil).GetNormalizedUsername), arg0, arg1, arg2)
 }
@@ -1923,7 +1923,7 @@ func (m *MockKBPKI) GetTeamRootID(arg0 context.Context, arg1 keybase1.TeamID, ar
 }
 
 // GetTeamRootID indicates an expected call of GetTeamRootID.
-func (mr *MockKBPKIMockRecorder) GetTeamRootID(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetTeamRootID(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTeamRootID", reflect.TypeOf((*MockKBPKI)(nil).GetTeamRootID), arg0, arg1, arg2)
 }
@@ -1939,7 +1939,7 @@ func (m *MockKBPKI) GetTeamTLFCryptKeys(arg0 context.Context, arg1 keybase1.Team
 }
 
 // GetTeamTLFCryptKeys indicates an expected call of GetTeamTLFCryptKeys.
-func (mr *MockKBPKIMockRecorder) GetTeamTLFCryptKeys(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) GetTeamTLFCryptKeys(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTeamTLFCryptKeys", reflect.TypeOf((*MockKBPKI)(nil).GetTeamTLFCryptKeys), arg0, arg1, arg2, arg3)
 }
@@ -1953,7 +1953,7 @@ func (m *MockKBPKI) HasVerifyingKey(arg0 context.Context, arg1 keybase1.UID, arg
 }
 
 // HasVerifyingKey indicates an expected call of HasVerifyingKey.
-func (mr *MockKBPKIMockRecorder) HasVerifyingKey(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) HasVerifyingKey(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HasVerifyingKey", reflect.TypeOf((*MockKBPKI)(nil).HasVerifyingKey), arg0, arg1, arg2, arg3, arg4)
 }
@@ -1969,7 +1969,7 @@ func (m *MockKBPKI) Identify(arg0 context.Context, arg1, arg2 string, arg3 keyba
 }
 
 // Identify indicates an expected call of Identify.
-func (mr *MockKBPKIMockRecorder) Identify(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) Identify(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Identify", reflect.TypeOf((*MockKBPKI)(nil).Identify), arg0, arg1, arg2, arg3)
 }
@@ -1984,7 +1984,7 @@ func (m *MockKBPKI) IdentifyImplicitTeam(arg0 context.Context, arg1, arg2 string
 }
 
 // IdentifyImplicitTeam indicates an expected call of IdentifyImplicitTeam.
-func (mr *MockKBPKIMockRecorder) IdentifyImplicitTeam(arg0, arg1, arg2, arg3, arg4, arg5 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) IdentifyImplicitTeam(arg0, arg1, arg2, arg3, arg4, arg5 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IdentifyImplicitTeam", reflect.TypeOf((*MockKBPKI)(nil).IdentifyImplicitTeam), arg0, arg1, arg2, arg3, arg4, arg5)
 }
@@ -1996,7 +1996,7 @@ func (m *MockKBPKI) InvalidateTeamCacheForID(arg0 keybase1.TeamID) {
 }
 
 // InvalidateTeamCacheForID indicates an expected call of InvalidateTeamCacheForID.
-func (mr *MockKBPKIMockRecorder) InvalidateTeamCacheForID(arg0 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) InvalidateTeamCacheForID(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvalidateTeamCacheForID", reflect.TypeOf((*MockKBPKI)(nil).InvalidateTeamCacheForID), arg0)
 }
@@ -2011,7 +2011,7 @@ func (m *MockKBPKI) IsTeamReader(arg0 context.Context, arg1 keybase1.TeamID, arg
 }
 
 // IsTeamReader indicates an expected call of IsTeamReader.
-func (mr *MockKBPKIMockRecorder) IsTeamReader(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) IsTeamReader(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsTeamReader", reflect.TypeOf((*MockKBPKI)(nil).IsTeamReader), arg0, arg1, arg2, arg3)
 }
@@ -2026,7 +2026,7 @@ func (m *MockKBPKI) IsTeamWriter(arg0 context.Context, arg1 keybase1.TeamID, arg
 }
 
 // IsTeamWriter indicates an expected call of IsTeamWriter.
-func (mr *MockKBPKIMockRecorder) IsTeamWriter(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) IsTeamWriter(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsTeamWriter", reflect.TypeOf((*MockKBPKI)(nil).IsTeamWriter), arg0, arg1, arg2, arg3, arg4)
 }
@@ -2041,7 +2041,7 @@ func (m *MockKBPKI) NoLongerTeamWriter(arg0 context.Context, arg1 keybase1.TeamI
 }
 
 // NoLongerTeamWriter indicates an expected call of NoLongerTeamWriter.
-func (mr *MockKBPKIMockRecorder) NoLongerTeamWriter(arg0, arg1, arg2, arg3, arg4, arg5 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) NoLongerTeamWriter(arg0, arg1, arg2, arg3, arg4, arg5 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NoLongerTeamWriter", reflect.TypeOf((*MockKBPKI)(nil).NoLongerTeamWriter), arg0, arg1, arg2, arg3, arg4, arg5)
 }
@@ -2056,7 +2056,7 @@ func (m *MockKBPKI) NormalizeSocialAssertion(arg0 context.Context, arg1 string) 
 }
 
 // NormalizeSocialAssertion indicates an expected call of NormalizeSocialAssertion.
-func (mr *MockKBPKIMockRecorder) NormalizeSocialAssertion(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) NormalizeSocialAssertion(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NormalizeSocialAssertion", reflect.TypeOf((*MockKBPKI)(nil).NormalizeSocialAssertion), arg0, arg1)
 }
@@ -2070,7 +2070,7 @@ func (m *MockKBPKI) Notify(arg0 context.Context, arg1 *keybase1.FSNotification) 
 }
 
 // Notify indicates an expected call of Notify.
-func (mr *MockKBPKIMockRecorder) Notify(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) Notify(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Notify", reflect.TypeOf((*MockKBPKI)(nil).Notify), arg0, arg1)
 }
@@ -2084,7 +2084,7 @@ func (m *MockKBPKI) NotifyPathUpdated(arg0 context.Context, arg1 string) error {
 }
 
 // NotifyPathUpdated indicates an expected call of NotifyPathUpdated.
-func (mr *MockKBPKIMockRecorder) NotifyPathUpdated(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) NotifyPathUpdated(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyPathUpdated", reflect.TypeOf((*MockKBPKI)(nil).NotifyPathUpdated), arg0, arg1)
 }
@@ -2098,7 +2098,7 @@ func (m *MockKBPKI) PutGitMetadata(arg0 context.Context, arg1 keybase1.FolderHan
 }
 
 // PutGitMetadata indicates an expected call of PutGitMetadata.
-func (mr *MockKBPKIMockRecorder) PutGitMetadata(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) PutGitMetadata(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutGitMetadata", reflect.TypeOf((*MockKBPKI)(nil).PutGitMetadata), arg0, arg1, arg2, arg3)
 }
@@ -2114,7 +2114,7 @@ func (m *MockKBPKI) Resolve(arg0 context.Context, arg1 string, arg2 keybase1.Off
 }
 
 // Resolve indicates an expected call of Resolve.
-func (mr *MockKBPKIMockRecorder) Resolve(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) Resolve(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Resolve", reflect.TypeOf((*MockKBPKI)(nil).Resolve), arg0, arg1, arg2)
 }
@@ -2129,7 +2129,7 @@ func (m *MockKBPKI) ResolveImplicitTeam(arg0 context.Context, arg1, arg2 string,
 }
 
 // ResolveImplicitTeam indicates an expected call of ResolveImplicitTeam.
-func (mr *MockKBPKIMockRecorder) ResolveImplicitTeam(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) ResolveImplicitTeam(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveImplicitTeam", reflect.TypeOf((*MockKBPKI)(nil).ResolveImplicitTeam), arg0, arg1, arg2, arg3, arg4)
 }
@@ -2144,7 +2144,7 @@ func (m *MockKBPKI) ResolveImplicitTeamByID(arg0 context.Context, arg1 keybase1.
 }
 
 // ResolveImplicitTeamByID indicates an expected call of ResolveImplicitTeamByID.
-func (mr *MockKBPKIMockRecorder) ResolveImplicitTeamByID(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) ResolveImplicitTeamByID(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveImplicitTeamByID", reflect.TypeOf((*MockKBPKI)(nil).ResolveImplicitTeamByID), arg0, arg1, arg2, arg3)
 }
@@ -2159,7 +2159,7 @@ func (m *MockKBPKI) ResolveTeamTLFID(arg0 context.Context, arg1 keybase1.TeamID,
 }
 
 // ResolveTeamTLFID indicates an expected call of ResolveTeamTLFID.
-func (mr *MockKBPKIMockRecorder) ResolveTeamTLFID(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) ResolveTeamTLFID(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveTeamTLFID", reflect.TypeOf((*MockKBPKI)(nil).ResolveTeamTLFID), arg0, arg1, arg2)
 }
@@ -2173,7 +2173,7 @@ func (m *MockKBPKI) VerifyMerkleRoot(arg0 context.Context, arg1 keybase1.MerkleR
 }
 
 // VerifyMerkleRoot indicates an expected call of VerifyMerkleRoot.
-func (mr *MockKBPKIMockRecorder) VerifyMerkleRoot(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKBPKIMockRecorder) VerifyMerkleRoot(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "VerifyMerkleRoot", reflect.TypeOf((*MockKBPKI)(nil).VerifyMerkleRoot), arg0, arg1, arg2)
 }
@@ -2208,7 +2208,7 @@ func (m *MockKeybaseService) ClearCaches(arg0 context.Context) {
 }
 
 // ClearCaches indicates an expected call of ClearCaches.
-func (mr *MockKeybaseServiceMockRecorder) ClearCaches(arg0 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) ClearCaches(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClearCaches", reflect.TypeOf((*MockKeybaseService)(nil).ClearCaches), arg0)
 }
@@ -2222,7 +2222,7 @@ func (m *MockKeybaseService) CreateTeamTLF(arg0 context.Context, arg1 keybase1.T
 }
 
 // CreateTeamTLF indicates an expected call of CreateTeamTLF.
-func (mr *MockKeybaseServiceMockRecorder) CreateTeamTLF(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) CreateTeamTLF(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateTeamTLF", reflect.TypeOf((*MockKeybaseService)(nil).CreateTeamTLF), arg0, arg1, arg2)
 }
@@ -2237,7 +2237,7 @@ func (m *MockKeybaseService) CurrentSession(arg0 context.Context, arg1 int) (idu
 }
 
 // CurrentSession indicates an expected call of CurrentSession.
-func (mr *MockKeybaseServiceMockRecorder) CurrentSession(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) CurrentSession(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CurrentSession", reflect.TypeOf((*MockKeybaseService)(nil).CurrentSession), arg0, arg1)
 }
@@ -2252,7 +2252,7 @@ func (m *MockKeybaseService) DecryptFavorites(arg0 context.Context, arg1 []byte)
 }
 
 // DecryptFavorites indicates an expected call of DecryptFavorites.
-func (mr *MockKeybaseServiceMockRecorder) DecryptFavorites(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) DecryptFavorites(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecryptFavorites", reflect.TypeOf((*MockKeybaseService)(nil).DecryptFavorites), arg0, arg1)
 }
@@ -2267,7 +2267,7 @@ func (m *MockKeybaseService) EncryptFavorites(arg0 context.Context, arg1 []byte)
 }
 
 // EncryptFavorites indicates an expected call of EncryptFavorites.
-func (mr *MockKeybaseServiceMockRecorder) EncryptFavorites(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) EncryptFavorites(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EncryptFavorites", reflect.TypeOf((*MockKeybaseService)(nil).EncryptFavorites), arg0, arg1)
 }
@@ -2282,7 +2282,7 @@ func (m *MockKeybaseService) EstablishMountDir(arg0 context.Context) (string, er
 }
 
 // EstablishMountDir indicates an expected call of EstablishMountDir.
-func (mr *MockKeybaseServiceMockRecorder) EstablishMountDir(arg0 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) EstablishMountDir(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EstablishMountDir", reflect.TypeOf((*MockKeybaseService)(nil).EstablishMountDir), arg0)
 }
@@ -2296,7 +2296,7 @@ func (m *MockKeybaseService) FavoriteAdd(arg0 context.Context, arg1 keybase1.Fol
 }
 
 // FavoriteAdd indicates an expected call of FavoriteAdd.
-func (mr *MockKeybaseServiceMockRecorder) FavoriteAdd(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) FavoriteAdd(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteAdd", reflect.TypeOf((*MockKeybaseService)(nil).FavoriteAdd), arg0, arg1)
 }
@@ -2310,7 +2310,7 @@ func (m *MockKeybaseService) FavoriteDelete(arg0 context.Context, arg1 keybase1.
 }
 
 // FavoriteDelete indicates an expected call of FavoriteDelete.
-func (mr *MockKeybaseServiceMockRecorder) FavoriteDelete(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) FavoriteDelete(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteDelete", reflect.TypeOf((*MockKeybaseService)(nil).FavoriteDelete), arg0, arg1)
 }
@@ -2325,7 +2325,7 @@ func (m *MockKeybaseService) FavoriteList(arg0 context.Context, arg1 int) (keyba
 }
 
 // FavoriteList indicates an expected call of FavoriteList.
-func (mr *MockKeybaseServiceMockRecorder) FavoriteList(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) FavoriteList(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FavoriteList", reflect.TypeOf((*MockKeybaseService)(nil).FavoriteList), arg0, arg1)
 }
@@ -2337,7 +2337,7 @@ func (m *MockKeybaseService) FlushUserFromLocalCache(arg0 context.Context, arg1 
 }
 
 // FlushUserFromLocalCache indicates an expected call of FlushUserFromLocalCache.
-func (mr *MockKeybaseServiceMockRecorder) FlushUserFromLocalCache(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) FlushUserFromLocalCache(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FlushUserFromLocalCache", reflect.TypeOf((*MockKeybaseService)(nil).FlushUserFromLocalCache), arg0, arg1)
 }
@@ -2353,7 +2353,7 @@ func (m *MockKeybaseService) GetCurrentMerkleRoot(arg0 context.Context) (keybase
 }
 
 // GetCurrentMerkleRoot indicates an expected call of GetCurrentMerkleRoot.
-func (mr *MockKeybaseServiceMockRecorder) GetCurrentMerkleRoot(arg0 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) GetCurrentMerkleRoot(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetCurrentMerkleRoot", reflect.TypeOf((*MockKeybaseService)(nil).GetCurrentMerkleRoot), arg0)
 }
@@ -2382,7 +2382,7 @@ func (m *MockKeybaseService) GetTeamSettings(arg0 context.Context, arg1 keybase1
 }
 
 // GetTeamSettings indicates an expected call of GetTeamSettings.
-func (mr *MockKeybaseServiceMockRecorder) GetTeamSettings(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) GetTeamSettings(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTeamSettings", reflect.TypeOf((*MockKeybaseService)(nil).GetTeamSettings), arg0, arg1, arg2)
 }
@@ -2398,7 +2398,7 @@ func (m *MockKeybaseService) Identify(arg0 context.Context, arg1, arg2 string, a
 }
 
 // Identify indicates an expected call of Identify.
-func (mr *MockKeybaseServiceMockRecorder) Identify(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) Identify(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Identify", reflect.TypeOf((*MockKeybaseService)(nil).Identify), arg0, arg1, arg2, arg3)
 }
@@ -2413,7 +2413,7 @@ func (m *MockKeybaseService) LoadTeamPlusKeys(arg0 context.Context, arg1 keybase
 }
 
 // LoadTeamPlusKeys indicates an expected call of LoadTeamPlusKeys.
-func (mr *MockKeybaseServiceMockRecorder) LoadTeamPlusKeys(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) LoadTeamPlusKeys(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LoadTeamPlusKeys", reflect.TypeOf((*MockKeybaseService)(nil).LoadTeamPlusKeys), arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 }
@@ -2428,7 +2428,7 @@ func (m *MockKeybaseService) LoadUserPlusKeys(arg0 context.Context, arg1 keybase
 }
 
 // LoadUserPlusKeys indicates an expected call of LoadUserPlusKeys.
-func (mr *MockKeybaseServiceMockRecorder) LoadUserPlusKeys(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) LoadUserPlusKeys(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LoadUserPlusKeys", reflect.TypeOf((*MockKeybaseService)(nil).LoadUserPlusKeys), arg0, arg1, arg2, arg3)
 }
@@ -2443,7 +2443,7 @@ func (m *MockKeybaseService) NormalizeSocialAssertion(arg0 context.Context, arg1
 }
 
 // NormalizeSocialAssertion indicates an expected call of NormalizeSocialAssertion.
-func (mr *MockKeybaseServiceMockRecorder) NormalizeSocialAssertion(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NormalizeSocialAssertion(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NormalizeSocialAssertion", reflect.TypeOf((*MockKeybaseService)(nil).NormalizeSocialAssertion), arg0, arg1)
 }
@@ -2457,7 +2457,7 @@ func (m *MockKeybaseService) Notify(arg0 context.Context, arg1 *keybase1.FSNotif
 }
 
 // Notify indicates an expected call of Notify.
-func (mr *MockKeybaseServiceMockRecorder) Notify(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) Notify(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Notify", reflect.TypeOf((*MockKeybaseService)(nil).Notify), arg0, arg1)
 }
@@ -2471,7 +2471,7 @@ func (m *MockKeybaseService) NotifyFavoritesChanged(arg0 context.Context) error 
 }
 
 // NotifyFavoritesChanged indicates an expected call of NotifyFavoritesChanged.
-func (mr *MockKeybaseServiceMockRecorder) NotifyFavoritesChanged(arg0 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NotifyFavoritesChanged(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyFavoritesChanged", reflect.TypeOf((*MockKeybaseService)(nil).NotifyFavoritesChanged), arg0)
 }
@@ -2485,7 +2485,7 @@ func (m *MockKeybaseService) NotifyOnlineStatusChanged(arg0 context.Context, arg
 }
 
 // NotifyOnlineStatusChanged indicates an expected call of NotifyOnlineStatusChanged.
-func (mr *MockKeybaseServiceMockRecorder) NotifyOnlineStatusChanged(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NotifyOnlineStatusChanged(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyOnlineStatusChanged", reflect.TypeOf((*MockKeybaseService)(nil).NotifyOnlineStatusChanged), arg0, arg1)
 }
@@ -2499,7 +2499,7 @@ func (m *MockKeybaseService) NotifyOverallSyncStatus(arg0 context.Context, arg1 
 }
 
 // NotifyOverallSyncStatus indicates an expected call of NotifyOverallSyncStatus.
-func (mr *MockKeybaseServiceMockRecorder) NotifyOverallSyncStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NotifyOverallSyncStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyOverallSyncStatus", reflect.TypeOf((*MockKeybaseService)(nil).NotifyOverallSyncStatus), arg0, arg1)
 }
@@ -2513,7 +2513,7 @@ func (m *MockKeybaseService) NotifyPathUpdated(arg0 context.Context, arg1 string
 }
 
 // NotifyPathUpdated indicates an expected call of NotifyPathUpdated.
-func (mr *MockKeybaseServiceMockRecorder) NotifyPathUpdated(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NotifyPathUpdated(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyPathUpdated", reflect.TypeOf((*MockKeybaseService)(nil).NotifyPathUpdated), arg0, arg1)
 }
@@ -2527,7 +2527,7 @@ func (m *MockKeybaseService) NotifySyncStatus(arg0 context.Context, arg1 *keybas
 }
 
 // NotifySyncStatus indicates an expected call of NotifySyncStatus.
-func (mr *MockKeybaseServiceMockRecorder) NotifySyncStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) NotifySyncStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifySyncStatus", reflect.TypeOf((*MockKeybaseService)(nil).NotifySyncStatus), arg0, arg1)
 }
@@ -2539,7 +2539,7 @@ func (m *MockKeybaseService) OnNonPathChange(arg0 SubscriptionManagerClientID, a
 }
 
 // OnNonPathChange indicates an expected call of OnNonPathChange.
-func (mr *MockKeybaseServiceMockRecorder) OnNonPathChange(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) OnNonPathChange(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OnNonPathChange", reflect.TypeOf((*MockKeybaseService)(nil).OnNonPathChange), arg0, arg1, arg2)
 }
@@ -2551,7 +2551,7 @@ func (m *MockKeybaseService) OnPathChange(arg0 SubscriptionManagerClientID, arg1
 }
 
 // OnPathChange indicates an expected call of OnPathChange.
-func (mr *MockKeybaseServiceMockRecorder) OnPathChange(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) OnPathChange(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OnPathChange", reflect.TypeOf((*MockKeybaseService)(nil).OnPathChange), arg0, arg1, arg2, arg3)
 }
@@ -2565,7 +2565,7 @@ func (m *MockKeybaseService) PutGitMetadata(arg0 context.Context, arg1 keybase1.
 }
 
 // PutGitMetadata indicates an expected call of PutGitMetadata.
-func (mr *MockKeybaseServiceMockRecorder) PutGitMetadata(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) PutGitMetadata(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutGitMetadata", reflect.TypeOf((*MockKeybaseService)(nil).PutGitMetadata), arg0, arg1, arg2, arg3)
 }
@@ -2581,7 +2581,7 @@ func (m *MockKeybaseService) Resolve(arg0 context.Context, arg1 string, arg2 key
 }
 
 // Resolve indicates an expected call of Resolve.
-func (mr *MockKeybaseServiceMockRecorder) Resolve(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) Resolve(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Resolve", reflect.TypeOf((*MockKeybaseService)(nil).Resolve), arg0, arg1, arg2)
 }
@@ -2596,7 +2596,7 @@ func (m *MockKeybaseService) ResolveIdentifyImplicitTeam(arg0 context.Context, a
 }
 
 // ResolveIdentifyImplicitTeam indicates an expected call of ResolveIdentifyImplicitTeam.
-func (mr *MockKeybaseServiceMockRecorder) ResolveIdentifyImplicitTeam(arg0, arg1, arg2, arg3, arg4, arg5, arg6 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) ResolveIdentifyImplicitTeam(arg0, arg1, arg2, arg3, arg4, arg5, arg6 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveIdentifyImplicitTeam", reflect.TypeOf((*MockKeybaseService)(nil).ResolveIdentifyImplicitTeam), arg0, arg1, arg2, arg3, arg4, arg5, arg6)
 }
@@ -2611,7 +2611,7 @@ func (m *MockKeybaseService) ResolveImplicitTeamByID(arg0 context.Context, arg1 
 }
 
 // ResolveImplicitTeamByID indicates an expected call of ResolveImplicitTeamByID.
-func (mr *MockKeybaseServiceMockRecorder) ResolveImplicitTeamByID(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) ResolveImplicitTeamByID(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveImplicitTeamByID", reflect.TypeOf((*MockKeybaseService)(nil).ResolveImplicitTeamByID), arg0, arg1)
 }
@@ -2637,7 +2637,7 @@ func (m *MockKeybaseService) VerifyMerkleRoot(arg0 context.Context, arg1 keybase
 }
 
 // VerifyMerkleRoot indicates an expected call of VerifyMerkleRoot.
-func (mr *MockKeybaseServiceMockRecorder) VerifyMerkleRoot(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeybaseServiceMockRecorder) VerifyMerkleRoot(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "VerifyMerkleRoot", reflect.TypeOf((*MockKeybaseService)(nil).VerifyMerkleRoot), arg0, arg1, arg2)
 }
@@ -2675,7 +2675,7 @@ func (m *MockKeyCache) GetTLFCryptKey(arg0 tlf.ID, arg1 kbfsmd.KeyGen) (kbfscryp
 }
 
 // GetTLFCryptKey indicates an expected call of GetTLFCryptKey.
-func (mr *MockKeyCacheMockRecorder) GetTLFCryptKey(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyCacheMockRecorder) GetTLFCryptKey(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKey", reflect.TypeOf((*MockKeyCache)(nil).GetTLFCryptKey), arg0, arg1)
 }
@@ -2689,7 +2689,7 @@ func (m *MockKeyCache) PutTLFCryptKey(arg0 tlf.ID, arg1 kbfsmd.KeyGen, arg2 kbfs
 }
 
 // PutTLFCryptKey indicates an expected call of PutTLFCryptKey.
-func (mr *MockKeyCacheMockRecorder) PutTLFCryptKey(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyCacheMockRecorder) PutTLFCryptKey(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutTLFCryptKey", reflect.TypeOf((*MockKeyCache)(nil).PutTLFCryptKey), arg0, arg1, arg2)
 }
@@ -2727,7 +2727,7 @@ func (m *MockKeyManager) GetFirstTLFCryptKey(arg0 context.Context, arg1 libkey.K
 }
 
 // GetFirstTLFCryptKey indicates an expected call of GetFirstTLFCryptKey.
-func (mr *MockKeyManagerMockRecorder) GetFirstTLFCryptKey(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) GetFirstTLFCryptKey(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFirstTLFCryptKey", reflect.TypeOf((*MockKeyManager)(nil).GetFirstTLFCryptKey), arg0, arg1)
 }
@@ -2742,7 +2742,7 @@ func (m *MockKeyManager) GetTLFCryptKeyForBlockDecryption(arg0 context.Context, 
 }
 
 // GetTLFCryptKeyForBlockDecryption indicates an expected call of GetTLFCryptKeyForBlockDecryption.
-func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForBlockDecryption(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForBlockDecryption(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyForBlockDecryption", reflect.TypeOf((*MockKeyManager)(nil).GetTLFCryptKeyForBlockDecryption), arg0, arg1, arg2)
 }
@@ -2757,7 +2757,7 @@ func (m *MockKeyManager) GetTLFCryptKeyForEncryption(arg0 context.Context, arg1 
 }
 
 // GetTLFCryptKeyForEncryption indicates an expected call of GetTLFCryptKeyForEncryption.
-func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForEncryption(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForEncryption(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyForEncryption", reflect.TypeOf((*MockKeyManager)(nil).GetTLFCryptKeyForEncryption), arg0, arg1)
 }
@@ -2772,7 +2772,7 @@ func (m *MockKeyManager) GetTLFCryptKeyForMDDecryption(arg0 context.Context, arg
 }
 
 // GetTLFCryptKeyForMDDecryption indicates an expected call of GetTLFCryptKeyForMDDecryption.
-func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForMDDecryption(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyForMDDecryption(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyForMDDecryption", reflect.TypeOf((*MockKeyManager)(nil).GetTLFCryptKeyForMDDecryption), arg0, arg1, arg2)
 }
@@ -2787,7 +2787,7 @@ func (m *MockKeyManager) GetTLFCryptKeyOfAllGenerations(arg0 context.Context, ar
 }
 
 // GetTLFCryptKeyOfAllGenerations indicates an expected call of GetTLFCryptKeyOfAllGenerations.
-func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyOfAllGenerations(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) GetTLFCryptKeyOfAllGenerations(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTLFCryptKeyOfAllGenerations", reflect.TypeOf((*MockKeyManager)(nil).GetTLFCryptKeyOfAllGenerations), arg0, arg1)
 }
@@ -2803,7 +2803,7 @@ func (m *MockKeyManager) Rekey(arg0 context.Context, arg1 *RootMetadata, arg2 bo
 }
 
 // Rekey indicates an expected call of Rekey.
-func (mr *MockKeyManagerMockRecorder) Rekey(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockKeyManagerMockRecorder) Rekey(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Rekey", reflect.TypeOf((*MockKeyManager)(nil).Rekey), arg0, arg1, arg2)
 }
@@ -2838,7 +2838,7 @@ func (m *MockMDCache) ChangeHandleForID(arg0, arg1 *tlfhandle.Handle) {
 }
 
 // ChangeHandleForID indicates an expected call of ChangeHandleForID.
-func (mr *MockMDCacheMockRecorder) ChangeHandleForID(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) ChangeHandleForID(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ChangeHandleForID", reflect.TypeOf((*MockMDCache)(nil).ChangeHandleForID), arg0, arg1)
 }
@@ -2850,7 +2850,7 @@ func (m *MockMDCache) Delete(arg0 tlf.ID, arg1 kbfsmd.Revision, arg2 kbfsmd.Bran
 }
 
 // Delete indicates an expected call of Delete.
-func (mr *MockMDCacheMockRecorder) Delete(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) Delete(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockMDCache)(nil).Delete), arg0, arg1, arg2)
 }
@@ -2865,7 +2865,7 @@ func (m *MockMDCache) Get(arg0 tlf.ID, arg1 kbfsmd.Revision, arg2 kbfsmd.BranchI
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockMDCacheMockRecorder) Get(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) Get(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockMDCache)(nil).Get), arg0, arg1, arg2)
 }
@@ -2880,7 +2880,7 @@ func (m *MockMDCache) GetIDForHandle(arg0 *tlfhandle.Handle) (tlf.ID, error) {
 }
 
 // GetIDForHandle indicates an expected call of GetIDForHandle.
-func (mr *MockMDCacheMockRecorder) GetIDForHandle(arg0 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) GetIDForHandle(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetIDForHandle", reflect.TypeOf((*MockMDCache)(nil).GetIDForHandle), arg0)
 }
@@ -2897,7 +2897,7 @@ func (m *MockMDCache) GetNextMD(arg0 tlf.ID, arg1 keybase1.Seqno) (*kbfsmd.Merkl
 }
 
 // GetNextMD indicates an expected call of GetNextMD.
-func (mr *MockMDCacheMockRecorder) GetNextMD(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) GetNextMD(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNextMD", reflect.TypeOf((*MockMDCache)(nil).GetNextMD), arg0, arg1)
 }
@@ -2909,7 +2909,7 @@ func (m *MockMDCache) MarkPutToServer(arg0 tlf.ID, arg1 kbfsmd.Revision, arg2 kb
 }
 
 // MarkPutToServer indicates an expected call of MarkPutToServer.
-func (mr *MockMDCacheMockRecorder) MarkPutToServer(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) MarkPutToServer(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MarkPutToServer", reflect.TypeOf((*MockMDCache)(nil).MarkPutToServer), arg0, arg1, arg2)
 }
@@ -2923,7 +2923,7 @@ func (m *MockMDCache) Put(arg0 ImmutableRootMetadata) error {
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockMDCacheMockRecorder) Put(arg0 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) Put(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockMDCache)(nil).Put), arg0)
 }
@@ -2937,7 +2937,7 @@ func (m *MockMDCache) PutIDForHandle(arg0 *tlfhandle.Handle, arg1 tlf.ID) error 
 }
 
 // PutIDForHandle indicates an expected call of PutIDForHandle.
-func (mr *MockMDCacheMockRecorder) PutIDForHandle(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) PutIDForHandle(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutIDForHandle", reflect.TypeOf((*MockMDCache)(nil).PutIDForHandle), arg0, arg1)
 }
@@ -2951,7 +2951,7 @@ func (m *MockMDCache) PutNextMD(arg0 tlf.ID, arg1 keybase1.Seqno, arg2 *kbfsmd.M
 }
 
 // PutNextMD indicates an expected call of PutNextMD.
-func (mr *MockMDCacheMockRecorder) PutNextMD(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) PutNextMD(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutNextMD", reflect.TypeOf((*MockMDCache)(nil).PutNextMD), arg0, arg1, arg2, arg3, arg4)
 }
@@ -2965,7 +2965,7 @@ func (m *MockMDCache) Replace(arg0 ImmutableRootMetadata, arg1 kbfsmd.BranchID) 
 }
 
 // Replace indicates an expected call of Replace.
-func (mr *MockMDCacheMockRecorder) Replace(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDCacheMockRecorder) Replace(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Replace", reflect.TypeOf((*MockMDCache)(nil).Replace), arg0, arg1)
 }
@@ -3003,7 +3003,7 @@ func (m *MockMDOps) GetForTLF(arg0 context.Context, arg1 tlf.ID, arg2 *keybase1.
 }
 
 // GetForTLF indicates an expected call of GetForTLF.
-func (mr *MockMDOpsMockRecorder) GetForTLF(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetForTLF(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetForTLF", reflect.TypeOf((*MockMDOps)(nil).GetForTLF), arg0, arg1, arg2)
 }
@@ -3018,7 +3018,7 @@ func (m *MockMDOps) GetForTLFByTime(arg0 context.Context, arg1 tlf.ID, arg2 time
 }
 
 // GetForTLFByTime indicates an expected call of GetForTLFByTime.
-func (mr *MockMDOpsMockRecorder) GetForTLFByTime(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetForTLFByTime(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetForTLFByTime", reflect.TypeOf((*MockMDOps)(nil).GetForTLFByTime), arg0, arg1, arg2)
 }
@@ -3033,7 +3033,7 @@ func (m *MockMDOps) GetIDForHandle(arg0 context.Context, arg1 *tlfhandle.Handle)
 }
 
 // GetIDForHandle indicates an expected call of GetIDForHandle.
-func (mr *MockMDOpsMockRecorder) GetIDForHandle(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetIDForHandle(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetIDForHandle", reflect.TypeOf((*MockMDOps)(nil).GetIDForHandle), arg0, arg1)
 }
@@ -3048,7 +3048,7 @@ func (m *MockMDOps) GetLatestHandleForTLF(arg0 context.Context, arg1 tlf.ID) (tl
 }
 
 // GetLatestHandleForTLF indicates an expected call of GetLatestHandleForTLF.
-func (mr *MockMDOpsMockRecorder) GetLatestHandleForTLF(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetLatestHandleForTLF(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetLatestHandleForTLF", reflect.TypeOf((*MockMDOps)(nil).GetLatestHandleForTLF), arg0, arg1)
 }
@@ -3063,7 +3063,7 @@ func (m *MockMDOps) GetRange(arg0 context.Context, arg1 tlf.ID, arg2, arg3 kbfsm
 }
 
 // GetRange indicates an expected call of GetRange.
-func (mr *MockMDOpsMockRecorder) GetRange(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetRange(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRange", reflect.TypeOf((*MockMDOps)(nil).GetRange), arg0, arg1, arg2, arg3, arg4)
 }
@@ -3078,7 +3078,7 @@ func (m *MockMDOps) GetUnmergedForTLF(arg0 context.Context, arg1 tlf.ID, arg2 kb
 }
 
 // GetUnmergedForTLF indicates an expected call of GetUnmergedForTLF.
-func (mr *MockMDOpsMockRecorder) GetUnmergedForTLF(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetUnmergedForTLF(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUnmergedForTLF", reflect.TypeOf((*MockMDOps)(nil).GetUnmergedForTLF), arg0, arg1, arg2)
 }
@@ -3093,7 +3093,7 @@ func (m *MockMDOps) GetUnmergedRange(arg0 context.Context, arg1 tlf.ID, arg2 kbf
 }
 
 // GetUnmergedRange indicates an expected call of GetUnmergedRange.
-func (mr *MockMDOpsMockRecorder) GetUnmergedRange(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) GetUnmergedRange(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUnmergedRange", reflect.TypeOf((*MockMDOps)(nil).GetUnmergedRange), arg0, arg1, arg2, arg3, arg4)
 }
@@ -3107,7 +3107,7 @@ func (m *MockMDOps) PruneBranch(arg0 context.Context, arg1 tlf.ID, arg2 kbfsmd.B
 }
 
 // PruneBranch indicates an expected call of PruneBranch.
-func (mr *MockMDOpsMockRecorder) PruneBranch(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) PruneBranch(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PruneBranch", reflect.TypeOf((*MockMDOps)(nil).PruneBranch), arg0, arg1, arg2)
 }
@@ -3122,7 +3122,7 @@ func (m *MockMDOps) Put(arg0 context.Context, arg1 *RootMetadata, arg2 kbfscrypt
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockMDOpsMockRecorder) Put(arg0, arg1, arg2, arg3, arg4, arg5 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) Put(arg0, arg1, arg2, arg3, arg4, arg5 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockMDOps)(nil).Put), arg0, arg1, arg2, arg3, arg4, arg5)
 }
@@ -3137,7 +3137,7 @@ func (m *MockMDOps) PutUnmerged(arg0 context.Context, arg1 *RootMetadata, arg2 k
 }
 
 // PutUnmerged indicates an expected call of PutUnmerged.
-func (mr *MockMDOpsMockRecorder) PutUnmerged(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) PutUnmerged(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutUnmerged", reflect.TypeOf((*MockMDOps)(nil).PutUnmerged), arg0, arg1, arg2, arg3)
 }
@@ -3152,7 +3152,7 @@ func (m *MockMDOps) ResolveBranch(arg0 context.Context, arg1 tlf.ID, arg2 kbfsmd
 }
 
 // ResolveBranch indicates an expected call of ResolveBranch.
-func (mr *MockMDOpsMockRecorder) ResolveBranch(arg0, arg1, arg2, arg3, arg4, arg5, arg6 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) ResolveBranch(arg0, arg1, arg2, arg3, arg4, arg5, arg6 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ResolveBranch", reflect.TypeOf((*MockMDOps)(nil).ResolveBranch), arg0, arg1, arg2, arg3, arg4, arg5, arg6)
 }
@@ -3167,7 +3167,7 @@ func (m *MockMDOps) ValidateLatestHandleNotFinal(arg0 context.Context, arg1 *tlf
 }
 
 // ValidateLatestHandleNotFinal indicates an expected call of ValidateLatestHandleNotFinal.
-func (mr *MockMDOpsMockRecorder) ValidateLatestHandleNotFinal(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDOpsMockRecorder) ValidateLatestHandleNotFinal(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ValidateLatestHandleNotFinal", reflect.TypeOf((*MockMDOps)(nil).ValidateLatestHandleNotFinal), arg0, arg1)
 }
@@ -3202,7 +3202,7 @@ func (m *MockMDServer) CancelRegistration(arg0 context.Context, arg1 tlf.ID) {
 }
 
 // CancelRegistration indicates an expected call of CancelRegistration.
-func (mr *MockMDServerMockRecorder) CancelRegistration(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) CancelRegistration(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelRegistration", reflect.TypeOf((*MockMDServer)(nil).CancelRegistration), arg0, arg1)
 }
@@ -3216,7 +3216,7 @@ func (m *MockMDServer) CheckForRekeys(arg0 context.Context) <-chan error {
 }
 
 // CheckForRekeys indicates an expected call of CheckForRekeys.
-func (mr *MockMDServerMockRecorder) CheckForRekeys(arg0 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) CheckForRekeys(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CheckForRekeys", reflect.TypeOf((*MockMDServer)(nil).CheckForRekeys), arg0)
 }
@@ -3228,7 +3228,7 @@ func (m *MockMDServer) CheckReachability(arg0 context.Context) {
 }
 
 // CheckReachability indicates an expected call of CheckReachability.
-func (mr *MockMDServerMockRecorder) CheckReachability(arg0 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) CheckReachability(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CheckReachability", reflect.TypeOf((*MockMDServer)(nil).CheckReachability), arg0)
 }
@@ -3269,7 +3269,7 @@ func (m *MockMDServer) FindNextMD(arg0 context.Context, arg1 tlf.ID, arg2 keybas
 }
 
 // FindNextMD indicates an expected call of FindNextMD.
-func (mr *MockMDServerMockRecorder) FindNextMD(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) FindNextMD(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindNextMD", reflect.TypeOf((*MockMDServer)(nil).FindNextMD), arg0, arg1, arg2)
 }
@@ -3285,7 +3285,7 @@ func (m *MockMDServer) GetForHandle(arg0 context.Context, arg1 tlf.Handle, arg2 
 }
 
 // GetForHandle indicates an expected call of GetForHandle.
-func (mr *MockMDServerMockRecorder) GetForHandle(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetForHandle(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetForHandle", reflect.TypeOf((*MockMDServer)(nil).GetForHandle), arg0, arg1, arg2, arg3)
 }
@@ -3300,7 +3300,7 @@ func (m *MockMDServer) GetForTLF(arg0 context.Context, arg1 tlf.ID, arg2 kbfsmd.
 }
 
 // GetForTLF indicates an expected call of GetForTLF.
-func (mr *MockMDServerMockRecorder) GetForTLF(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetForTLF(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetForTLF", reflect.TypeOf((*MockMDServer)(nil).GetForTLF), arg0, arg1, arg2, arg3, arg4)
 }
@@ -3315,7 +3315,7 @@ func (m *MockMDServer) GetForTLFByTime(arg0 context.Context, arg1 tlf.ID, arg2 t
 }
 
 // GetForTLFByTime indicates an expected call of GetForTLFByTime.
-func (mr *MockMDServerMockRecorder) GetForTLFByTime(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetForTLFByTime(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetForTLFByTime", reflect.TypeOf((*MockMDServer)(nil).GetForTLFByTime), arg0, arg1, arg2)
 }
@@ -3331,7 +3331,7 @@ func (m *MockMDServer) GetKeyBundles(arg0 context.Context, arg1 tlf.ID, arg2 kbf
 }
 
 // GetKeyBundles indicates an expected call of GetKeyBundles.
-func (mr *MockMDServerMockRecorder) GetKeyBundles(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetKeyBundles(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetKeyBundles", reflect.TypeOf((*MockMDServer)(nil).GetKeyBundles), arg0, arg1, arg2, arg3)
 }
@@ -3346,7 +3346,7 @@ func (m *MockMDServer) GetLatestHandleForTLF(arg0 context.Context, arg1 tlf.ID) 
 }
 
 // GetLatestHandleForTLF indicates an expected call of GetLatestHandleForTLF.
-func (mr *MockMDServerMockRecorder) GetLatestHandleForTLF(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetLatestHandleForTLF(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetLatestHandleForTLF", reflect.TypeOf((*MockMDServer)(nil).GetLatestHandleForTLF), arg0, arg1)
 }
@@ -3361,7 +3361,7 @@ func (m *MockMDServer) GetMerkleRootLatest(arg0 context.Context, arg1 keybase1.M
 }
 
 // GetMerkleRootLatest indicates an expected call of GetMerkleRootLatest.
-func (mr *MockMDServerMockRecorder) GetMerkleRootLatest(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetMerkleRootLatest(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetMerkleRootLatest", reflect.TypeOf((*MockMDServer)(nil).GetMerkleRootLatest), arg0, arg1)
 }
@@ -3376,7 +3376,7 @@ func (m *MockMDServer) GetRange(arg0 context.Context, arg1 tlf.ID, arg2 kbfsmd.B
 }
 
 // GetRange indicates an expected call of GetRange.
-func (mr *MockMDServerMockRecorder) GetRange(arg0, arg1, arg2, arg3, arg4, arg5, arg6 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) GetRange(arg0, arg1, arg2, arg3, arg4, arg5, arg6 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRange", reflect.TypeOf((*MockMDServer)(nil).GetRange), arg0, arg1, arg2, arg3, arg4, arg5, arg6)
 }
@@ -3404,7 +3404,7 @@ func (m *MockMDServer) Lock(arg0 context.Context, arg1 tlf.ID, arg2 keybase1.Loc
 }
 
 // Lock indicates an expected call of Lock.
-func (mr *MockMDServerMockRecorder) Lock(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) Lock(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Lock", reflect.TypeOf((*MockMDServer)(nil).Lock), arg0, arg1, arg2)
 }
@@ -3433,7 +3433,7 @@ func (m *MockMDServer) PruneBranch(arg0 context.Context, arg1 tlf.ID, arg2 kbfsm
 }
 
 // PruneBranch indicates an expected call of PruneBranch.
-func (mr *MockMDServerMockRecorder) PruneBranch(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) PruneBranch(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PruneBranch", reflect.TypeOf((*MockMDServer)(nil).PruneBranch), arg0, arg1, arg2)
 }
@@ -3447,7 +3447,7 @@ func (m *MockMDServer) Put(arg0 context.Context, arg1 *RootMetadataSigned, arg2 
 }
 
 // Put indicates an expected call of Put.
-func (mr *MockMDServerMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) Put(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockMDServer)(nil).Put), arg0, arg1, arg2, arg3, arg4)
 }
@@ -3459,7 +3459,7 @@ func (m *MockMDServer) RefreshAuthToken(arg0 context.Context) {
 }
 
 // RefreshAuthToken indicates an expected call of RefreshAuthToken.
-func (mr *MockMDServerMockRecorder) RefreshAuthToken(arg0 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) RefreshAuthToken(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RefreshAuthToken", reflect.TypeOf((*MockMDServer)(nil).RefreshAuthToken), arg0)
 }
@@ -3474,7 +3474,7 @@ func (m *MockMDServer) RegisterForUpdate(arg0 context.Context, arg1 tlf.ID, arg2
 }
 
 // RegisterForUpdate indicates an expected call of RegisterForUpdate.
-func (mr *MockMDServerMockRecorder) RegisterForUpdate(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) RegisterForUpdate(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterForUpdate", reflect.TypeOf((*MockMDServer)(nil).RegisterForUpdate), arg0, arg1, arg2)
 }
@@ -3488,7 +3488,7 @@ func (m *MockMDServer) ReleaseLock(arg0 context.Context, arg1 tlf.ID, arg2 keyba
 }
 
 // ReleaseLock indicates an expected call of ReleaseLock.
-func (mr *MockMDServerMockRecorder) ReleaseLock(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) ReleaseLock(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReleaseLock", reflect.TypeOf((*MockMDServer)(nil).ReleaseLock), arg0, arg1, arg2)
 }
@@ -3514,7 +3514,7 @@ func (m *MockMDServer) StartImplicitTeamMigration(arg0 context.Context, arg1 tlf
 }
 
 // StartImplicitTeamMigration indicates an expected call of StartImplicitTeamMigration.
-func (mr *MockMDServerMockRecorder) StartImplicitTeamMigration(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) StartImplicitTeamMigration(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "StartImplicitTeamMigration", reflect.TypeOf((*MockMDServer)(nil).StartImplicitTeamMigration), arg0, arg1)
 }
@@ -3529,7 +3529,7 @@ func (m *MockMDServer) TruncateLock(arg0 context.Context, arg1 tlf.ID) (bool, er
 }
 
 // TruncateLock indicates an expected call of TruncateLock.
-func (mr *MockMDServerMockRecorder) TruncateLock(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) TruncateLock(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TruncateLock", reflect.TypeOf((*MockMDServer)(nil).TruncateLock), arg0, arg1)
 }
@@ -3544,7 +3544,7 @@ func (m *MockMDServer) TruncateUnlock(arg0 context.Context, arg1 tlf.ID) (bool, 
 }
 
 // TruncateUnlock indicates an expected call of TruncateUnlock.
-func (mr *MockMDServerMockRecorder) TruncateUnlock(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockMDServerMockRecorder) TruncateUnlock(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TruncateUnlock", reflect.TypeOf((*MockMDServer)(nil).TruncateUnlock), arg0, arg1)
 }
@@ -3581,7 +3581,7 @@ func (m *MockNode) ChildName(arg0 string) data.PathPartString {
 }
 
 // ChildName indicates an expected call of ChildName.
-func (mr *MockNodeMockRecorder) ChildName(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) ChildName(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ChildName", reflect.TypeOf((*MockNode)(nil).ChildName), arg0)
 }
@@ -3607,7 +3607,7 @@ func (m *MockNode) FillCacheDuration(arg0 *time.Duration) {
 }
 
 // FillCacheDuration indicates an expected call of FillCacheDuration.
-func (mr *MockNodeMockRecorder) FillCacheDuration(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) FillCacheDuration(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FillCacheDuration", reflect.TypeOf((*MockNode)(nil).FillCacheDuration), arg0)
 }
@@ -3649,7 +3649,7 @@ func (m *MockNode) GetFS(arg0 context.Context) NodeFSReadOnly {
 }
 
 // GetFS indicates an expected call of GetFS.
-func (mr *MockNodeMockRecorder) GetFS(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) GetFS(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFS", reflect.TypeOf((*MockNode)(nil).GetFS), arg0)
 }
@@ -3663,7 +3663,7 @@ func (m *MockNode) GetFile(arg0 context.Context) billy.File {
 }
 
 // GetFile indicates an expected call of GetFile.
-func (mr *MockNodeMockRecorder) GetFile(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) GetFile(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFile", reflect.TypeOf((*MockNode)(nil).GetFile), arg0)
 }
@@ -3734,7 +3734,7 @@ func (m *MockNode) Readonly(arg0 context.Context) bool {
 }
 
 // Readonly indicates an expected call of Readonly.
-func (mr *MockNodeMockRecorder) Readonly(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) Readonly(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Readonly", reflect.TypeOf((*MockNode)(nil).Readonly), arg0)
 }
@@ -3749,7 +3749,7 @@ func (m *MockNode) RemoveDir(arg0 context.Context, arg1 data.PathPartString) (bo
 }
 
 // RemoveDir indicates an expected call of RemoveDir.
-func (mr *MockNodeMockRecorder) RemoveDir(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) RemoveDir(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RemoveDir", reflect.TypeOf((*MockNode)(nil).RemoveDir), arg0, arg1)
 }
@@ -3768,7 +3768,7 @@ func (m *MockNode) ShouldCreateMissedLookup(arg0 context.Context, arg1 data.Path
 }
 
 // ShouldCreateMissedLookup indicates an expected call of ShouldCreateMissedLookup.
-func (mr *MockNodeMockRecorder) ShouldCreateMissedLookup(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) ShouldCreateMissedLookup(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShouldCreateMissedLookup", reflect.TypeOf((*MockNode)(nil).ShouldCreateMissedLookup), arg0, arg1)
 }
@@ -3782,7 +3782,7 @@ func (m *MockNode) ShouldRetryOnDirRead(arg0 context.Context) bool {
 }
 
 // ShouldRetryOnDirRead indicates an expected call of ShouldRetryOnDirRead.
-func (mr *MockNodeMockRecorder) ShouldRetryOnDirRead(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) ShouldRetryOnDirRead(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShouldRetryOnDirRead", reflect.TypeOf((*MockNode)(nil).ShouldRetryOnDirRead), arg0)
 }
@@ -3810,7 +3810,7 @@ func (m *MockNode) WrapChild(arg0 Node) Node {
 }
 
 // WrapChild indicates an expected call of WrapChild.
-func (mr *MockNodeMockRecorder) WrapChild(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeMockRecorder) WrapChild(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "WrapChild", reflect.TypeOf((*MockNode)(nil).WrapChild), arg0)
 }
@@ -3845,7 +3845,7 @@ func (m *MockNodeCache) AddRootWrapper(arg0 func(Node) Node) {
 }
 
 // AddRootWrapper indicates an expected call of AddRootWrapper.
-func (mr *MockNodeCacheMockRecorder) AddRootWrapper(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) AddRootWrapper(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddRootWrapper", reflect.TypeOf((*MockNodeCache)(nil).AddRootWrapper), arg0)
 }
@@ -3859,7 +3859,7 @@ func (m *MockNodeCache) AllNodeChildren(arg0 Node) []Node {
 }
 
 // AllNodeChildren indicates an expected call of AllNodeChildren.
-func (mr *MockNodeCacheMockRecorder) AllNodeChildren(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) AllNodeChildren(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AllNodeChildren", reflect.TypeOf((*MockNodeCache)(nil).AllNodeChildren), arg0)
 }
@@ -3887,7 +3887,7 @@ func (m *MockNodeCache) Get(arg0 data.BlockRef) Node {
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockNodeCacheMockRecorder) Get(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) Get(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockNodeCache)(nil).Get), arg0)
 }
@@ -3902,7 +3902,7 @@ func (m *MockNodeCache) GetOrCreate(arg0 data.BlockPointer, arg1 data.PathPartSt
 }
 
 // GetOrCreate indicates an expected call of GetOrCreate.
-func (mr *MockNodeCacheMockRecorder) GetOrCreate(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) GetOrCreate(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetOrCreate", reflect.TypeOf((*MockNodeCache)(nil).GetOrCreate), arg0, arg1, arg2, arg3)
 }
@@ -3916,7 +3916,7 @@ func (m *MockNodeCache) IsUnlinked(arg0 Node) bool {
 }
 
 // IsUnlinked indicates an expected call of IsUnlinked.
-func (mr *MockNodeCacheMockRecorder) IsUnlinked(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) IsUnlinked(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsUnlinked", reflect.TypeOf((*MockNodeCache)(nil).IsUnlinked), arg0)
 }
@@ -3931,7 +3931,7 @@ func (m *MockNodeCache) Move(arg0 data.BlockRef, arg1 Node, arg2 data.PathPartSt
 }
 
 // Move indicates an expected call of Move.
-func (mr *MockNodeCacheMockRecorder) Move(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) Move(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Move", reflect.TypeOf((*MockNodeCache)(nil).Move), arg0, arg1, arg2)
 }
@@ -3959,7 +3959,7 @@ func (m *MockNodeCache) PathFromNode(arg0 Node) data.Path {
 }
 
 // PathFromNode indicates an expected call of PathFromNode.
-func (mr *MockNodeCacheMockRecorder) PathFromNode(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) PathFromNode(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PathFromNode", reflect.TypeOf((*MockNodeCache)(nil).PathFromNode), arg0)
 }
@@ -3971,7 +3971,7 @@ func (m *MockNodeCache) SetObfuscatorMaker(arg0 func() data.Obfuscator) {
 }
 
 // SetObfuscatorMaker indicates an expected call of SetObfuscatorMaker.
-func (mr *MockNodeCacheMockRecorder) SetObfuscatorMaker(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) SetObfuscatorMaker(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetObfuscatorMaker", reflect.TypeOf((*MockNodeCache)(nil).SetObfuscatorMaker), arg0)
 }
@@ -3985,7 +3985,7 @@ func (m *MockNodeCache) Unlink(arg0 data.BlockRef, arg1 data.Path, arg2 data.Dir
 }
 
 // Unlink indicates an expected call of Unlink.
-func (mr *MockNodeCacheMockRecorder) Unlink(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) Unlink(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Unlink", reflect.TypeOf((*MockNodeCache)(nil).Unlink), arg0, arg1, arg2)
 }
@@ -3999,7 +3999,7 @@ func (m *MockNodeCache) UnlinkedDirEntry(arg0 Node) data.DirEntry {
 }
 
 // UnlinkedDirEntry indicates an expected call of UnlinkedDirEntry.
-func (mr *MockNodeCacheMockRecorder) UnlinkedDirEntry(arg0 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) UnlinkedDirEntry(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UnlinkedDirEntry", reflect.TypeOf((*MockNodeCache)(nil).UnlinkedDirEntry), arg0)
 }
@@ -4013,7 +4013,7 @@ func (m *MockNodeCache) UpdatePointer(arg0 data.BlockRef, arg1 data.BlockPointer
 }
 
 // UpdatePointer indicates an expected call of UpdatePointer.
-func (mr *MockNodeCacheMockRecorder) UpdatePointer(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) UpdatePointer(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdatePointer", reflect.TypeOf((*MockNodeCache)(nil).UpdatePointer), arg0, arg1)
 }
@@ -4025,7 +4025,7 @@ func (m *MockNodeCache) UpdateUnlinkedDirEntry(arg0 Node, arg1 data.DirEntry) {
 }
 
 // UpdateUnlinkedDirEntry indicates an expected call of UpdateUnlinkedDirEntry.
-func (mr *MockNodeCacheMockRecorder) UpdateUnlinkedDirEntry(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNodeCacheMockRecorder) UpdateUnlinkedDirEntry(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUnlinkedDirEntry", reflect.TypeOf((*MockNodeCache)(nil).UpdateUnlinkedDirEntry), arg0, arg1)
 }
@@ -4099,7 +4099,7 @@ func (m *MockNotifier) RegisterForChanges(arg0 []data.FolderBranch, arg1 Observe
 }
 
 // RegisterForChanges indicates an expected call of RegisterForChanges.
-func (mr *MockNotifierMockRecorder) RegisterForChanges(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNotifierMockRecorder) RegisterForChanges(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterForChanges", reflect.TypeOf((*MockNotifier)(nil).RegisterForChanges), arg0, arg1)
 }
@@ -4113,7 +4113,7 @@ func (m *MockNotifier) RegisterForSyncedTlfs(arg0 SyncedTlfObserver) error {
 }
 
 // RegisterForSyncedTlfs indicates an expected call of RegisterForSyncedTlfs.
-func (mr *MockNotifierMockRecorder) RegisterForSyncedTlfs(arg0 interface{}) *gomock.Call {
+func (mr *MockNotifierMockRecorder) RegisterForSyncedTlfs(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterForSyncedTlfs", reflect.TypeOf((*MockNotifier)(nil).RegisterForSyncedTlfs), arg0)
 }
@@ -4127,7 +4127,7 @@ func (m *MockNotifier) UnregisterFromChanges(arg0 []data.FolderBranch, arg1 Obse
 }
 
 // UnregisterFromChanges indicates an expected call of UnregisterFromChanges.
-func (mr *MockNotifierMockRecorder) UnregisterFromChanges(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockNotifierMockRecorder) UnregisterFromChanges(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UnregisterFromChanges", reflect.TypeOf((*MockNotifier)(nil).UnregisterFromChanges), arg0, arg1)
 }
@@ -4141,7 +4141,7 @@ func (m *MockNotifier) UnregisterFromSyncedTlfs(arg0 SyncedTlfObserver) error {
 }
 
 // UnregisterFromSyncedTlfs indicates an expected call of UnregisterFromSyncedTlfs.
-func (mr *MockNotifierMockRecorder) UnregisterFromSyncedTlfs(arg0 interface{}) *gomock.Call {
+func (mr *MockNotifierMockRecorder) UnregisterFromSyncedTlfs(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UnregisterFromSyncedTlfs", reflect.TypeOf((*MockNotifier)(nil).UnregisterFromSyncedTlfs), arg0)
 }
@@ -4176,7 +4176,7 @@ func (m *MockRekeyQueue) Enqueue(arg0 tlf.ID) {
 }
 
 // Enqueue indicates an expected call of Enqueue.
-func (mr *MockRekeyQueueMockRecorder) Enqueue(arg0 interface{}) *gomock.Call {
+func (mr *MockRekeyQueueMockRecorder) Enqueue(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Enqueue", reflect.TypeOf((*MockRekeyQueue)(nil).Enqueue), arg0)
 }
@@ -4190,7 +4190,7 @@ func (m *MockRekeyQueue) IsRekeyPending(arg0 tlf.ID) bool {
 }
 
 // IsRekeyPending indicates an expected call of IsRekeyPending.
-func (mr *MockRekeyQueueMockRecorder) IsRekeyPending(arg0 interface{}) *gomock.Call {
+func (mr *MockRekeyQueueMockRecorder) IsRekeyPending(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsRekeyPending", reflect.TypeOf((*MockRekeyQueue)(nil).IsRekeyPending), arg0)
 }
@@ -4251,7 +4251,7 @@ func (m *MockReporter) Notify(arg0 context.Context, arg1 *keybase1.FSNotificatio
 }
 
 // Notify indicates an expected call of Notify.
-func (mr *MockReporterMockRecorder) Notify(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) Notify(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Notify", reflect.TypeOf((*MockReporter)(nil).Notify), arg0, arg1)
 }
@@ -4263,7 +4263,7 @@ func (m *MockReporter) NotifyFavoritesChanged(arg0 context.Context) {
 }
 
 // NotifyFavoritesChanged indicates an expected call of NotifyFavoritesChanged.
-func (mr *MockReporterMockRecorder) NotifyFavoritesChanged(arg0 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) NotifyFavoritesChanged(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyFavoritesChanged", reflect.TypeOf((*MockReporter)(nil).NotifyFavoritesChanged), arg0)
 }
@@ -4275,7 +4275,7 @@ func (m *MockReporter) NotifyOverallSyncStatus(arg0 context.Context, arg1 keybas
 }
 
 // NotifyOverallSyncStatus indicates an expected call of NotifyOverallSyncStatus.
-func (mr *MockReporterMockRecorder) NotifyOverallSyncStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) NotifyOverallSyncStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyOverallSyncStatus", reflect.TypeOf((*MockReporter)(nil).NotifyOverallSyncStatus), arg0, arg1)
 }
@@ -4287,7 +4287,7 @@ func (m *MockReporter) NotifyPathUpdated(arg0 context.Context, arg1 string) {
 }
 
 // NotifyPathUpdated indicates an expected call of NotifyPathUpdated.
-func (mr *MockReporterMockRecorder) NotifyPathUpdated(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) NotifyPathUpdated(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifyPathUpdated", reflect.TypeOf((*MockReporter)(nil).NotifyPathUpdated), arg0, arg1)
 }
@@ -4299,7 +4299,7 @@ func (m *MockReporter) NotifySyncStatus(arg0 context.Context, arg1 *keybase1.FSP
 }
 
 // NotifySyncStatus indicates an expected call of NotifySyncStatus.
-func (mr *MockReporterMockRecorder) NotifySyncStatus(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) NotifySyncStatus(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NotifySyncStatus", reflect.TypeOf((*MockReporter)(nil).NotifySyncStatus), arg0, arg1)
 }
@@ -4311,7 +4311,7 @@ func (m *MockReporter) OnlineStatusChanged(arg0 context.Context, arg1 bool) {
 }
 
 // OnlineStatusChanged indicates an expected call of OnlineStatusChanged.
-func (mr *MockReporterMockRecorder) OnlineStatusChanged(arg0, arg1 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) OnlineStatusChanged(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OnlineStatusChanged", reflect.TypeOf((*MockReporter)(nil).OnlineStatusChanged), arg0, arg1)
 }
@@ -4323,7 +4323,7 @@ func (m *MockReporter) ReportErr(arg0 context.Context, arg1 tlf.CanonicalName, a
 }
 
 // ReportErr indicates an expected call of ReportErr.
-func (mr *MockReporterMockRecorder) ReportErr(arg0, arg1, arg2, arg3, arg4 interface{}) *gomock.Call {
+func (mr *MockReporterMockRecorder) ReportErr(arg0, arg1, arg2, arg3, arg4 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReportErr", reflect.TypeOf((*MockReporter)(nil).ReportErr), arg0, arg1, arg2, arg3, arg4)
 }
@@ -4370,7 +4370,7 @@ func (m *MockSubscriptionNotifier) OnNonPathChange(arg0 SubscriptionManagerClien
 }
 
 // OnNonPathChange indicates an expected call of OnNonPathChange.
-func (mr *MockSubscriptionNotifierMockRecorder) OnNonPathChange(arg0, arg1, arg2 interface{}) *gomock.Call {
+func (mr *MockSubscriptionNotifierMockRecorder) OnNonPathChange(arg0, arg1, arg2 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OnNonPathChange", reflect.TypeOf((*MockSubscriptionNotifier)(nil).OnNonPathChange), arg0, arg1, arg2)
 }
@@ -4382,7 +4382,7 @@ func (m *MockSubscriptionNotifier) OnPathChange(arg0 SubscriptionManagerClientID
 }
 
 // OnPathChange indicates an expected call of OnPathChange.
-func (mr *MockSubscriptionNotifierMockRecorder) OnPathChange(arg0, arg1, arg2, arg3 interface{}) *gomock.Call {
+func (mr *MockSubscriptionNotifierMockRecorder) OnPathChange(arg0, arg1, arg2, arg3 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "OnPathChange", reflect.TypeOf((*MockSubscriptionNotifier)(nil).OnPathChange), arg0, arg1, arg2, arg3)
 }
@@ -4417,7 +4417,7 @@ func (m *MockSubscriptionManagerPublisher) PublishChange(arg0 keybase1.Subscript
 }
 
 // PublishChange indicates an expected call of PublishChange.
-func (mr *MockSubscriptionManagerPublisherMockRecorder) PublishChange(arg0 interface{}) *gomock.Call {
+func (mr *MockSubscriptionManagerPublisherMockRecorder) PublishChange(arg0 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishChange", reflect.TypeOf((*MockSubscriptionManagerPublisher)(nil).PublishChange), arg0)
 }

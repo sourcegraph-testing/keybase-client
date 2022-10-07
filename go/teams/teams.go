@@ -1222,7 +1222,7 @@ func (t *Team) deleteSubteam(ctx context.Context) error {
 	}
 
 	payload := make(libkb.JSONPayload)
-	payload["sigs"] = []interface{}{sigParent, sigSub}
+	payload["sigs"] = []any{sigParent, sigSub}
 
 	var ratchetSet hidden.RatchetBlindingKeySet
 	if parentRatchet != nil {
@@ -2495,7 +2495,7 @@ func isTeamBadGenerationError(err error) bool {
 	return libkb.IsAppStatusCode(err, keybase1.StatusCode_SCTeamBadGeneration)
 }
 
-func (t *Team) marshal(incoming interface{}) ([]byte, error) {
+func (t *Team) marshal(incoming any) ([]byte, error) {
 	var data []byte
 	mh := codec.MsgpackHandle{WriteExt: true}
 	enc := codec.NewEncoderBytes(&data, &mh)

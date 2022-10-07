@@ -65,9 +65,10 @@ type preambleArg struct {
 
 // Preamble
 // Example usage:
-//   ctx, err, fin := c.Preamble(...)
-//   defer fin()
-//   if err != nil { return err }
+//
+//	ctx, err, fin := c.Preamble(...)
+//	defer fin()
+//	if err != nil { return err }
 func (s *Server) Preamble(inCtx context.Context, opts preambleArg) (mctx libkb.MetaContext, fin func(), err error) {
 	mctx = libkb.NewMetaContext(s.logTag(inCtx), s.G())
 	fin = mctx.Trace("LRPC "+opts.RPCName, opts.Err)
@@ -956,7 +957,7 @@ func (s *Server) GetPartnerUrlsLocal(ctx context.Context, sessionID int) (res []
 	if err != nil {
 		return nil, err
 	}
-	var externalURLs map[string]map[string][]interface{}
+	var externalURLs map[string]map[string][]any
 	if err := json.Unmarshal([]byte(entry.Entry), &externalURLs); err != nil {
 		return nil, err
 	}

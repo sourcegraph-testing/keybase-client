@@ -8,3 +8,4 @@ The Keybase hash type. The package is named `kbfshash` rather than
 
 All errors returned by this package are wrapped with pkg/errors, and
 so need errors.Cause() to unwrap them.
+Hello World

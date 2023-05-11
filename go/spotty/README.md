@@ -7,3 +7,4 @@ a mechanism to read the current TTY that should work on both Linux and OSX.
 
 Or at least, not with Go's test framework, because Go test
 [closes /dev/tty](https://groups.google.com/forum/#!topic/golang-nuts/w6TTJpw9stA).
+Hello World

@@ -41,3 +41,4 @@
 * Version numbers matter in `client/shared/constants/whats-new.tsx`. They are
    used to sync the **most recent** version a user has seen and set the badge
    state of the radio icon.
+Hello World

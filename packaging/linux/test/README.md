@@ -192,3 +192,4 @@ From inside the Arch docker environment:
     pacman -U --noconfirm  `ls -tr /root/build/arch/keybase-bin/*.xz | tail -1`
     su - strib
     run_keybase
+Hello World

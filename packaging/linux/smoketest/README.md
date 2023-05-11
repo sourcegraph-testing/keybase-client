@@ -8,3 +8,4 @@ setup (once per machine)
 
 running
 4) run smoketest_all.bash
+Hello World

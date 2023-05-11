@@ -55,3 +55,4 @@ Update the scripts that reference the older version such to include this version
 * [packaging/desktop/kbfuse.sh](/packaging/desktop/kbfuse.sh)
 
 The installer is bundled into the Keybase.app, in `Keybase.app/Contents/Resources/KeybaseInstaller.app`.
+Hello World

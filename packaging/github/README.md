@@ -5,3 +5,4 @@ and upload it. For example:
 
         VERSION=1.0.9 ./keybase.sh
         VERSION=1.0.0 ./kbfs.sh
+Hello World

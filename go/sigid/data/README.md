@@ -1,4 +1,4 @@
 
 # How To Run This
 
-Generate the data.go, use `./build.sh`
+Generate the data.go, use `./build.sh`Hello World

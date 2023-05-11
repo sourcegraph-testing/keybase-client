@@ -79,3 +79,4 @@ View kext status:
 
     sudo kextstat -b com.github.kbfuse.filesystems.kbfuse
 
+Hello World

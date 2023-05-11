@@ -22,3 +22,4 @@ The Go library uses LoadLibrary to load the Dokan DLL, it is not linked
 with the DLL. Using different builds of the DLL works fine.
 
 
+Hello World
